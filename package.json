@@ -31,5 +31,8 @@
     "dotenv": "^8.2.0",
     "esm": "^3.2.25",
     "mustache": "^4.0.1"
+  },
+  "devDependencies": {
+    "prettier": "^2.1.1"
   }
 }
