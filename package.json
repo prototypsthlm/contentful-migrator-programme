@@ -1,6 +1,6 @@
 {
   "name": "contentful-migrator-programme",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Tool to manage contentful migrations",
   "main": "migrator.js",
   "scripts": {
