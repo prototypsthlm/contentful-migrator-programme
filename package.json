@@ -1,0 +1,35 @@
+{
+  "name": "contentful-migrator-programme",
+  "version": "1.0.0",
+  "description": "Tool to manage contentful migrations",
+  "main": "migrator.js",
+  "scripts": {
+    "test": "npm test",
+    "m:generate": "node ./commands/generate.js",
+    "m:apply": "node ./commands/apply.js",
+    "m:reset": "node ./commands/reset.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prototypsthlm/contentful-migrator-programme.git"
+  },
+  "keywords": [
+    "node",
+    "contentful",
+    "migrations",
+    "cli"
+  ],
+  "author": "Prototyp <info@prototyp.se> (https://www.prototyp.se)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/prototypsthlm/contentful-migrator-programme/issues"
+  },
+  "homepage": "https://github.com/prototypsthlm/contentful-migrator-programme#readme",
+  "dependencies": {
+    "contentful-management": "^6.1.1",
+    "contentful-migration": "^1.6.2",
+    "dotenv": "^8.2.0",
+    "esm": "^3.2.25",
+    "mustache": "^4.0.1"
+  }
+}
