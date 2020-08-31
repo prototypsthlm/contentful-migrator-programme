@@ -9,7 +9,7 @@ const { camelToKebabCase } = require('../lib/string')
 const [, , name] = process.argv
 
 const templatePath = fs.readFileSync(
-  join(__dirname, '..', 'templates', 'migration.tpl'),
+  join(__dirname, '..', 'templates', 'migration.mustache'),
   'utf8'
 )
 

@@ -2,10 +2,14 @@ require('dotenv').config()
 const fs = require('fs')
 const { join } = require('path')
 const { runMigration } = require('contentful-migration/built/bin/cli')
+const { utcTimestamp } = require('./lib/date')
 const spaceModule = require('./lib/contentful-space-manager')
 
+const AUX_SPACE_ENV = utcTimestamp({ dashes: true })
 const MIGRATIONS_TYPE = 'migrations'
 const MIGRATIONS_DIR = 'migrations'
+const MAX_ENV_AMOUNT = 3
+const ALIAS_AMOUNT = 1
 
 const getMigratedTimestamps = async (space) => {
   try {
@@ -69,29 +73,63 @@ const saveMigratedTimestamps = (space, migratedMigrations) => {
   )
 }
 
-module.exports = async () => {
-  const space = await spaceModule(
+module.exports = async (testEnv) => {
+  const spaceMasterEnv = await spaceModule(
     process.env.CTF_SPACE,
     process.env.CTF_ENVIRONMENT,
     process.env.CTF_CMA_TOKEN
   )
+  const auxEnv = testEnv || AUX_SPACE_ENV
 
-  const migrationsToApply = await getMigrationsToApply(space)
+  try {
+    // abort if max env amount reached, to prevent failures
+    // (or wait and retry if in ci? so the build doesnt fail
+    // if someone is migrating somewhere else)
+    const envs = await spaceMasterEnv.getEnvironments()
+    if (envs.items.length >= MAX_ENV_AMOUNT + ALIAS_AMOUNT) {
+      throw new Error('Maximum environment amount reached. Aborting.')
+    }
 
-  // migrate the migrations type if it doesnt exist
-  if (!(await space.typeExists(MIGRATIONS_TYPE))) {
-    console.info('Creating migrations type.')
-    await migrateMigrationsType(space)
-    console.info('Migrations type created.')
-  }
+    const migrationsToApply = await getMigrationsToApply(spaceMasterEnv)
 
-  // migrate if there's migrations to apply
-  if (migrationsToApply.length) {
-    console.info('Applying all new migrations.')
-    await migrate(migrationsToApply, space.env.sys.id)
-    await saveMigratedTimestamps(space, migrationsToApply)
-    console.info('All new migrations applied.')
-  } else {
-    console.info('No new migrations to apply.')
+    if (!migrationsToApply.length) {
+      console.info('No new migrations to apply.')
+      if (!testEnv) {
+        return
+      }
+    }
+
+    await spaceMasterEnv.createSpaceEnv(auxEnv, process.env.CTF_ENVIRONMENT)
+
+    await spaceMasterEnv.updateApiKeysAccessToNewEnv(auxEnv)
+
+    const spaceAuxEnv = await spaceModule(
+      process.env.CTF_SPACE,
+      auxEnv,
+      process.env.CTF_CMA_TOKEN
+    )
+
+    if (!(await spaceAuxEnv.typeExists(MIGRATIONS_TYPE))) {
+      await migrateMigrationsType(auxEnv)
+    }
+
+    if (migrationsToApply.length) {
+      await migrate(migrationsToApply, auxEnv)
+      await saveMigratedTimestamps(spaceAuxEnv, migrationsToApply)
+      console.info('All new migrations applied.')
+    }
+
+    if (!testEnv) {
+      const currentEnv = await spaceMasterEnv.getCurrentEnvironmentOfAlias(
+        process.env.CTF_ENVIRONMENT
+      )
+      await spaceMasterEnv.switchEnvOfAlias(process.env.CTF_ENVIRONMENT, auxEnv)
+      await spaceMasterEnv.deleteSpaceEnv(currentEnv.sys.id)
+      console.info('Environment switched successfully.')
+    }
+  } catch (e) {
+    console.error(e)
+    await spaceMasterEnv.deleteSpaceEnv(auxEnv)
+    throw e
   }
 }

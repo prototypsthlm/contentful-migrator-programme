@@ -7,7 +7,9 @@
     "test": "npm test",
     "m:generate": "node ./commands/generate.js",
     "m:apply": "node ./commands/apply.js",
-    "m:reset": "node ./commands/reset.js"
+    "m:aux:create": "node ./commands/create-aux-env.js",
+    "m:aux:drop": "node ./commands/drop-aux-env.js",
+    "m:aux:test": "node ./commands/test-aux-env.js"
   },
   "repository": {
     "type": "git",
