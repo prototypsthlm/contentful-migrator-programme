@@ -1,15 +1,13 @@
 {
-    "name": "contentful-migrator-programme",
+    "name": "@prototyp-stockholm/contentful-migrator-programme",
     "version": "0.0.1",
     "description": "Tool to manage contentful migrations",
     "main": "migrator.js",
     "scripts": {
-        "test": "npm test",
-        "m:generate": "node ./commands/generate.js",
-        "m:apply": "node ./commands/apply.js",
-        "m:aux:create": "node ./commands/create-aux-env.js",
-        "m:aux:drop": "node ./commands/drop-aux-env.js",
-        "m:aux:test": "node ./commands/test-aux-env.js"
+        "test": "npm test"
+    },
+    "bin": {
+        "cmp": "./bin/cmp.js"
     },
     "repository": {
         "type": "git",
@@ -32,7 +30,8 @@
         "contentful-migration": "^1.6.2",
         "dotenv": "^8.2.0",
         "esm": "^3.2.25",
-        "mustache": "^4.0.1"
+        "mustache": "^4.0.1",
+        "yargs": "^15.4.1"
     },
     "devDependencies": {
         "prettier": "^2.1.1"

@@ -24,3 +24,13 @@ yarn m:aux:create
 yarn m:aux:drop test20200220233122
 # remember to revert back CTF_ENVIRONMENT to the original value after reverting.
 ```
+
+
+## Environment
+
+```shell script
+CTF_SPACE=<SECRET>
+CTF_ENVIRONMENT=<SECRET>
+CTF_CDA_TOKEN=<SECRET> # maybe not needed?
+CTF_CMA_TOKEN=<SECRET>
+```
