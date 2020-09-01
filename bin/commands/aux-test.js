@@ -16,6 +16,7 @@ exports.handler = async () => {
         await space.deleteSpaceEnv(testEnv)
         console.info(`${testEnv} environment deleted in contentful.`)
     } catch (e) {
+        console.error(e)
         process.exitCode = 1
     }
 }

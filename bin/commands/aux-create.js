@@ -27,6 +27,7 @@ exports.handler = async ({ name }) => {
             `Configure that into your local "CTF_ENVIRONMENT" to test out and remember to delete it after with: "cmp aux:drop ${name}"`
         )
     } catch (e) {
+        console.error(e)
         process.exitCode = 1
     }
 }

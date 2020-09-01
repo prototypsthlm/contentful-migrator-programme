@@ -19,7 +19,8 @@ exports.builder = (yargs) => {
 exports.handler = async ({ name }) => {
     try {
         if (name === 'master') {
-            throw new Error('Dropping master environment is not allowed.')
+            console.error('Dropping master environment is not allowed.')
+            return
         }
 
         const space = await spaceManager(env('CTF_SPACE'), name, env('CTF_CMA_TOKEN'))

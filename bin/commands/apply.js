@@ -20,9 +20,11 @@ exports.handler = async ({ force }) => {
     try {
         if (env('CTF_ENVIRONMENT') === 'master' && !force) {
             console.error('Executing migrations against master requires the --force flag.')
+            return
         }
         await migrator()
     } catch (e) {
+        console.error(e)
         process.exitCode = 1
     }
 }

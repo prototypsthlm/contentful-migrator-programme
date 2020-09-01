@@ -1,6 +1,6 @@
 require('dotenv').config()
 const fs = require('fs')
-const { join } = require('path')
+const { join } = (path = require('path'))
 const { runMigration } = require('contentful-migration/built/bin/cli')
 const { utcTimestamp } = require('../lib/date')
 const spaceModule = require('../lib/contentful-space-manager')
@@ -44,8 +44,7 @@ const getTimestampFromFileName = (filename) => {
 
 const getMigrationsToApply = async (space) => {
     const timestamps = await getMigratedTimestamps(space)
-    // return fs.readdirSync(join(__dirname, '..', MIGRATIONS_DIR)).filter((file) => { TODO
-    return fs.readdirSync(join(__dirname, MIGRATIONS_DIR)).filter((file) => {
+    return fs.readdirSync(join('.', MIGRATIONS_DIR)).filter((file) => {
         const timestamp = getTimestampFromFileName(file)
         return timestamp && !timestamps.includes(timestamp)
     })
@@ -54,8 +53,7 @@ const getMigrationsToApply = async (space) => {
 const migrate = async (migrations, envId) => {
     for (const migration of migrations) {
         await runMigration({
-            // filePath: join(__dirname, '..', MIGRATIONS_DIR, migration), TODO
-            filePath: join(__dirname, MIGRATIONS_DIR, migration),
+            filePath: join('.', MIGRATIONS_DIR, migration),
             spaceId: env('CTF_SPACE'),
             accessToken: env('CTF_CMA_TOKEN'),
             environmentId: envId,
@@ -84,7 +82,8 @@ module.exports = async (testEnv) => {
         // if someone is migrating somewhere else)
         const envs = await spaceMasterEnv.getEnvironments()
         if (envs.items.length >= ENV_AMOUNT + ALIAS_AMOUNT) {
-            throw new Error('Maximum environment amount reached. Aborting.')
+            console.error('Maximum environment amount reached. Aborting.')
+            return
         }
 
         const migrationsToApply = await getMigrationsToApply(spaceMasterEnv)
@@ -119,7 +118,6 @@ module.exports = async (testEnv) => {
             console.info('Environment switched successfully.')
         }
     } catch (e) {
-        console.error(e)
         await spaceMasterEnv.deleteSpaceEnv(auxEnv)
         throw e
     }
