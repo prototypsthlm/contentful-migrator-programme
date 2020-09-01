@@ -1,40 +1,40 @@
 {
-  "name": "contentful-migrator-programme",
-  "version": "0.0.1",
-  "description": "Tool to manage contentful migrations",
-  "main": "migrator.js",
-  "scripts": {
-    "test": "npm test",
-    "m:generate": "node ./commands/generate.js",
-    "m:apply": "node ./commands/apply.js",
-    "m:aux:create": "node ./commands/create-aux-env.js",
-    "m:aux:drop": "node ./commands/drop-aux-env.js",
-    "m:aux:test": "node ./commands/test-aux-env.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/prototypsthlm/contentful-migrator-programme.git"
-  },
-  "keywords": [
-    "node",
-    "contentful",
-    "migrations",
-    "cli"
-  ],
-  "author": "Prototyp <info@prototyp.se> (https://www.prototyp.se)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/prototypsthlm/contentful-migrator-programme/issues"
-  },
-  "homepage": "https://github.com/prototypsthlm/contentful-migrator-programme#readme",
-  "dependencies": {
-    "contentful-management": "^6.1.1",
-    "contentful-migration": "^1.6.2",
-    "dotenv": "^8.2.0",
-    "esm": "^3.2.25",
-    "mustache": "^4.0.1"
-  },
-  "devDependencies": {
-    "prettier": "^2.1.1"
-  }
+    "name": "contentful-migrator-programme",
+    "version": "0.0.1",
+    "description": "Tool to manage contentful migrations",
+    "main": "migrator.js",
+    "scripts": {
+        "test": "npm test",
+        "m:generate": "node ./commands/generate.js",
+        "m:apply": "node ./commands/apply.js",
+        "m:aux:create": "node ./commands/create-aux-env.js",
+        "m:aux:drop": "node ./commands/drop-aux-env.js",
+        "m:aux:test": "node ./commands/test-aux-env.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/prototypsthlm/contentful-migrator-programme.git"
+    },
+    "keywords": [
+        "node",
+        "contentful",
+        "migrations",
+        "cli"
+    ],
+    "author": "Prototyp <info@prototyp.se> (https://www.prototyp.se)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/prototypsthlm/contentful-migrator-programme/issues"
+    },
+    "homepage": "https://github.com/prototypsthlm/contentful-migrator-programme#readme",
+    "dependencies": {
+        "contentful-management": "^6.1.1",
+        "contentful-migration": "^1.6.2",
+        "dotenv": "^8.2.0",
+        "esm": "^3.2.25",
+        "mustache": "^4.0.1"
+    },
+    "devDependencies": {
+        "prettier": "^2.1.1"
+    }
 }
