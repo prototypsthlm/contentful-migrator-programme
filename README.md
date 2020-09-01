@@ -1,36 +1,52 @@
-# contentful-migrator-programme
+# Contentful Migrator Programme
 Tool to manage Contentful migrations
 
-## Migrations
+
+## Setup
+
+### Install package
 
 ```shell script
-# Generate a migration
-yarn m:generate addUserType
-# This will generate a migration with the name YYYYMMDDhhmmssxxx-add-user-type.js
-
-# Apply migration
-yarn m:apply
-# This will apply the migration to the branch set in the CTF_ENVIRONMENT env var
-
-# Test migrations
-yarn m:aux:create
-# This will generate an aux env based on CTF_ENVIRONMENT and apply the migrations so they can be tested.
-# Update the CTF_ENVIRONMENT with the testEnv created and printed out by that command to be able to test
-# the app. And remember to drop it when done with the m:aux:drop command.
-#
-# Would be great to set the aux env name manually, and create a file with the env name stored, that if present, the project uses that env
-
-# Drop aux env after testing (migrations will be applied in ctf master env by the ci)
-yarn m:aux:drop test20200220233122
-# remember to revert back CTF_ENVIRONMENT to the original value after reverting.
+npm i --save @prototyp-stockholm/contentful-migrator-programme
 ```
 
+### Set environment variables
 
-## Environment
+Create a `.env` file in your project root and add those variables:
 
-```shell script
+```dotenv
+# required
 CTF_SPACE=<SECRET>
 CTF_ENVIRONMENT=<SECRET>
-CTF_CDA_TOKEN=<SECRET> # maybe not needed?
 CTF_CMA_TOKEN=<SECRET>
+
+# optional
+MIGRATIONS_DIR=migrations
+MIGRATIONS_TYPE=migrations
+ALIAS_AMOUNT=1
+ENV_AMOUNT=3
+```
+
+## Usage
+
+### Available commands
+
+```shell script
+cmp generate <migrationName> # generates a migration with the given name and a timestamp prepended ex: YYYYMMDDhhmmssxxx-add-user-type.js.
+cmp apply # applies all non applied migrations to the CTF_ENVIRONMENT set in the `.env` file
+cmp aux:create <name?> # creates an aux env based on CTF_ENVIRONMENT. You can give it an optional name.
+cmp aux:drop <name> # drop the env with the given name
+cmp aux:test # creates env from CTF_ENVIRONMENT, applies new migrations, and drops the env
+```
+
+If you did not install the package globally you'll have to prepend `node_modules/.bin/` to the `cmp` command.
+
+Otherwise, you can add the `cmp` command in the scripts section of the project `package.json`.
+
+ ```json
+{
+    "scripts": {
+        "cmp": "cmp"
+    }
+}
 ```

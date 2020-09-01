@@ -1,8 +1,7 @@
 {
     "name": "@prototyp-stockholm/contentful-migrator-programme",
     "version": "0.0.1",
-    "description": "Tool to manage contentful migrations",
-    "main": "migrator.js",
+    "description": "Tool to manage and keep track of contentful migrations.",
     "scripts": {
         "test": "npm test"
     },
