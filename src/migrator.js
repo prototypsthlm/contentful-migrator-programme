@@ -73,8 +73,11 @@ const getMigrationsToApply = async (space, options) => {
 
 function extractFunctionToSeparateFile(filePath, direction) {
     const migrationFile = join('..', MIGRATIONS_DIR, filePath) // TODO Assumes a file structure that might not be correct
-    const parsedContent = require(migrationFile)
-    const serializedFunction = `module.exports = ${serialize(parsedContent[direction])}`
+    const upAndDownFunctions = require(migrationFile)
+    if (!(upAndDownFunctions.up && upAndDownFunctions.down)) {
+        throw new Error("Each migration module needs to declare both 'up' and 'down' functions")
+    }
+    const serializedFunction = `module.exports = ${serialize(upAndDownFunctions[direction])}`
     const partialMigrationFile = tmp.fileSync({ prefix: `up-${filePath}`, postfix: '.js' })
     fs.writeFileSync(partialMigrationFile.name, serializedFunction)
 
