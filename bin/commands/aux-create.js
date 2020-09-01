@@ -1,11 +1,12 @@
 #! /usr/bin/env node
 
 require('dotenv').config()
+const migrator = require('../../migrator')
 const { utcTimestamp } = require('../../lib/date')
 
 exports.command = 'aux:create'
 
-exports.desc = 'Creates an auxiliary environment based on CTF_ENVIRONMENT and apples newer migrations to it.'
+exports.desc = 'Creates an auxiliary environment based on CTF_ENVIRONMENT and applies newer migrations to it.'
 
 exports.builder = (yargs) => {
     yargs.option('name', {
@@ -18,7 +19,7 @@ exports.builder = (yargs) => {
 
 exports.handler = async ({ name }) => {
     try {
-        await require('../../migrator')(name)
+        await migrator(name)
         console.info('###########################################')
         console.info('Contentful test environment:', name)
         console.info('###########################################')

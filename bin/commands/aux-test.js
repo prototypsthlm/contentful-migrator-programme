@@ -1,6 +1,8 @@
 require('dotenv').config()
+const migrator = require('../../migrator')
 const { utcTimestamp } = require('../../lib/date')
 const spaceManager = require('../../lib/contentful-space-manager')
+const env = require('../../lib/env')
 
 exports.command = 'aux:test'
 
@@ -9,8 +11,8 @@ exports.desc = 'Creates a temporary environment based on CTF_ENVIRONMENT, applie
 exports.handler = async () => {
     try {
         const testEnv = 'test' + utcTimestamp()
-        await require('../../migrator')(testEnv)
-        const space = await spaceManager(process.env.CTF_SPACE, testEnv, process.env.CTF_CMA_TOKEN)
+        await migrator(testEnv)
+        const space = await spaceManager(env('CTF_SPACE'), testEnv, env('CTF_CMA_TOKEN'))
         await space.deleteSpaceEnv(testEnv)
         console.info(`${testEnv} environment deleted in contentful.`)
     } catch (e) {

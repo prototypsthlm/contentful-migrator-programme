@@ -5,14 +5,14 @@ const { join } = require('path')
 const Mustache = require('mustache')
 const { utcTimestampMs } = require('../../lib/date')
 const { camelToKebabCase } = require('../../lib/string')
+const env = require('../../lib/env')
 
-exports.command = 'generate'
+exports.command = 'generate <name>'
 
 exports.desc = 'Generates a migration file with the timestamp prepended in the filename.'
 
 exports.builder = (yargs) => {
     yargs.positional('name', {
-        alias: 'n',
         describe: 'The name of the migration file.',
         type: 'string',
     })
@@ -24,7 +24,15 @@ exports.handler = ({ name }) => {
 
         const migrationContents = Mustache.render(templatePath)
         const migrationFileName = `${utcTimestampMs()}-${camelToKebabCase(name)}.js`
-        const migrationPath = join(__dirname, '..', '..', 'migrations', migrationFileName)
+        const migrationsDir = env('MIGRATIONS_DIR')
+
+        fs.mkdir(migrationsDir, { recursive: true }, (err) => {
+            if (err) {
+                throw err
+            }
+        })
+
+        const migrationPath = join(migrationsDir, migrationFileName)
 
         fs.writeFile(migrationPath, migrationContents, { flag: 'w' }, (err) => {
             if (err) {

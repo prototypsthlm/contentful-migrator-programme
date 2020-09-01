@@ -3,10 +3,11 @@
 require('dotenv').config()
 
 const spaceManager = require('../../lib/contentful-space-manager')
+const env = require('../../lib/env')
 
 exports.command = 'aux:drop <name>'
 
-exports.desc = 'Drops the given auxiliary environment.'
+exports.desc = 'Drops the environment with the given name.'
 
 exports.builder = (yargs) => {
     yargs.positional('name', {
@@ -21,7 +22,7 @@ exports.handler = async ({ name }) => {
             throw new Error('Dropping master environment is not allowed.')
         }
 
-        const space = await spaceManager(process.env.CTF_SPACE, name, process.env.CTF_CMA_TOKEN)
+        const space = await spaceManager(env('CTF_SPACE'), name, env('CTF_CMA_TOKEN'))
 
         await space.deleteSpaceEnv(name)
         console.info(`${name} environment deleted in contentful.`)

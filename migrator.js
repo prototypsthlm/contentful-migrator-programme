@@ -4,12 +4,13 @@ const { join } = require('path')
 const { runMigration } = require('contentful-migration/built/bin/cli')
 const { utcTimestamp } = require('./lib/date')
 const spaceModule = require('./lib/contentful-space-manager')
+const env = require('./lib/env')
 
 const AUX_SPACE_ENV = utcTimestamp({ dashes: true })
-const MIGRATIONS_TYPE = 'migrations'
-const MIGRATIONS_DIR = 'migrations'
-const MAX_ENV_AMOUNT = 3
-const ALIAS_AMOUNT = 1
+const MIGRATIONS_TYPE = env('MIGRATIONS_TYPE')
+const MIGRATIONS_DIR = env('MIGRATIONS_DIR')
+const ENV_AMOUNT = env('ENV_AMOUNT')
+const ALIAS_AMOUNT = env('ALIAS_AMOUNT')
 
 const getMigratedTimestamps = async (space) => {
     try {
@@ -20,12 +21,12 @@ const getMigratedTimestamps = async (space) => {
     }
 }
 
-const migrateMigrationsType = async (env) => {
+const migrateMigrationsType = async (envId) => {
     await runMigration({
         filePath: join(__dirname, 'migrations-type.js'),
-        spaceId: process.env.CTF_SPACE,
-        accessToken: process.env.CTF_CMA_TOKEN,
-        environmentId: env,
+        spaceId: env('CTF_SPACE'),
+        accessToken: env('CTF_CMA_TOKEN'),
+        environmentId: envId,
         yes: true,
     })
 }
@@ -43,19 +44,21 @@ const getTimestampFromFileName = (filename) => {
 
 const getMigrationsToApply = async (space) => {
     const timestamps = await getMigratedTimestamps(space)
-    return fs.readdirSync(join(__dirname, '..', MIGRATIONS_DIR)).filter((file) => {
+    // return fs.readdirSync(join(__dirname, '..', MIGRATIONS_DIR)).filter((file) => {
+    return fs.readdirSync(join(__dirname, MIGRATIONS_DIR)).filter((file) => {
         const timestamp = getTimestampFromFileName(file)
         return timestamp && !timestamps.includes(timestamp)
     })
 }
 
-const migrate = async (migrations, env) => {
+const migrate = async (migrations, envId) => {
     for (const migration of migrations) {
         await runMigration({
-            filePath: join(__dirname, '..', MIGRATIONS_DIR, migration),
-            spaceId: process.env.CTF_SPACE,
-            accessToken: process.env.CTF_CMA_TOKEN,
-            environmentId: env,
+            // filePath: join(__dirname, '..', MIGRATIONS_DIR, migration),
+            filePath: join(__dirname, MIGRATIONS_DIR, migration),
+            spaceId: env('CTF_SPACE'),
+            accessToken: env('CTF_CMA_TOKEN'),
+            environmentId: envId,
             yes: true,
         })
     }
@@ -72,7 +75,7 @@ const saveMigratedTimestamps = (space, migratedMigrations) => {
 }
 
 module.exports = async (testEnv) => {
-    const spaceMasterEnv = await spaceModule(process.env.CTF_SPACE, process.env.CTF_ENVIRONMENT, process.env.CTF_CMA_TOKEN)
+    const spaceMasterEnv = await spaceModule(env('CTF_SPACE'), env('CTF_ENVIRONMENT'), env('CTF_CMA_TOKEN'))
     const auxEnv = testEnv || AUX_SPACE_ENV
 
     try {
@@ -80,7 +83,7 @@ module.exports = async (testEnv) => {
         // (or wait and retry if in ci? so the build doesnt fail
         // if someone is migrating somewhere else)
         const envs = await spaceMasterEnv.getEnvironments()
-        if (envs.items.length >= MAX_ENV_AMOUNT + ALIAS_AMOUNT) {
+        if (envs.items.length >= ENV_AMOUNT + ALIAS_AMOUNT) {
             throw new Error('Maximum environment amount reached. Aborting.')
         }
 
@@ -93,11 +96,11 @@ module.exports = async (testEnv) => {
             }
         }
 
-        await spaceMasterEnv.createSpaceEnv(auxEnv, process.env.CTF_ENVIRONMENT)
+        await spaceMasterEnv.createSpaceEnv(auxEnv, env('CTF_ENVIRONMENT'))
 
         await spaceMasterEnv.updateApiKeysAccessToNewEnv(auxEnv)
 
-        const spaceAuxEnv = await spaceModule(process.env.CTF_SPACE, auxEnv, process.env.CTF_CMA_TOKEN)
+        const spaceAuxEnv = await spaceModule(env('CTF_SPACE'), auxEnv, env('CTF_CMA_TOKEN'))
 
         if (!(await spaceAuxEnv.typeExists(MIGRATIONS_TYPE))) {
             await migrateMigrationsType(auxEnv)
@@ -110,8 +113,8 @@ module.exports = async (testEnv) => {
         }
 
         if (!testEnv) {
-            const currentEnv = await spaceMasterEnv.getCurrentEnvironmentOfAlias(process.env.CTF_ENVIRONMENT)
-            await spaceMasterEnv.switchEnvOfAlias(process.env.CTF_ENVIRONMENT, auxEnv)
+            const currentEnv = await spaceMasterEnv.getCurrentEnvironmentOfAlias(env('CTF_ENVIRONMENT'))
+            await spaceMasterEnv.switchEnvOfAlias(env('CTF_ENVIRONMENT'), auxEnv)
             await spaceMasterEnv.deleteSpaceEnv(currentEnv.sys.id)
             console.info('Environment switched successfully.')
         }
