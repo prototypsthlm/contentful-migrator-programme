@@ -4,9 +4,9 @@ require('dotenv').config()
 const migrator = require('../../src/migrator')
 const env = require('../../lib/env')
 
-exports.command = 'apply'
+exports.command = 'rollback'
 
-exports.desc = 'Apply migrations.'
+exports.desc = 'Rollback already applied migrations'
 
 exports.builder = (yargs) => {
     yargs.option('force', {
@@ -22,7 +22,7 @@ exports.handler = async ({ force }) => {
             console.error('Executing migrations against master requires the --force flag.')
             return
         }
-        await migrator({ rollback: false })
+        await migrator({ rollback: true })
     } catch (e) {
         console.error(e)
         process.exitCode = 1
