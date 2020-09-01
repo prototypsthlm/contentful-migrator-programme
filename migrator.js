@@ -22,7 +22,7 @@ const getMigratedTimestamps = async (space) => {
 
 const migrateMigrationsType = async (env) => {
     await runMigration({
-        filePath: join(__dirname, 'migrations-content-type.js'),
+        filePath: join(__dirname, 'migrations-type.js'),
         spaceId: process.env.CTF_SPACE,
         accessToken: process.env.CTF_CMA_TOKEN,
         environmentId: env,
