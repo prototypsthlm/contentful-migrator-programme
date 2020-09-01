@@ -1,5 +1,5 @@
 # contentful-migrator-programme
-Tool to manage contentful migrations
+Tool to manage Contentful migrations
 
 ## Migrations
 
