@@ -1,4 +1,4 @@
-const spaceModule = require('./lib/contentful-space-manager')
+const spaceModule = require('../lib/contentful-space-manager')
 
 const seed = async ({ spaceId, environmentId, accessToken }, type, data) => {
     const space = await spaceModule(spaceId, environmentId, accessToken)

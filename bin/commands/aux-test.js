@@ -1,5 +1,5 @@
 require('dotenv').config()
-const migrator = require('../../migrator')
+const migrator = require('../../src/migrator')
 const { utcTimestamp } = require('../../lib/date')
 const spaceManager = require('../../lib/contentful-space-manager')
 const env = require('../../lib/env')

@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 
 require('dotenv').config()
-const migrator = require('../../migrator')
+const migrator = require('../../src/migrator')
 const { utcTimestamp } = require('../../lib/date')
 
 exports.command = 'aux:create'

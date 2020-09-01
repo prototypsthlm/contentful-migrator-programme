@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 
 require('dotenv').config()
-const migrator = require('../../migrator')
+const migrator = require('../../src/migrator')
 const env = require('../../lib/env')
 
 exports.command = 'apply'
