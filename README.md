@@ -41,7 +41,9 @@ cmp aux:test # creates env from CTF_ENVIRONMENT, applies new migrations, and dro
 
 If you did not install the package globally you'll have to prepend `node_modules/.bin/` to the `cmp` command.
 
-Otherwise, you can add the `cmp` command in the scripts section of the project `package.json`.
+Otherwise, you can add the `cmp` command in the scripts section of the project `package.json`. 
+
+Then you can use it like so: `npm run cmp`.
 
  ```json
 {
