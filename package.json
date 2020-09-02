@@ -1,9 +1,10 @@
 {
     "name": "@prototyp-stockholm/contentful-migrator-programme",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "Tool to manage and keep track of contentful migrations.",
     "scripts": {
-        "test": "npm test"
+        "test": "npm test",
+        "release": "standard-version"
     },
     "bin": {
         "cmp": "./bin/cmp.js"
@@ -35,6 +36,7 @@
         "tmp": "^0.2.1"
     },
     "devDependencies": {
-        "prettier": "^2.1.1"
+        "prettier": "^2.1.1",
+        "standard-version": "^9.0.0"
     }
 }
