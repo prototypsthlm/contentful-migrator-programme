@@ -1,9 +1,7 @@
 #! /usr/bin/env node
 
 require('dotenv').config()
-
-const spaceManager = require('../../lib/contentful-space-manager')
-const env = require('../../lib/env')
+const { drop } = require('../../src/migrator')
 
 exports.command = 'aux:drop <name>'
 
@@ -23,9 +21,7 @@ exports.handler = async ({ name }) => {
             return
         }
 
-        const space = await spaceManager(env('CTF_SPACE'), name, env('CTF_CMA_TOKEN'))
-
-        await space.deleteSpaceEnv(name)
+        await drop({ envId: name })
         console.info(`${name} environment deleted in contentful.`)
     } catch (e) {
         console.error(e)

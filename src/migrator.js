@@ -8,7 +8,6 @@ const env = require('../lib/env')
 const serialize = require('serialize-javascript')
 const tmp = require('tmp')
 
-const AUX_SPACE_ENV = utcTimestamp({ dashes: true })
 const MIGRATIONS_TYPE = env('MIGRATIONS_TYPE')
 const MIGRATIONS_DIR = join(process.cwd(), env('MIGRATIONS_DIR'))
 const ENV_AMOUNT = env('ENV_AMOUNT')
@@ -49,7 +48,7 @@ const getNameFromFileName = (filename) => {
     return (matches && matches[1]) || null
 }
 
-const getMigrationsToApply = async (space, options) => {
+const getMigrationsToApply = async (space, options = {}) => {
     const appliedMigrationTimestamps = await getMigratedTimestamps(space)
 
     let fullMigrations
@@ -72,8 +71,7 @@ const getMigrationsToApply = async (space, options) => {
 }
 
 function extractFunctionToSeparateFile(filePath, direction) {
-    const migrationFile = join(MIGRATIONS_DIR, filePath) // TODO Assumes a file structure that might not be correct
-    const upAndDownFunctions = require(migrationFile)
+    const upAndDownFunctions = require(join(MIGRATIONS_DIR, filePath))
     if (!(upAndDownFunctions.up && upAndDownFunctions.down)) {
         throw new Error("Each migration module needs to declare both 'up' and 'down' functions")
     }
@@ -84,7 +82,7 @@ function extractFunctionToSeparateFile(filePath, direction) {
     return new Migration(partialMigrationFile.name, getTimestampFromFileName(filePath), getNameFromFileName(filePath))
 }
 
-const migrate = async (migrations, envId) => {
+const runMigrations = async (migrations, envId) => {
     for (const migration of migrations) {
         await runMigration({
             filePath: migration.fileName,
@@ -96,7 +94,7 @@ const migrate = async (migrations, envId) => {
     }
 }
 
-const updateBookkeeping = async (space, migratedMigrations, options) => {
+const updateBookkeeping = async (space, migratedMigrations, options = {}) => {
     if (options.rollback) {
         const appliedMigrationEntries = await space.getEntries(MIGRATIONS_TYPE)
         const migratedTimestamps = migratedMigrations.map((m) => m.timestamp)
@@ -127,53 +125,109 @@ class Migration {
     }
 }
 
-module.exports = async (options) => {
-    const spaceMasterEnv = await spaceModule(env('CTF_SPACE'), env('CTF_ENVIRONMENT'), env('CTF_CMA_TOKEN'))
-    const auxEnv = options.testEnv || AUX_SPACE_ENV
+const migrate = async (space, options = {}) => {
+    if (!(await space.typeExists(MIGRATIONS_TYPE))) {
+        console.info('`Applied migrations` type not found. Creating it.')
+        await migrateMigrationsType(space.env.sys.id)
+        console.info('`Applied migrations` type created.')
+    }
+
+    const migrationsToApply = await getMigrationsToApply(space, options)
+
+    if (!migrationsToApply.length) {
+        console.info(`No migrations to ${options.rollback ? 'rollback' : 'apply'}.`)
+        return
+    }
+
+    console.info(options.rollback ? 'Rolling back last migration.' : 'Applying all new migrations.')
+    await runMigrations(migrationsToApply, space.env.sys.id)
+    await updateBookkeeping(space, migrationsToApply, options)
+    console.info(options.rollback ? 'Last migration rolled back.' : 'All new migrations applied.')
+}
+
+const createEnv = async (space, envId) => {
+    console.info(`Creating env ${envId}.`)
+    await space.createSpaceEnv(envId, env('CTF_ENVIRONMENT'))
+    console.info(`env ${envId} created.`)
+
+    console.info(`Updating api key access to new env${envId}.`)
+    await space.updateApiKeysAccessToNewEnv(envId)
+    console.info(`Api key access to new env${envId} updated.`)
+
+    return await spaceModule(env('CTF_SPACE'), envId, env('CTF_CMA_TOKEN'))
+}
+
+const switchEnvAliasAndDropOldEnv = async (space, auxEnv) => {
+    console.info('Switching environment alias.')
+    const currentEnv = await space.getCurrentEnvironmentOfAlias(env('CTF_ENVIRONMENT'))
+    await space.switchEnvOfAlias(env('CTF_ENVIRONMENT'), auxEnv)
+    await space.deleteSpaceEnv(currentEnv.sys.id)
+    console.info('Environment alias switched successfully.')
+}
+
+const isEnvLimitReached = async (space) => {
+    const envs = await space.getEnvironments()
+    if (envs.items.length >= ENV_AMOUNT + ALIAS_AMOUNT) {
+        console.error('Maximum environment amount reached. Aborting.')
+        return true
+    }
+    return false
+}
+
+const apply = async (options = {}) => {
+    const space = await spaceModule(env('CTF_SPACE'), env('CTF_ENVIRONMENT'), env('CTF_CMA_TOKEN'))
+    const migrationsToApply = await getMigrationsToApply(space, options)
+
+    if (!migrationsToApply.length) {
+        console.info(`No migrations to ${options.rollback ? 'rollback' : 'apply'}.`)
+        return
+    }
+
+    if (env('CTF_ENVIRONMENT') === 'master') {
+        const newEnvId = utcTimestamp({ dashes: true })
+
+        try {
+            if (await isEnvLimitReached(space)) {
+                return
+            }
+
+            const spaceNewEnv = await createEnv(space, newEnvId)
+            await migrate(spaceNewEnv, options)
+            await switchEnvAliasAndDropOldEnv(space, newEnvId)
+            return
+        } catch (e) {
+            await space.deleteSpaceEnv(newEnvId)
+            throw e
+        }
+    }
+
+    await migrate(space, options)
+}
+
+const create = async ({ newEnvId }) => {
+    const space = await spaceModule(env('CTF_SPACE'), env('CTF_ENVIRONMENT'), env('CTF_CMA_TOKEN'))
 
     try {
-        // abort if max env amount reached, to prevent failures
-        // (or wait and retry if in ci? so the build doesnt fail
-        // if someone is migrating somewhere else)
-        const envs = await spaceMasterEnv.getEnvironments()
-        if (envs.items.length >= ENV_AMOUNT + ALIAS_AMOUNT) {
-            console.error('Maximum environment amount reached. Aborting.')
+        if (await isEnvLimitReached(space)) {
             return
         }
 
-        const migrationsToApply = await getMigrationsToApply(spaceMasterEnv, options)
+        const spaceNewEnv = await createEnv(space, newEnvId)
 
-        if (!migrationsToApply.length) {
-            console.info('No new migrations to apply.')
-            if (!options.testEnv) {
-                return
-            }
-        }
-
-        await spaceMasterEnv.createSpaceEnv(auxEnv, env('CTF_ENVIRONMENT'))
-
-        await spaceMasterEnv.updateApiKeysAccessToNewEnv(auxEnv)
-
-        const spaceAuxEnv = await spaceModule(env('CTF_SPACE'), auxEnv, env('CTF_CMA_TOKEN'))
-
-        if (!(await spaceAuxEnv.typeExists(MIGRATIONS_TYPE))) {
-            await migrateMigrationsType(auxEnv)
-        }
-
-        if (migrationsToApply.length) {
-            await migrate(migrationsToApply, auxEnv)
-            await updateBookkeeping(spaceAuxEnv, migrationsToApply, options)
-            console.info('All new migrations applied.')
-        }
-
-        if (!options.testEnv) {
-            const currentEnv = await spaceMasterEnv.getCurrentEnvironmentOfAlias(env('CTF_ENVIRONMENT'))
-            await spaceMasterEnv.switchEnvOfAlias(env('CTF_ENVIRONMENT'), auxEnv)
-            await spaceMasterEnv.deleteSpaceEnv(currentEnv.sys.id)
-            console.info('Environment switched successfully.')
-        }
+        await migrate(spaceNewEnv)
     } catch (e) {
-        await spaceMasterEnv.deleteSpaceEnv(auxEnv)
+        await space.deleteSpaceEnv(newEnvId)
         throw e
     }
+}
+
+const drop = async ({ envId }) => {
+    const space = await spaceModule(env('CTF_SPACE'), envId, env('CTF_CMA_TOKEN'))
+    await space.deleteSpaceEnv(envId)
+}
+
+module.exports = {
+    apply,
+    create,
+    drop,
 }

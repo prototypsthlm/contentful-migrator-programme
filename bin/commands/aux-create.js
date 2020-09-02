@@ -1,10 +1,10 @@
 #! /usr/bin/env node
 
 require('dotenv').config()
-const migrator = require('../../src/migrator')
+const { create } = require('../../src/migrator')
 const { utcTimestamp } = require('../../lib/date')
 
-exports.command = 'aux:create <name>'
+exports.command = 'aux:create [name]'
 
 exports.desc = 'Creates an auxiliary environment based on CTF_ENVIRONMENT and applies newer migrations to it.'
 
@@ -18,13 +18,12 @@ exports.builder = (yargs) => {
 
 exports.handler = async ({ name }) => {
     try {
-        await migrator({ testEnv: name })
+        await create({ newEnvId: name })
         console.info('###########################################')
         console.info('Contentful test environment:', name)
         console.info('###########################################')
-        console.info(
-            `Configure that into your local "CTF_ENVIRONMENT" to test out and remember to delete it after with: "cmp aux:drop ${name}"`
-        )
+        console.info('Configure that into your local "CTF_ENVIRONMENT" to test out')
+        console.info(`And remember to delete it after with: "cmp aux:drop ${name}"`)
     } catch (e) {
         console.error(e)
         process.exitCode = 1
