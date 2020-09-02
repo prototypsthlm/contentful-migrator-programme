@@ -53,3 +53,16 @@ Then you can use it like so: `npm run cmp`.
     }
 }
 ```
+
+## Develop
+
+1. Clone this project
+2. run npm i
+3. run npm link
+4. create a test project in another folder and cd into it
+5. run npm init
+6. run npm i @prototyp-stockholm/contentful-migrator-programme
+7. run npm link @prototyp-stockholm/contentful-migrator-programme
+8. create an .env file and set the required CTF credentials
+
+Now anything you modify in the locally cloned package will be instantly available in the test project to test.
