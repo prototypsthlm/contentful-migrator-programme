@@ -29,8 +29,10 @@
         "contentful-migration": "^1.6.2",
         "dotenv": "^8.2.0",
         "esm": "^3.2.25",
+        "yargs": "^15.4.1",
         "mustache": "^4.0.1",
-        "yargs": "^15.4.1"
+        "serialize-javascript": "^4.0.0",
+        "tmp": "^0.2.1"
     },
     "devDependencies": {
         "prettier": "^2.1.1"

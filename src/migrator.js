@@ -5,6 +5,8 @@ const { runMigration } = require('contentful-migration/built/bin/cli')
 const { utcTimestamp } = require('../lib/date')
 const spaceModule = require('../lib/contentful-space-manager')
 const env = require('../lib/env')
+const serialize = require('serialize-javascript')
+const tmp = require('tmp')
 
 const AUX_SPACE_ENV = utcTimestamp({ dashes: true })
 const MIGRATIONS_TYPE = env('MIGRATIONS_TYPE')
@@ -42,18 +44,50 @@ const getTimestampFromFileName = (filename) => {
     return (matches && matches[1]) || null
 }
 
-const getMigrationsToApply = async (space) => {
-    const timestamps = await getMigratedTimestamps(space)
-    return fs.readdirSync(join('.', MIGRATIONS_DIR)).filter((file) => {
-        const timestamp = getTimestampFromFileName(file)
-        return timestamp && !timestamps.includes(timestamp)
+const getNameFromFileName = (filename) => {
+    const matches = filename.match(/^\d{17}-([^.]+)/)
+    return (matches && matches[1]) || null
+}
+
+const getMigrationsToApply = async (space, options) => {
+    const appliedMigrationTimestamps = await getMigratedTimestamps(space)
+
+    let fullMigrations
+    if (options.rollback) {
+        const latestAppliedMigration = fs.readdirSync(join('.', MIGRATIONS_DIR)).find((file) => {
+            const timestamp = getTimestampFromFileName(file)
+            return timestamp && appliedMigrationTimestamps.includes(timestamp)
+        })
+        fullMigrations = latestAppliedMigration ? [latestAppliedMigration] : []
+    } else {
+        fullMigrations = fs.readdirSync(join('.', MIGRATIONS_DIR)).filter((file) => {
+            const timestamp = getTimestampFromFileName(file)
+            return timestamp && !appliedMigrationTimestamps.includes(timestamp)
+        })
+    }
+
+    return fullMigrations.map((f) => {
+        return extractFunctionToSeparateFile(f, options.rollback ? 'down' : 'up')
     })
+}
+
+function extractFunctionToSeparateFile(filePath, direction) {
+    const migrationFile = join('..', MIGRATIONS_DIR, filePath) // TODO Assumes a file structure that might not be correct
+    const upAndDownFunctions = require(migrationFile)
+    if (!(upAndDownFunctions.up && upAndDownFunctions.down)) {
+        throw new Error("Each migration module needs to declare both 'up' and 'down' functions")
+    }
+    const serializedFunction = `module.exports = ${serialize(upAndDownFunctions[direction])}`
+    const partialMigrationFile = tmp.fileSync({ prefix: `up-${filePath}`, postfix: '.js' })
+    fs.writeFileSync(partialMigrationFile.name, serializedFunction)
+
+    return new Migration(partialMigrationFile.name, getTimestampFromFileName(filePath), getNameFromFileName(filePath))
 }
 
 const migrate = async (migrations, envId) => {
     for (const migration of migrations) {
         await runMigration({
-            filePath: join('.', MIGRATIONS_DIR, migration),
+            filePath: migration.fileName,
             spaceId: env('CTF_SPACE'),
             accessToken: env('CTF_CMA_TOKEN'),
             environmentId: envId,
@@ -62,19 +96,40 @@ const migrate = async (migrations, envId) => {
     }
 }
 
-const saveMigratedTimestamps = (space, migratedMigrations) => {
+const updateBookkeeping = async (space, migratedMigrations, options) => {
+    if (options.rollback) {
+        const appliedMigrationEntries = await space.getEntries(MIGRATIONS_TYPE)
+        const migratedTimestamps = migratedMigrations.map((m) => m.timestamp)
+        return Promise.all(
+            appliedMigrationEntries
+                .filter((appliedMigration) => {
+                    return migratedTimestamps.includes(appliedMigration.fields.timestamp[space.locale])
+                })
+                .map((entry) => entry.unpublish().then((entry) => entry.delete()))
+        )
+    }
+
     return Promise.all(
         migratedMigrations.map((migration) =>
             space.createEntry(MIGRATIONS_TYPE, {
-                timestamp: getTimestampFromFileName(migration),
+                timestamp: migration.timestamp,
+                name: migration.name,
             })
         )
     )
 }
 
-module.exports = async (testEnv) => {
+class Migration {
+    constructor(fileName, timestamp, name) {
+        this.fileName = fileName
+        this.timestamp = timestamp
+        this.name = name
+    }
+}
+
+module.exports = async (options) => {
     const spaceMasterEnv = await spaceModule(env('CTF_SPACE'), env('CTF_ENVIRONMENT'), env('CTF_CMA_TOKEN'))
-    const auxEnv = testEnv || AUX_SPACE_ENV
+    const auxEnv = options.testEnv || AUX_SPACE_ENV
 
     try {
         // abort if max env amount reached, to prevent failures
@@ -86,11 +141,11 @@ module.exports = async (testEnv) => {
             return
         }
 
-        const migrationsToApply = await getMigrationsToApply(spaceMasterEnv)
+        const migrationsToApply = await getMigrationsToApply(spaceMasterEnv, options)
 
         if (!migrationsToApply.length) {
             console.info('No new migrations to apply.')
-            if (!testEnv) {
+            if (!options.testEnv) {
                 return
             }
         }
@@ -107,11 +162,11 @@ module.exports = async (testEnv) => {
 
         if (migrationsToApply.length) {
             await migrate(migrationsToApply, auxEnv)
-            await saveMigratedTimestamps(spaceAuxEnv, migrationsToApply)
+            await updateBookkeeping(spaceAuxEnv, migrationsToApply, options)
             console.info('All new migrations applied.')
         }
 
-        if (!testEnv) {
+        if (!options.testEnv) {
             const currentEnv = await spaceMasterEnv.getCurrentEnvironmentOfAlias(env('CTF_ENVIRONMENT'))
             await spaceMasterEnv.switchEnvOfAlias(env('CTF_ENVIRONMENT'), auxEnv)
             await spaceMasterEnv.deleteSpaceEnv(currentEnv.sys.id)
