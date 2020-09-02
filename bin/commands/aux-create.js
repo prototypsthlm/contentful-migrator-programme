@@ -4,13 +4,12 @@ require('dotenv').config()
 const migrator = require('../../src/migrator')
 const { utcTimestamp } = require('../../lib/date')
 
-exports.command = 'aux:create'
+exports.command = 'aux:create <name>'
 
 exports.desc = 'Creates an auxiliary environment based on CTF_ENVIRONMENT and applies newer migrations to it.'
 
 exports.builder = (yargs) => {
-    yargs.option('name', {
-        alias: 'n',
+    yargs.positional('name', {
         describe: 'Specify an optional name for the auxiliary environment.',
         type: 'string',
         default: 'test' + utcTimestamp(),
@@ -19,7 +18,7 @@ exports.builder = (yargs) => {
 
 exports.handler = async ({ name }) => {
     try {
-        await migrator(name)
+        await migrator({ testEnv: name })
         console.info('###########################################')
         console.info('Contentful test environment:', name)
         console.info('###########################################')
