@@ -1,6 +1,6 @@
 require('dotenv').config()
 const fs = require('fs')
-const { join } = (path = require('path'))
+const { join } = require('path')
 const { runMigration } = require('contentful-migration/built/bin/cli')
 const { utcTimestamp } = require('../lib/date')
 const spaceModule = require('../lib/contentful-space-manager')
@@ -10,7 +10,7 @@ const tmp = require('tmp')
 
 const AUX_SPACE_ENV = utcTimestamp({ dashes: true })
 const MIGRATIONS_TYPE = env('MIGRATIONS_TYPE')
-const MIGRATIONS_DIR = env('MIGRATIONS_DIR')
+const MIGRATIONS_DIR = join(process.cwd(), env('MIGRATIONS_DIR'))
 const ENV_AMOUNT = env('ENV_AMOUNT')
 const ALIAS_AMOUNT = env('ALIAS_AMOUNT')
 
@@ -54,13 +54,13 @@ const getMigrationsToApply = async (space, options) => {
 
     let fullMigrations
     if (options.rollback) {
-        const latestAppliedMigration = fs.readdirSync(join('.', MIGRATIONS_DIR)).find((file) => {
+        const latestAppliedMigration = fs.readdirSync(MIGRATIONS_DIR).find((file) => {
             const timestamp = getTimestampFromFileName(file)
             return timestamp && appliedMigrationTimestamps.includes(timestamp)
         })
         fullMigrations = latestAppliedMigration ? [latestAppliedMigration] : []
     } else {
-        fullMigrations = fs.readdirSync(join('.', MIGRATIONS_DIR)).filter((file) => {
+        fullMigrations = fs.readdirSync(MIGRATIONS_DIR).filter((file) => {
             const timestamp = getTimestampFromFileName(file)
             return timestamp && !appliedMigrationTimestamps.includes(timestamp)
         })
@@ -72,7 +72,7 @@ const getMigrationsToApply = async (space, options) => {
 }
 
 function extractFunctionToSeparateFile(filePath, direction) {
-    const migrationFile = join('..', MIGRATIONS_DIR, filePath) // TODO Assumes a file structure that might not be correct
+    const migrationFile = join(MIGRATIONS_DIR, filePath) // TODO Assumes a file structure that might not be correct
     const upAndDownFunctions = require(migrationFile)
     if (!(upAndDownFunctions.up && upAndDownFunctions.down)) {
         throw new Error("Each migration module needs to declare both 'up' and 'down' functions")
