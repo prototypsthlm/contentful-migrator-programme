@@ -11,7 +11,7 @@ exports.desc = 'Creates a temporary environment based on CTF_ENVIRONMENT, applie
 exports.handler = async () => {
     try {
         const testEnv = 'test' + utcTimestamp()
-        await migrator(testEnv)
+        await migrator({ testEnv })
         const space = await spaceManager(env('CTF_SPACE'), testEnv, env('CTF_CMA_TOKEN'))
         await space.deleteSpaceEnv(testEnv)
         console.info(`${testEnv} environment deleted in contentful.`)
