@@ -101,3 +101,16 @@ Creates environment from CTF_ENVIRONMENT_ID, applies new migrations, and drops t
 8. create an .env file and set the required CTF credentials
 
 Now anything you modify in the locally cloned package will be instantly available in the test project to test.
+
+## Roadmap
+- [x]  Track migrated migrations with a migration type
+- [x]  Generate migration command.
+- [x]  Apply migrations command.
+- [x]  Reset current environment to master.
+- [x]  Rollback the latest migration
+- [ ]  Apply migrations in batches and ability to rollback if something goes wrong (aux env).
+- [ ]  When migrating, all migrations will belong to a batch. When rolling back, the latest batch will be reverted.
+- [ ]  Improve migrations templates (add ability to use `npm run m:generate add-name-to-user-type --name=Symbol --age=Number` for example and generate the needed code to add the fields.
+- [ ]  Improve seeding or maybe rethink it or maybe remove it since it may be out of scope.
+- [ ]  Move to TypeScript.
+- [ ]  Document features.
