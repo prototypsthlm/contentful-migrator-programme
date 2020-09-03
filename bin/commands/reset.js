@@ -15,7 +15,7 @@ exports.handler = async () => {
             return
         }
 
-        const space = await spaceModule(env('CTF_SPACE'), env('CTF_ENVIRONMENT'), env('CTF_CMA_TOKEN'))
+        const space = await spaceModule(env('CTF_SPACE_ID'), env('CTF_ENVIRONMENT'), env('CTF_CMA_TOKEN'))
 
         console.info(`Deleting ${env('CTF_ENVIRONMENT')} environment.`)
         await space.deleteSpaceEnv(env('CTF_ENVIRONMENT'))
