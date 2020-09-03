@@ -22,7 +22,7 @@ Create a `.env` file in your project root and add these variables:
 #### Required variables
 ```dotenv
 CTF_SPACE_ID=<SECRET>       # The Contentful space id
-CTF_ENVIRONMENT=<SECRET>    # The name of the Contentful environment
+CTF_ENVIRONMENT_ID=<SECRET>    # The name of the Contentful environment
 CTF_CMA_TOKEN=<SECRET>      # The Content Management API token
 ```
 
@@ -74,19 +74,19 @@ Read more on migration syntax on https://github.com/contentful/contentful-migrat
 Generates a migration with the given name and a timestamp prepended ex: YYYYMMDDhhmmssxxx-add-user-type.js.
 
 #### `cmp migrate`
-Applies all _up_ operations of the non applied migrations to the CTF_ENVIRONMENT set in the `.env` file
+Applies all _up_ operations of the non applied migrations to the CTF_ENVIRONMENT_ID set in the `.env` file
 
 #### `cmp rollback`
 Applies the _down_ operations (i.e rolls back ) of the latest migration batch
 
 #### `cmp aux:create <name?>`
-Creates an aux environment based on CTF_ENVIRONMENT. You can give it an optional name.
+Creates an aux environment based on CTF_ENVIRONMENT_ID. You can give it an optional name.
 
 #### `cmp aux:drop <name>`
 Drop the environment with the given name
 
 #### `cmp aux:test`
-Creates environment from CTF_ENVIRONMENT, applies new migrations, and drops the environment
+Creates environment from CTF_ENVIRONMENT_ID, applies new migrations, and drops the environment
 
 
 ## For development of the CMP tool

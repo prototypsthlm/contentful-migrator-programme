@@ -6,7 +6,7 @@ const { utcTimestamp } = require('../../lib/date')
 
 exports.command = 'aux:test'
 
-exports.desc = 'Creates a temporary environment based on CTF_ENVIRONMENT, applies any pending migration and then is immediately deleted.'
+exports.desc = 'Creates a temporary environment based on CTF_ENVIRONMENT_ID, applies any pending migration and then is immediately deleted.'
 
 exports.handler = async () => {
     try {

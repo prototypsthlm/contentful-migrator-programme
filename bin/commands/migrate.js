@@ -18,7 +18,7 @@ exports.builder = (yargs) => {
 
 exports.handler = async ({ force }) => {
     try {
-        if (env('CTF_ENVIRONMENT') === 'master' && !force) {
+        if (env('CTF_ENVIRONMENT_ID') === 'master' && !force) {
             console.error('Executing migrations against master requires the --force flag.')
             return
         }
