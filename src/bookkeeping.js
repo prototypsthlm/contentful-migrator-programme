@@ -3,10 +3,10 @@ const { runMigration } = require('contentful-migration/built/bin/cli')
 require('../lib/contentful-space-manager')
 const env = require('../lib/env')
 
-const MIGRATION_HISTORY_TYPE_ID = env('MIGRATION_HISTORY_TYPE_ID')
+const APPLIED_MIGRATIONS_TYPE_ID = env('APPLIED_MIGRATIONS_TYPE_ID')
 
 const initBookkeeping = async (space) => {
-    if (!(await space.typeExists(MIGRATION_HISTORY_TYPE_ID))) {
+    if (!(await space.typeExists(APPLIED_MIGRATIONS_TYPE_ID))) {
         console.info('`Applied migrations` type not found. Creating it.')
         await migrateMigrationsType(space.env.sys.id)
         console.info('`Applied migrations` type created.')
@@ -15,7 +15,7 @@ const initBookkeeping = async (space) => {
 
 const updateBookkeeping = async (space, migratedMigrations, options = {}) => {
     if (options.rollback) {
-        const allAppliedMigrationEntries = await space.getEntries(MIGRATION_HISTORY_TYPE_ID)
+        const allAppliedMigrationEntries = await space.getEntries(APPLIED_MIGRATIONS_TYPE_ID)
         const migratedTimestamps = migratedMigrations.map((m) => m.timestamp)
         return Promise.all(
             allAppliedMigrationEntries
@@ -28,7 +28,7 @@ const updateBookkeeping = async (space, migratedMigrations, options = {}) => {
 
     return Promise.all(
         migratedMigrations.map((migration) =>
-            space.createEntry(MIGRATION_HISTORY_TYPE_ID, {
+            space.createEntry(APPLIED_MIGRATIONS_TYPE_ID, {
                 timestamp: migration.timestamp,
                 name: migration.name,
                 batch: newBatchNumber,
@@ -49,12 +49,12 @@ const migrateMigrationsType = async (envId) => {
 
 const getLatestBatchNumber = async (space) => {
     const initialBatchNumber = 0
-    const allAppliedMigrationEntries = await space.getEntries(MIGRATION_HISTORY_TYPE_ID)
+    const allAppliedMigrationEntries = await space.getEntries(APPLIED_MIGRATIONS_TYPE_ID)
     return allAppliedMigrationEntries.map((item) => item.fields.batch[space.locale]).reduce((a, b) => Math.max(a, b), initialBatchNumber)
 }
 
 const getMigrationTimestampsForBatch = async (space, batchNumber) => {
-    return (await space.getEntries(MIGRATION_HISTORY_TYPE_ID, { 'fields.batch': batchNumber })).map(
+    return (await space.getEntries(APPLIED_MIGRATIONS_TYPE_ID, { 'fields.batch': batchNumber })).map(
         (item) => item.fields.timestamp[space.locale]
     )
 }

@@ -9,14 +9,14 @@ const serialize = require('serialize-javascript')
 const tmp = require('tmp')
 const { updateBookkeeping, initBookkeeping, getMigrationTimestampsForBatch, getLatestBatchNumber } = require('./bookkeeping')
 
-const MIGRATION_HISTORY_TYPE_ID = env('MIGRATION_HISTORY_TYPE_ID')
+const APPLIED_MIGRATIONS_TYPE_ID = env('APPLIED_MIGRATIONS_TYPE_ID')
 const MIGRATIONS_DIR = join(process.cwd(), env('MIGRATIONS_DIR'))
 const MAX_NUMBER_OF_ENVIRONMENTS = env('MAX_NUMBER_OF_ENVIRONMENTS')
 const MAX_NUMBER_OF_ALIASES = env('MAX_NUMBER_OF_ALIASES')
 
 const getMigratedTimestamps = async (space) => {
     try {
-        const migrations = await space.getEntries(MIGRATION_HISTORY_TYPE_ID)
+        const migrations = await space.getEntries(APPLIED_MIGRATIONS_TYPE_ID)
         return migrations.map((x) => x.fields.timestamp[space.locale])
     } catch (e) {
         return []
