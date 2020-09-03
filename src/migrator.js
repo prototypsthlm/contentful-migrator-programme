@@ -7,6 +7,7 @@ const spaceModule = require('../lib/contentful-space-manager')
 const env = require('../lib/env')
 const serialize = require('serialize-javascript')
 const tmp = require('tmp')
+const { updateBookkeeping, initBookkeeping, getMigrationTimestampsForBatch, getLatestBatchNumber } = require('./bookkeeping')
 
 const MIGRATIONS_TYPE = env('MIGRATIONS_TYPE')
 const MIGRATIONS_DIR = join(process.cwd(), env('MIGRATIONS_DIR'))
@@ -20,16 +21,6 @@ const getMigratedTimestamps = async (space) => {
     } catch (e) {
         return []
     }
-}
-
-const migrateMigrationsType = async (envId) => {
-    await runMigration({
-        filePath: join(__dirname, 'migrations-type.js'),
-        spaceId: env('CTF_SPACE'),
-        accessToken: env('CTF_CMA_TOKEN'),
-        environmentId: envId,
-        yes: true,
-    })
 }
 
 /**
@@ -48,27 +39,32 @@ const getNameFromFileName = (filename) => {
     return (matches && matches[1]) || null
 }
 
-const getMigrationsToApply = async (space, options = {}) => {
-    const appliedMigrationTimestamps = await getMigratedTimestamps(space)
-
-    let fullMigrations
+const getMigrationsToHandle = async (space, options = {}) => {
+    // Rolling back
     if (options.rollback) {
-        const latestAppliedMigration = fs.readdirSync(MIGRATIONS_DIR).find((file) => {
+        const latestBatchNumber = await getLatestBatchNumber(space)
+        let latestBatchMigrationTimestamps = await getMigrationTimestampsForBatch(space, latestBatchNumber)
+        let fullMigrationsToRun = fs.readdirSync(MIGRATIONS_DIR).filter((file) => {
             const timestamp = getTimestampFromFileName(file)
-            return timestamp && appliedMigrationTimestamps.includes(timestamp)
+            return timestamp && latestBatchMigrationTimestamps.includes(timestamp)
         })
-        fullMigrations = latestAppliedMigration ? [latestAppliedMigration] : []
-    } else {
-        fullMigrations = fs.readdirSync(MIGRATIONS_DIR).filter((file) => {
-            const timestamp = getTimestampFromFileName(file)
-            return timestamp && !appliedMigrationTimestamps.includes(timestamp)
-        })
+        if (fullMigrationsToRun) console.log('About to rollback the following migrations: ' + fullMigrationsToRun.join(', '))
+        return fullMigrationsToRun.map(getDownMigration)
     }
 
-    return fullMigrations.map((f) => {
-        return extractFunctionToSeparateFile(f, options.rollback ? 'down' : 'up')
+    // Rolling forward
+    const appliedMigrationTimestamps = await getMigratedTimestamps(space)
+    let fullMigrationsToRun = fs.readdirSync(MIGRATIONS_DIR).filter((file) => {
+        const timestamp = getTimestampFromFileName(file)
+        return timestamp && !appliedMigrationTimestamps.includes(timestamp)
     })
+    if (fullMigrationsToRun) console.log('About to apply the following migrations: ' + fullMigrationsToRun.join(', '))
+    return fullMigrationsToRun.map(getUpMigration)
 }
+
+const getUpMigration = (migrationFunction) => extractFunctionToSeparateFile(migrationFunction, 'up')
+
+const getDownMigration = (migrationFunction) => extractFunctionToSeparateFile(migrationFunction, 'down')
 
 function extractFunctionToSeparateFile(filePath, direction) {
     const upAndDownFunctions = require(join(MIGRATIONS_DIR, filePath))
@@ -94,29 +90,6 @@ const runMigrations = async (migrations, envId) => {
     }
 }
 
-const updateBookkeeping = async (space, migratedMigrations, options = {}) => {
-    if (options.rollback) {
-        const appliedMigrationEntries = await space.getEntries(MIGRATIONS_TYPE)
-        const migratedTimestamps = migratedMigrations.map((m) => m.timestamp)
-        return Promise.all(
-            appliedMigrationEntries
-                .filter((appliedMigration) => {
-                    return migratedTimestamps.includes(appliedMigration.fields.timestamp[space.locale])
-                })
-                .map((entry) => entry.unpublish().then((entry) => entry.delete()))
-        )
-    }
-
-    return Promise.all(
-        migratedMigrations.map((migration) =>
-            space.createEntry(MIGRATIONS_TYPE, {
-                timestamp: migration.timestamp,
-                name: migration.name,
-            })
-        )
-    )
-}
-
 class Migration {
     constructor(fileName, timestamp, name) {
         this.fileName = fileName
@@ -126,13 +99,9 @@ class Migration {
 }
 
 const migrate = async (space, options = {}) => {
-    if (!(await space.typeExists(MIGRATIONS_TYPE))) {
-        console.info('`Applied migrations` type not found. Creating it.')
-        await migrateMigrationsType(space.env.sys.id)
-        console.info('`Applied migrations` type created.')
-    }
+    await initBookkeeping(space)
 
-    const migrationsToApply = await getMigrationsToApply(space, options)
+    const migrationsToApply = await getMigrationsToHandle(space, options)
 
     if (!migrationsToApply.length) {
         console.info(`No migrations to ${options.rollback ? 'rollback' : 'apply'}.`)
@@ -146,9 +115,9 @@ const migrate = async (space, options = {}) => {
 }
 
 const createEnv = async (space, envId) => {
-    console.info(`Creating env ${envId}.`)
+    console.info(`Creating environment ${envId}.`)
     await space.createSpaceEnv(envId, env('CTF_ENVIRONMENT'))
-    console.info(`env ${envId} created.`)
+    console.info(`Environment ${envId} created.`)
 
     console.info(`Updating api key access to new env${envId}.`)
     await space.updateApiKeysAccessToNewEnv(envId)
@@ -176,7 +145,7 @@ const isEnvLimitReached = async (space) => {
 
 const apply = async (options = {}) => {
     const space = await spaceModule(env('CTF_SPACE'), env('CTF_ENVIRONMENT'), env('CTF_CMA_TOKEN'))
-    const migrationsToApply = await getMigrationsToApply(space, options)
+    const migrationsToApply = await getMigrationsToHandle(space, options)
 
     if (!migrationsToApply.length) {
         console.info(`No migrations to ${options.rollback ? 'rollback' : 'apply'}.`)

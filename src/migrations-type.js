@@ -6,6 +6,7 @@ module.exports = (migration) => {
 
     migrationsContentType.createField('timestamp').name('Timestamp').type('Symbol').required(true)
     migrationsContentType.createField('name').name('Name').type('Symbol').required(true)
+    migrationsContentType.createField('batch').name('Batch number').type('Integer').required(true)
 
     migrationsContentType.displayField('timestamp')
 }
