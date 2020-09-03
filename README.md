@@ -1,6 +1,6 @@
 # Contentful Migrator Programme
-Tool to manage Contentful migrations
 
+Tool to manage Contentful migrations
 
 ## Setup
 
@@ -9,6 +9,12 @@ Tool to manage Contentful migrations
 ```shell script
 npm i --save @prototyp-stockholm/contentful-migrator-programme
 ```
+
+### Prepare contentful space
+
+Get an API Key for migrations (`CTF_CMA_TOKEN`) under `Settings -> API Keys -> Content management` tokens in your Contentful space.
+
+Create an environment under `Settings -> Environments`.
 
 ### Set environment variables
 
@@ -29,6 +35,22 @@ ENV_AMOUNT=3
 
 ## Usage
 
+An example migration with up and down function:
+
+```javascript
+module.exports.up = (migration, context) => {
+    const dog = migration.createContentType('dog').name('Dog').displayField('name')
+    dog.createField('name').type('Symbol').name('Name')
+}
+
+module.exports.down = (migration, context) => {
+    // Note: If you already have content with type dog you'll have to remove that content before removing the dog type
+    migration.deleteContentType('dog')
+}
+```
+
+Read more on migration syntax on https://github.com/contentful/contentful-migration
+
 ### Available commands
 
 ```shell script
@@ -42,11 +64,11 @@ cmp aux:test # creates env from CTF_ENVIRONMENT, applies new migrations, and dro
 
 If you did not install the package globally you'll have to prepend `node_modules/.bin/` to the `cmp` command.
 
-Otherwise, you can add the `cmp` command in the scripts section of the project `package.json`. 
+Otherwise, you can add the `cmp` command in the scripts section of the project `package.json`.
 
 Then you can use it like so: `npm run cmp`.
 
- ```json
+```json
 {
     "scripts": {
         "cmp": "cmp"
