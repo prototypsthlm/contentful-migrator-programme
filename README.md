@@ -56,7 +56,7 @@ Read more on migration syntax on https://github.com/contentful/contentful-migrat
 ```shell script
 cmp generate <migrationName> # generates a migration with the given name and a timestamp prepended ex: YYYYMMDDhhmmssxxx-add-user-type.js.
 cmp migrate # applies all _up_ operations of the non applied migrations to the CTF_ENVIRONMENT set in the `.env` file
-cmp rollback # applies the _down_ operation of the latest migration
+cmp rollback # applies the _down_ operation of the latest migration batch
 cmp aux:create <name?> # creates an aux env based on CTF_ENVIRONMENT. You can give it an optional name.
 cmp aux:drop <name> # drop the env with the given name
 cmp aux:test # creates env from CTF_ENVIRONMENT, applies new migrations, and drops the env
