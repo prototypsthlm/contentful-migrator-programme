@@ -6,7 +6,7 @@ const { utcTimestamp } = require('../../lib/date')
 
 exports.command = 'aux:create [name]'
 
-exports.desc = 'Creates an auxiliary environment based on CTF_ENVIRONMENT and applies newer migrations to it.'
+exports.desc = 'Creates an auxiliary environment based on CTF_ENVIRONMENT_ID and applies newer migrations to it.'
 
 exports.builder = (yargs) => {
     yargs.positional('name', {
@@ -22,7 +22,7 @@ exports.handler = async ({ name }) => {
         console.info('###########################################')
         console.info('Contentful test environment:', name)
         console.info('###########################################')
-        console.info('Configure that into your local "CTF_ENVIRONMENT" to test out')
+        console.info('Configure that into your local "CTF_ENVIRONMENT_ID" to test out')
         console.info(`And remember to delete it after with: "cmp aux:drop ${name}"`)
     } catch (e) {
         console.error(e)

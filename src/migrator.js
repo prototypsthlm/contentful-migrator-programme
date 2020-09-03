@@ -9,14 +9,14 @@ const serialize = require('serialize-javascript')
 const tmp = require('tmp')
 const { updateBookkeeping, initBookkeeping, getMigrationTimestampsForBatch, getLatestBatchNumber } = require('./bookkeeping')
 
-const MIGRATIONS_TYPE = env('MIGRATIONS_TYPE')
+const APPLIED_MIGRATIONS_TYPE_ID = env('APPLIED_MIGRATIONS_TYPE_ID')
 const MIGRATIONS_DIR = join(process.cwd(), env('MIGRATIONS_DIR'))
-const ENV_AMOUNT = env('ENV_AMOUNT')
-const ALIAS_AMOUNT = env('ALIAS_AMOUNT')
+const MAX_NUMBER_OF_ENVIRONMENTS = env('MAX_NUMBER_OF_ENVIRONMENTS')
+const MAX_NUMBER_OF_ALIASES = env('MAX_NUMBER_OF_ALIASES')
 
 const getMigratedTimestamps = async (space) => {
     try {
-        const migrations = await space.getEntries(MIGRATIONS_TYPE)
+        const migrations = await space.getEntries(APPLIED_MIGRATIONS_TYPE_ID)
         return migrations.map((x) => x.fields.timestamp[space.locale])
     } catch (e) {
         return []
@@ -82,7 +82,7 @@ const runMigrations = async (migrations, envId) => {
     for (const migration of migrations) {
         await runMigration({
             filePath: migration.fileName,
-            spaceId: env('CTF_SPACE'),
+            spaceId: env('CTF_SPACE_ID'),
             accessToken: env('CTF_CMA_TOKEN'),
             environmentId: envId,
             yes: true,
@@ -116,27 +116,27 @@ const migrate = async (space, options = {}) => {
 
 const createEnv = async (space, envId) => {
     console.info(`Creating environment ${envId}.`)
-    await space.createSpaceEnv(envId, env('CTF_ENVIRONMENT'))
+    await space.createSpaceEnv(envId, env('CTF_ENVIRONMENT_ID'))
     console.info(`Environment ${envId} created.`)
 
     console.info(`Updating api key access to new env${envId}.`)
     await space.updateApiKeysAccessToNewEnv(envId)
     console.info(`Api key access to new env${envId} updated.`)
 
-    return await spaceModule(env('CTF_SPACE'), envId, env('CTF_CMA_TOKEN'))
+    return await spaceModule(env('CTF_SPACE_ID'), envId, env('CTF_CMA_TOKEN'))
 }
 
 const switchEnvAliasAndDropOldEnv = async (space, auxEnv) => {
     console.info('Switching environment alias.')
-    const currentEnv = await space.getCurrentEnvironmentOfAlias(env('CTF_ENVIRONMENT'))
-    await space.switchEnvOfAlias(env('CTF_ENVIRONMENT'), auxEnv)
+    const currentEnv = await space.getCurrentEnvironmentOfAlias(env('CTF_ENVIRONMENT_ID'))
+    await space.switchEnvOfAlias(env('CTF_ENVIRONMENT_ID'), auxEnv)
     await space.deleteSpaceEnv(currentEnv.sys.id)
     console.info('Environment alias switched successfully.')
 }
 
 const isEnvLimitReached = async (space) => {
     const envs = await space.getEnvironments()
-    if (envs.items.length >= ENV_AMOUNT + ALIAS_AMOUNT) {
+    if (envs.items.length >= MAX_NUMBER_OF_ENVIRONMENTS + MAX_NUMBER_OF_ALIASES) {
         console.error('Maximum environment amount reached. Aborting.')
         return true
     }
@@ -144,7 +144,7 @@ const isEnvLimitReached = async (space) => {
 }
 
 const apply = async (options = {}) => {
-    const space = await spaceModule(env('CTF_SPACE'), env('CTF_ENVIRONMENT'), env('CTF_CMA_TOKEN'))
+    const space = await spaceModule(env('CTF_SPACE_ID'), env('CTF_ENVIRONMENT_ID'), env('CTF_CMA_TOKEN'))
     const migrationsToApply = await getMigrationsToHandle(space, options)
 
     if (!migrationsToApply.length) {
@@ -152,7 +152,7 @@ const apply = async (options = {}) => {
         return
     }
 
-    if (env('CTF_ENVIRONMENT') === 'master') {
+    if (env('CTF_ENVIRONMENT_ID') === 'master') {
         const newEnvId = utcTimestamp({ dashes: true })
 
         try {
@@ -174,7 +174,7 @@ const apply = async (options = {}) => {
 }
 
 const create = async ({ newEnvId }) => {
-    const space = await spaceModule(env('CTF_SPACE'), env('CTF_ENVIRONMENT'), env('CTF_CMA_TOKEN'))
+    const space = await spaceModule(env('CTF_SPACE_ID'), env('CTF_ENVIRONMENT_ID'), env('CTF_CMA_TOKEN'))
 
     try {
         if (await isEnvLimitReached(space)) {
@@ -191,7 +191,7 @@ const create = async ({ newEnvId }) => {
 }
 
 const drop = async ({ envId }) => {
-    const space = await spaceModule(env('CTF_SPACE'), envId, env('CTF_CMA_TOKEN'))
+    const space = await spaceModule(env('CTF_SPACE_ID'), envId, env('CTF_CMA_TOKEN'))
     await space.deleteSpaceEnv(envId)
 }
 
