@@ -3,6 +3,7 @@
     "version": "0.0.6",
     "description": "Tool to manage and keep track of contentful migrations.",
     "scripts": {
+        "test": "jest",
         "release": "standard-version"
     },
     "bin": {
@@ -37,7 +38,15 @@
         "yargs": "^15.4.1"
     },
     "devDependencies": {
+        "execa": "^4.0.3",
+        "jest": "^26.4.2",
         "prettier": "^2.1.1",
         "standard-version": "^9.0.0"
+    },
+    "jest": {
+        "verbose": true,
+        "setupFilesAfterEnv": [
+            "./jest.setupFiles.js"
+        ]
     }
 }
