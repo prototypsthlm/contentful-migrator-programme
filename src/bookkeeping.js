@@ -49,8 +49,9 @@ const migrateMigrationsType = async (envId) => {
 
 const getLatestBatchNumber = async (space) => {
     const initialBatchNumber = 0
-    const allAppliedMigrationEntries = await space.getEntries(APPLIED_MIGRATIONS_TYPE_ID)
-    return allAppliedMigrationEntries.map((item) => item.fields.batch[space.locale]).reduce((a, b) => Math.max(a, b), initialBatchNumber)
+    return (await getAppliedMigrationEntries(space))
+        .map((item) => item.fields.batch[space.locale])
+        .reduce((a, b) => Math.max(a, b), initialBatchNumber)
 }
 
 const getMigrationTimestampsForBatch = async (space, batchNumber) => {
@@ -59,9 +60,19 @@ const getMigrationTimestampsForBatch = async (space, batchNumber) => {
     )
 }
 
+const getAppliedMigrationEntries = async (space) => {
+    return space.getEntries(APPLIED_MIGRATIONS_TYPE_ID)
+}
+
+const getMigratedTimestamps = async (space) => {
+    return (await getAppliedMigrationEntries(space)).map((x) => x.fields.timestamp[space.locale])
+}
+
 module.exports = {
     updateBookkeeping,
     initBookkeeping,
     getLatestBatchNumber,
     getMigrationTimestampsForBatch,
+    getAppliedMigrationEntries,
+    getMigratedTimestamps,
 }

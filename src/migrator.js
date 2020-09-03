@@ -7,21 +7,17 @@ const spaceModule = require('../lib/contentful-space-manager')
 const env = require('../lib/env')
 const serialize = require('serialize-javascript')
 const tmp = require('tmp')
-const { updateBookkeeping, initBookkeeping, getMigrationTimestampsForBatch, getLatestBatchNumber } = require('./bookkeeping')
+const {
+    updateBookkeeping,
+    initBookkeeping,
+    getMigrationTimestampsForBatch,
+    getLatestBatchNumber,
+    getMigratedTimestamps,
+} = require('./bookkeeping')
 
-const APPLIED_MIGRATIONS_TYPE_ID = env('APPLIED_MIGRATIONS_TYPE_ID')
 const MIGRATIONS_DIR = join(process.cwd(), env('MIGRATIONS_DIR'))
 const MAX_NUMBER_OF_ENVIRONMENTS = env('MAX_NUMBER_OF_ENVIRONMENTS')
 const MAX_NUMBER_OF_ALIASES = env('MAX_NUMBER_OF_ALIASES')
-
-const getMigratedTimestamps = async (space) => {
-    try {
-        const migrations = await space.getEntries(APPLIED_MIGRATIONS_TYPE_ID)
-        return migrations.map((x) => x.fields.timestamp[space.locale])
-    } catch (e) {
-        return []
-    }
-}
 
 /**
  * Gets the timestamp from a filename such as '20200211111800525-create-cars-type.js'
@@ -42,13 +38,20 @@ const getNameFromFileName = (filename) => {
 const getMigrationsToHandle = async (space, options = {}) => {
     // Rolling back
     if (options.rollback) {
+        if (options.targetMigrationTimestamp) {
+            return (await getAppliedMigrations(space))
+                .filter((m) => Number(m.timestamp) > Number(options.targetMigrationTimestamp))
+                .map((m) => getDownMigration(m.fileName))
+        }
+
         const latestBatchNumber = await getLatestBatchNumber(space)
         let latestBatchMigrationTimestamps = await getMigrationTimestampsForBatch(space, latestBatchNumber)
         let fullMigrationsToRun = fs.readdirSync(MIGRATIONS_DIR).filter((file) => {
             const timestamp = getTimestampFromFileName(file)
             return timestamp && latestBatchMigrationTimestamps.includes(timestamp)
         })
-        if (fullMigrationsToRun) console.log('About to rollback the following migrations: ' + fullMigrationsToRun.join(', '))
+        if (fullMigrationsToRun.length) console.log('About to rollback the following migrations:\n ' + fullMigrationsToRun.join('\n '))
+
         return fullMigrationsToRun.map(getDownMigration)
     }
 
@@ -58,15 +61,26 @@ const getMigrationsToHandle = async (space, options = {}) => {
         const timestamp = getTimestampFromFileName(file)
         return timestamp && !appliedMigrationTimestamps.includes(timestamp)
     })
-    if (fullMigrationsToRun) console.log('About to apply the following migrations: ' + fullMigrationsToRun.join(', '))
+    if (fullMigrationsToRun) console.log('About to apply the following migrations:\n' + fullMigrationsToRun.join('\n '))
     return fullMigrationsToRun.map(getUpMigration)
+}
+
+const getAppliedMigrations = async (space) => {
+    const migratedTimestamps = await getMigratedTimestamps(space)
+    return fs
+        .readdirSync(MIGRATIONS_DIR)
+        .filter((file) => {
+            const timestamp = getTimestampFromFileName(file)
+            return timestamp && migratedTimestamps.includes(timestamp)
+        })
+        .map((file) => new Migration(file, getTimestampFromFileName(file), getNameFromFileName(file)))
 }
 
 const getUpMigration = (migrationFunction) => extractFunctionToSeparateFile(migrationFunction, 'up')
 
 const getDownMigration = (migrationFunction) => extractFunctionToSeparateFile(migrationFunction, 'down')
 
-function extractFunctionToSeparateFile(filePath, direction) {
+const extractFunctionToSeparateFile = (filePath, direction) => {
     const upAndDownFunctions = require(join(MIGRATIONS_DIR, filePath))
     if (!(upAndDownFunctions.up && upAndDownFunctions.down)) {
         throw new Error("Each migration module needs to declare both 'up' and 'down' functions")
@@ -111,7 +125,7 @@ const migrate = async (space, options = {}) => {
     console.info(options.rollback ? 'Rolling back last migration.' : 'Applying all new migrations.')
     await runMigrations(migrationsToApply, space.env.sys.id)
     await updateBookkeeping(space, migrationsToApply, options)
-    console.info(options.rollback ? 'Last migration rolled back.' : 'All new migrations applied.')
+    console.info(options.rollback ? 'Last migration batch was rolled back.' : 'All new migrations applied.')
 }
 
 const createEnv = async (space, envId) => {
@@ -199,4 +213,5 @@ module.exports = {
     apply,
     create,
     drop,
+    list: getAppliedMigrations,
 }
