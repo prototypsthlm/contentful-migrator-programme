@@ -92,12 +92,12 @@ Creates environment from CTF_ENVIRONMENT_ID, applies new migrations, and drops t
 ## For development of the CMP tool
 
 1. Clone this project
-2. `run npm i`
-3. `run npm link`
+2. `npm i`
+3. `npm link`
 4. Create a test project in another folder and cd into it
-5. `run npm init`
-6. `run npm i @prototyp-stockholm/contentful-migrator-programme`
-7. `run npm link @prototyp-stockholm/contentful-migrator-programme`
+5. `npm init`
+6. `npm i @prototyp-stockholm/contentful-migrator-programme`
+7. `npm link @prototyp-stockholm/contentful-migrator-programme`
 8. create an .env file and set the required CTF credentials
 
 Now anything you modify in the locally cloned package will be instantly available in the test project to test.
