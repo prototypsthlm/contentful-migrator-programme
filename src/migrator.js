@@ -159,6 +159,9 @@ const isEnvLimitReached = async (space) => {
 
 const apply = async (options = {}) => {
     const space = await spaceModule(env('CTF_SPACE_ID'), env('CTF_ENVIRONMENT_ID'), env('CTF_CMA_TOKEN'))
+
+    await initBookkeeping(space)
+
     const migrationsToApply = await getMigrationsToHandle(space, options)
 
     if (!migrationsToApply.length) {
