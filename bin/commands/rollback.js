@@ -6,9 +6,9 @@ const env = require('../../lib/env')
 const cliSelect = require('cli-select')
 const spaceModule = require('../../lib/contentful-space-manager')
 
-exports.command = 'rollback';
+exports.command = 'rollback'
 
-exports.desc = 'Rollback already applied migrations';
+exports.desc = 'Rollback already applied migrations'
 
 exports.builder = (yargs) => {
     yargs.option('force', {
@@ -37,10 +37,10 @@ exports.handler = async ({ force, interactive }) => {
 
         await apply({ rollback: true })
     } catch (e) {
-        console.error(e);
-        process.exitCode = 1;
+        console.error(e)
+        process.exitCode = 1
     }
-};
+}
 
 const runInteractive = async () => {
     const space = await spaceModule(env('CTF_SPACE_ID'), env('CTF_ENVIRONMENT_ID'), env('CTF_CMA_TOKEN'))

@@ -26,14 +26,14 @@ const MAX_NUMBER_OF_ALIASES = env('MAX_NUMBER_OF_ALIASES')
  * @returns {string|null} the timestamp if match, null otherwise
  */
 const getTimestampFromFileName = (filename) => {
-    const matches = filename.match(/(^\d{17})-/);
-    return (matches && matches[1]) || null;
-};
+    const matches = filename.match(/(^\d{17})-/)
+    return (matches && matches[1]) || null
+}
 
 const getNameFromFileName = (filename) => {
-    const matches = filename.match(/^\d{17}-([^.]+)/);
-    return (matches && matches[1]) || null;
-};
+    const matches = filename.match(/^\d{17}-([^.]+)/)
+    return (matches && matches[1]) || null
+}
 
 const getMigrationsToHandle = async (space, options = {}) => {
     // Rolling back
@@ -56,7 +56,7 @@ const getMigrationsToHandle = async (space, options = {}) => {
     }
 
     // Rolling forward
-    const appliedMigrationTimestamps = await getMigratedTimestamps(space);
+    const appliedMigrationTimestamps = await getMigratedTimestamps(space)
     let fullMigrationsToRun = fs.readdirSync(MIGRATIONS_DIR).filter((file) => {
         const timestamp = getTimestampFromFileName(file)
         return timestamp && !appliedMigrationTimestamps.includes(timestamp)
@@ -78,18 +78,18 @@ const getAppliedMigrations = async (space) => {
 
 const getUpMigration = (migrationFunction) => extractFunctionToSeparateFile(migrationFunction, 'up')
 
-const getDownMigration = (migrationFunction) => extractFunctionToSeparateFile(migrationFunction, 'down');
+const getDownMigration = (migrationFunction) => extractFunctionToSeparateFile(migrationFunction, 'down')
 
 const extractFunctionToSeparateFile = (filePath, direction) => {
     const upAndDownFunctions = require(join(MIGRATIONS_DIR, filePath))
     if (!(upAndDownFunctions.up && upAndDownFunctions.down)) {
-        throw new Error("Each migration module needs to declare both 'up' and 'down' functions");
+        throw new Error("Each migration module needs to declare both 'up' and 'down' functions")
     }
-    const serializedFunction = `module.exports = ${serialize(upAndDownFunctions[direction])}`;
-    const partialMigrationFile = tmp.fileSync({ prefix: `up-${filePath}`, postfix: '.js' });
-    fs.writeFileSync(partialMigrationFile.name, serializedFunction);
+    const serializedFunction = `module.exports = ${serialize(upAndDownFunctions[direction])}`
+    const partialMigrationFile = tmp.fileSync({ prefix: `up-${filePath}`, postfix: '.js' })
+    fs.writeFileSync(partialMigrationFile.name, serializedFunction)
 
-    return new Migration(partialMigrationFile.name, getTimestampFromFileName(filePath), getNameFromFileName(filePath));
+    return new Migration(partialMigrationFile.name, getTimestampFromFileName(filePath), getNameFromFileName(filePath))
 }
 
 const runMigrations = async (migrations, envId) => {
@@ -100,26 +100,26 @@ const runMigrations = async (migrations, envId) => {
             accessToken: env('CTF_CMA_TOKEN'),
             environmentId: envId,
             yes: true,
-        });
+        })
     }
-};
+}
 
 class Migration {
     constructor(fileName, timestamp, name) {
-        this.fileName = fileName;
-        this.timestamp = timestamp;
-        this.name = name;
+        this.fileName = fileName
+        this.timestamp = timestamp
+        this.name = name
     }
 }
 
 const migrate = async (space, options = {}) => {
-    await initBookkeeping(space);
+    await initBookkeeping(space)
 
-    const migrationsToApply = await getMigrationsToHandle(space, options);
+    const migrationsToApply = await getMigrationsToHandle(space, options)
 
     if (!migrationsToApply.length) {
-        console.info(`No migrations to ${options.rollback ? 'rollback' : 'apply'}.`);
-        return;
+        console.info(`No migrations to ${options.rollback ? 'rollback' : 'apply'}.`)
+        return
     }
 
     console.info(options.rollback ? 'Rolling back.' : 'Migrating.')
@@ -154,16 +154,16 @@ const isEnvLimitReached = async (space) => {
         console.error('Maximum environment amount reached. Aborting.')
         return true
     }
-    return false;
-};
+    return false
+}
 
 const apply = async (options = {}) => {
     const space = await spaceModule(env('CTF_SPACE_ID'), env('CTF_ENVIRONMENT_ID'), env('CTF_CMA_TOKEN'))
     const migrationsToApply = await getMigrationsToHandle(space, options)
 
     if (!migrationsToApply.length) {
-        console.info(`No migrations to ${options.rollback ? 'rollback' : 'apply'}.`);
-        return;
+        console.info(`No migrations to ${options.rollback ? 'rollback' : 'apply'}.`)
+        return
     }
 
     if (env('CTF_ENVIRONMENT_ID') === 'master') {
@@ -171,38 +171,38 @@ const apply = async (options = {}) => {
 
         try {
             if (await isEnvLimitReached(space)) {
-                return;
+                return
             }
 
-            const spaceNewEnv = await createEnv(space, newEnvId);
-            await migrate(spaceNewEnv, options);
-            await switchEnvAliasAndDropOldEnv(space, newEnvId);
-            return;
+            const spaceNewEnv = await createEnv(space, newEnvId)
+            await migrate(spaceNewEnv, options)
+            await switchEnvAliasAndDropOldEnv(space, newEnvId)
+            return
         } catch (e) {
-            await space.deleteSpaceEnv(newEnvId);
-            throw e;
+            await space.deleteSpaceEnv(newEnvId)
+            throw e
         }
     }
 
-    await migrate(space, options);
-};
+    await migrate(space, options)
+}
 
 const create = async ({ newEnvId }) => {
     const space = await spaceModule(env('CTF_SPACE_ID'), env('CTF_ENVIRONMENT_ID'), env('CTF_CMA_TOKEN'))
 
     try {
         if (await isEnvLimitReached(space)) {
-            return;
+            return
         }
 
-        const spaceNewEnv = await createEnv(space, newEnvId);
+        const spaceNewEnv = await createEnv(space, newEnvId)
 
-        await migrate(spaceNewEnv);
+        await migrate(spaceNewEnv)
     } catch (e) {
-        await space.deleteSpaceEnv(newEnvId);
-        throw e;
+        await space.deleteSpaceEnv(newEnvId)
+        throw e
     }
-};
+}
 
 const drop = async ({ envId }) => {
     const space = await spaceModule(env('CTF_SPACE_ID'), envId, env('CTF_CMA_TOKEN'))
