@@ -52,7 +52,6 @@ const getMigrationsToHandle = async (space, options = {}) => {
             const timestamp = getTimestampFromFileName(file)
             return timestamp && latestBatchMigrationTimestamps.includes(timestamp)
         })
-        if (fullMigrationsToRun.length) log.info('About to rollback the following migrations:\n ' + fullMigrationsToRun.join('\n '))
 
         return fullMigrationsToRun.map(getDownMigration)
     }
@@ -63,7 +62,7 @@ const getMigrationsToHandle = async (space, options = {}) => {
         const timestamp = getTimestampFromFileName(file)
         return timestamp && !appliedMigrationTimestamps.includes(timestamp)
     })
-    if (fullMigrationsToRun) log.info('About to apply the following migrations:\n' + fullMigrationsToRun.join('\n '))
+
     return fullMigrationsToRun.map(getUpMigration)
 }
 
@@ -112,6 +111,8 @@ class Migration {
         this.timestamp = timestamp
         this.name = name
     }
+
+    toString = () => `${this.timestamp} - ${this.name}`
 }
 
 const migrate = async (space, options = {}) => {
@@ -164,11 +165,17 @@ const apply = async (options = {}) => {
 
     await initBookkeeping(space)
 
-    const migrationsToApply = await getMigrationsToHandle(space, options)
+    const migrationsToHandle = await getMigrationsToHandle(space, options)
 
-    if (!migrationsToApply.length) {
+    if (!migrationsToHandle.length) {
         log.info(`No migrations to ${options.rollback ? 'rollback' : 'apply'}.`)
         return
+    }
+
+    if (options.rollback) {
+        log.info('About to rollback the following migrations:\n  ' + migrationsToHandle.join('\n  '))
+    } else {
+        log.info('About to apply the following migrations:\n  ' + migrationsToHandle.join('\n  '))
     }
 
     if (env('CTF_ENVIRONMENT_ID') === 'master') {

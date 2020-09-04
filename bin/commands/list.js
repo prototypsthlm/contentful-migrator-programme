@@ -21,7 +21,7 @@ exports.handler = async () => {
             log.info('Applied migrations:')
             console.group()
             appliedMigrations.forEach((m) => {
-                log.info(`${m.timestamp} - ${m.name}`)
+                log.info(m)
             })
             console.groupEnd()
         } else {
