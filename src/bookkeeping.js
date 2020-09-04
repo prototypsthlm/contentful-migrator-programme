@@ -2,14 +2,15 @@ const { join } = require('path')
 const { runMigration } = require('contentful-migration/built/bin/cli')
 require('../lib/contentful-space-manager')
 const env = require('../lib/env')
+const log = require('../lib/log')
 
 const APPLIED_MIGRATIONS_TYPE_ID = env('APPLIED_MIGRATIONS_TYPE_ID')
 
 const initBookkeeping = async (space) => {
     if (!(await space.typeExists(APPLIED_MIGRATIONS_TYPE_ID))) {
-        console.info('`Applied migrations` type not found. Creating it.')
+        log.info('`Applied migrations` type not found. Creating it.')
         await migrateMigrationsType(space.env.sys.id)
-        console.info('`Applied migrations` type created.')
+        log.success('`Applied migrations` type created.')
     }
 }
 

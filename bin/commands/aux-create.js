@@ -3,6 +3,7 @@
 require('dotenv').config()
 const { create } = require('../../src/migrator')
 const { utcTimestamp } = require('../../lib/date')
+const log = require('../../lib/log')
 
 exports.command = 'aux:create [name]'
 
@@ -19,13 +20,7 @@ exports.builder = (yargs) => {
 exports.handler = async ({ name }) => {
     try {
         await create({ newEnvId: name })
-        console.info('###########################################')
-        console.info('Contentful test environment:', name)
-        console.info('###########################################')
-        console.info('Configure that into your local "CTF_ENVIRONMENT_ID" to test out')
-        console.info(`And remember to delete it after with: "cmp aux:drop ${name}"`)
     } catch (e) {
-        console.error(e)
-        process.exitCode = 1
+        log.error('Something went wrong.', e)
     }
 }

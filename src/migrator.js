@@ -14,6 +14,8 @@ const {
     getLatestBatchNumber,
     getMigratedTimestamps,
 } = require('./bookkeeping')
+const chalk = require('chalk')
+const log = require('../lib/log')
 
 const MIGRATIONS_DIR = join(process.cwd(), env('MIGRATIONS_DIR'))
 const MAX_NUMBER_OF_ENVIRONMENTS = env('MAX_NUMBER_OF_ENVIRONMENTS')
@@ -50,7 +52,7 @@ const getMigrationsToHandle = async (space, options = {}) => {
             const timestamp = getTimestampFromFileName(file)
             return timestamp && latestBatchMigrationTimestamps.includes(timestamp)
         })
-        if (fullMigrationsToRun.length) console.log('About to rollback the following migrations:\n ' + fullMigrationsToRun.join('\n '))
+        if (fullMigrationsToRun.length) log.info('About to rollback the following migrations:\n ' + fullMigrationsToRun.join('\n '))
 
         return fullMigrationsToRun.map(getDownMigration)
     }
@@ -61,7 +63,7 @@ const getMigrationsToHandle = async (space, options = {}) => {
         const timestamp = getTimestampFromFileName(file)
         return timestamp && !appliedMigrationTimestamps.includes(timestamp)
     })
-    if (fullMigrationsToRun) console.log('About to apply the following migrations:\n' + fullMigrationsToRun.join('\n '))
+    if (fullMigrationsToRun) log.info('About to apply the following migrations:\n' + fullMigrationsToRun.join('\n '))
     return fullMigrationsToRun.map(getUpMigration)
 }
 
@@ -118,40 +120,40 @@ const migrate = async (space, options = {}) => {
     const migrationsToApply = await getMigrationsToHandle(space, options)
 
     if (!migrationsToApply.length) {
-        console.info(`No migrations to ${options.rollback ? 'rollback' : 'apply'}.`)
+        log.info(`No migrations to ${options.rollback ? 'rollback' : 'apply'}.`)
         return
     }
 
-    console.info(options.rollback ? 'Rolling back.' : 'Migrating.')
+    log.info(options.rollback ? 'Rolling back.' : 'Migrating.')
     await runMigrations(migrationsToApply, space.env.sys.id)
     await updateBookkeeping(space, migrationsToApply, options)
-    console.info(options.rollback ? 'Rolled back.' : 'Migrated.')
+    log.info(options.rollback ? 'Rolled back.' : 'Migrated.')
 }
 
 const createEnv = async (space, envId) => {
-    console.info(`Creating environment ${envId}.`)
+    log.info(`Creating environment ${envId}.`)
     await space.createSpaceEnv(envId, env('CTF_ENVIRONMENT_ID'))
-    console.info(`Environment ${envId} created.`)
+    log.success(`Environment ${envId} created.`)
 
-    console.info(`Updating api key access to new env${envId}.`)
+    log.info(`Updating api key access to new env${envId}.`)
     await space.updateApiKeysAccessToNewEnv(envId)
-    console.info(`Api key access to new env${envId} updated.`)
+    log.success(`Api key access to new env${envId} updated.`)
 
     return await spaceModule(env('CTF_SPACE_ID'), envId, env('CTF_CMA_TOKEN'))
 }
 
 const switchEnvAliasAndDropOldEnv = async (space, auxEnv) => {
-    console.info('Switching environment alias.')
+    log.info('Switching environment alias.')
     const currentEnv = await space.getCurrentEnvironmentOfAlias(env('CTF_ENVIRONMENT_ID'))
     await space.switchEnvOfAlias(env('CTF_ENVIRONMENT_ID'), auxEnv)
     await space.deleteSpaceEnv(currentEnv.sys.id)
-    console.info('Environment alias switched successfully.')
+    log.info('Environment alias switched successfully.')
 }
 
 const isEnvLimitReached = async (space) => {
     const envs = await space.getEnvironments()
     if (envs.items.length >= MAX_NUMBER_OF_ENVIRONMENTS + MAX_NUMBER_OF_ALIASES) {
-        console.error('Maximum environment amount reached. Aborting.')
+        log.error('Maximum environment amount reached. Aborting.')
         return true
     }
     return false
@@ -165,7 +167,7 @@ const apply = async (options = {}) => {
     const migrationsToApply = await getMigrationsToHandle(space, options)
 
     if (!migrationsToApply.length) {
-        console.info(`No migrations to ${options.rollback ? 'rollback' : 'apply'}.`)
+        log.info(`No migrations to ${options.rollback ? 'rollback' : 'apply'}.`)
         return
     }
 
@@ -193,14 +195,30 @@ const apply = async (options = {}) => {
 const create = async ({ newEnvId }) => {
     const space = await spaceModule(env('CTF_SPACE_ID'), env('CTF_ENVIRONMENT_ID'), env('CTF_CMA_TOKEN'))
 
-    try {
-        if (await isEnvLimitReached(space)) {
-            return
-        }
+    if (await space.environmentExists(newEnvId)) {
+        log.error(`An environment with id ${newEnvId} already exists.`)
+        return
+    }
 
+    if (await isEnvLimitReached(space)) {
+        return
+    }
+
+    try {
         const spaceNewEnv = await createEnv(space, newEnvId)
 
         await migrate(spaceNewEnv)
+
+        console.group()
+        log.success('###########################################')
+        log.success(`Contentful test environment \`${chalk.blue(newEnvId)}\` created`)
+        log.success('###########################################')
+        console.groupEnd()
+
+        console.group()
+        log.warn('Configure that into your local "CTF_ENVIRONMENT_ID" to test out')
+        log.warn(`And remember to delete it after with: "cmp aux:drop ${newEnvId}"`)
+        console.groupEnd()
     } catch (e) {
         await space.deleteSpaceEnv(newEnvId)
         throw e

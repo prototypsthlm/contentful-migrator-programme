@@ -3,6 +3,7 @@
 require('dotenv').config()
 const { create, drop } = require('../../src/migrator')
 const { utcTimestamp } = require('../../lib/date')
+const log = require('../../lib/log')
 
 exports.command = 'aux:test'
 
@@ -13,9 +14,9 @@ exports.handler = async () => {
         const testEnv = 'test' + utcTimestamp()
         await create({ newEnvId: testEnv })
         await drop({ envId: testEnv })
-        console.info(`${testEnv} environment deleted in contentful.`)
+        log.info(`${testEnv} environment deleted in contentful.`)
     } catch (e) {
-        console.error(e)
+        log.error(e)
         process.exitCode = 1
     }
 }

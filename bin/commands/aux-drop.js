@@ -2,6 +2,7 @@
 
 require('dotenv').config()
 const { drop } = require('../../src/migrator')
+const log = require('../../lib/log')
 
 exports.command = 'aux:drop <name>'
 
@@ -17,14 +18,14 @@ exports.builder = (yargs) => {
 exports.handler = async ({ name }) => {
     try {
         if (name === 'master') {
-            console.error('Dropping master environment is not allowed.')
+            log.error('Dropping master environment is not allowed.')
             return
         }
 
         await drop({ envId: name })
-        console.info(`${name} environment deleted in contentful.`)
+        log.success(`${name} environment deleted in contentful.`)
     } catch (e) {
-        console.error(e)
+        log.error(e)
         process.exitCode = 1
     }
 }
