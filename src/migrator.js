@@ -122,10 +122,10 @@ const migrate = async (space, options = {}) => {
         return
     }
 
-    console.info(options.rollback ? 'Rolling back last migration.' : 'Applying all new migrations.')
+    console.info(options.rollback ? 'Rolling back.' : 'Migrating.')
     await runMigrations(migrationsToApply, space.env.sys.id)
     await updateBookkeeping(space, migrationsToApply, options)
-    console.info(options.rollback ? 'Last migration batch was rolled back.' : 'All new migrations applied.')
+    console.info(options.rollback ? 'Rolled back.' : 'Migrated.')
 }
 
 const createEnv = async (space, envId) => {

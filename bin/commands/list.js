@@ -13,7 +13,7 @@ exports.builder = (_) => {}
 
 exports.handler = async () => {
     try {
-        const space = await spaceModule(env('CTF_SPACE'), env('CTF_ENVIRONMENT'), env('CTF_CMA_TOKEN'))
+        const space = await spaceModule(env('CTF_SPACE_ID'), env('CTF_ENVIRONMENT_ID'), env('CTF_CMA_TOKEN'))
         const appliedMigrations = await list(space)
         appliedMigrations.sort((a, b) => b.timestamp.localeCompare(a.timestamp))
         if (appliedMigrations.length) {
