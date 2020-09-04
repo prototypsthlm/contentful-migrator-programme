@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/prototypsthlm/contentful-migrator-programme/compare/v0.0.4...v0.0.5) (2020-09-04)
+
+
+### Features
+
+* Add support for interactive rollback to an arbitrary migration ([6241ec3](https://github.com/prototypsthlm/contentful-migrator-programme/commit/6241ec38479054b8d2680f448dc5c723c883ba28))
+* Add support for migration batches ([18cb26f](https://github.com/prototypsthlm/contentful-migrator-programme/commit/18cb26f3a6a7a34436af413951182ccec0be6a1f))
+* added lint PR title to conform with conventional commits format ([d81aac5](https://github.com/prototypsthlm/contentful-migrator-programme/commit/d81aac51ed2ca3e9563d3d952f08dfd9dfab5f6e))
+* added log coloring with chalk ([#25](https://github.com/prototypsthlm/contentful-migrator-programme/issues/25)) ([1995126](https://github.com/prototypsthlm/contentful-migrator-programme/commit/199512608ed96bfa142c41dbddcddddb2d5b2a06))
+* convert project to typescript ([#23](https://github.com/prototypsthlm/contentful-migrator-programme/issues/23)) ([857b8fe](https://github.com/prototypsthlm/contentful-migrator-programme/commit/857b8fef109f81c7346cb5c44dc6d365c6ba2df7))
+
+
+### Bug Fixes
+
+* init bookkeeping before checking migrations to handle ([0573853](https://github.com/prototypsthlm/contentful-migrator-programme/commit/0573853ea8fd2c37e4da0658f2b4f6496d2a29d8))
+* missing environment variables to rename ([41f39d1](https://github.com/prototypsthlm/contentful-migrator-programme/commit/41f39d180b69f375d43c8ab39b5f01dbb1a00294))
+
 ### 0.0.4 (2020-09-02)
 
 
