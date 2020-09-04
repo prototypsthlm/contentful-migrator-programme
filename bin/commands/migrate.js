@@ -3,6 +3,7 @@
 require('dotenv').config()
 const { apply } = require('../../src/migrator')
 const env = require('../../lib/env')
+const log = require('../../lib/log')
 
 exports.command = 'migrate'
 
@@ -19,13 +20,13 @@ exports.builder = (yargs) => {
 exports.handler = async ({ force }) => {
     try {
         if (env('CTF_ENVIRONMENT_ID') === 'master' && !force) {
-            console.error('Executing migrations against master requires the --force flag.')
+            log.error('Executing migrations against master requires the --force flag.')
             return
         }
 
         await apply({ rollback: false })
     } catch (e) {
-        console.error(e)
+        log.error(e)
         process.exitCode = 1
     }
 }

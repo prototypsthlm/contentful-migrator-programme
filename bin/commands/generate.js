@@ -6,6 +6,7 @@ const Mustache = require('mustache')
 const { utcTimestampMs } = require('../../lib/date')
 const { camelToKebabCase } = require('../../lib/string')
 const env = require('../../lib/env')
+const log = require('../../lib/log')
 
 exports.command = 'generate <name>'
 
@@ -38,10 +39,10 @@ exports.handler = ({ name }) => {
             if (err) {
                 throw err
             }
-            console.info(`Migration file ${migrationFileName} created`)
+            log.success(`Migration file ${migrationFileName} created`)
         })
     } catch (e) {
-        console.error('Migration file creation failed.', e)
+        log.error('Migration file creation failed.', e)
         process.exitCode = 1
     }
 }

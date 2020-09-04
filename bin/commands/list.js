@@ -4,6 +4,7 @@ require('dotenv').config()
 const { list } = require('../../src/migrator')
 const env = require('../../lib/env')
 const spaceModule = require('../../lib/contentful-space-manager')
+const log = require('../../lib/log')
 
 exports.command = 'list'
 
@@ -17,15 +18,17 @@ exports.handler = async () => {
         const appliedMigrations = await list(space)
         appliedMigrations.sort((a, b) => b.timestamp.localeCompare(a.timestamp))
         if (appliedMigrations.length) {
-            console.log('Applied migrations:')
+            log.info('Applied migrations:')
+            console.group()
             appliedMigrations.forEach((m) => {
-                console.log(`  ${m.timestamp} - ${m.name}`)
+                log.info(`${m.timestamp} - ${m.name}`)
             })
+            console.groupEnd()
         } else {
-            console.log('Found no applied migrations')
+            log.info('Found no applied migrations')
         }
     } catch (e) {
-        console.error(e)
+        log.error(e)
         process.exitCode = 1
     }
 }
