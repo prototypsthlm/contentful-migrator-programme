@@ -1,20 +1,20 @@
 #! /usr/bin/env node
 
-require('dotenv').config()
-const { apply } = require('../../src/migrator')
-const env = require('../../lib/env')
+require('dotenv').config();
+const { apply } = require('../../src/migrator');
+const env = require('../../lib/env');
 
-exports.command = 'migrate'
+exports.command = 'migrate';
 
-exports.desc = 'Apply migrations.'
+exports.desc = 'Apply migrations.';
 
 exports.builder = (yargs) => {
     yargs.option('force', {
         alias: 'f',
         describe: 'Required to run them against master environment.',
         type: 'boolean',
-    })
-}
+    });
+};
 
 exports.handler = async ({ force }) => {
     try {
@@ -23,9 +23,9 @@ exports.handler = async ({ force }) => {
             return
         }
 
-        await apply({ rollback: false })
+        await apply({ rollback: false });
     } catch (e) {
-        console.error(e)
-        process.exitCode = 1
+        console.error(e);
+        process.exitCode = 1;
     }
-}
+};

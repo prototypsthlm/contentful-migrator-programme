@@ -1,10 +1,10 @@
 #! /usr/bin/env node
 
-require('dotenv').config()
-const spaceModule = require('../../lib/contentful-space-manager')
-const env = require('../../lib/env')
+require('dotenv').config();
+const spaceModule = require('../../lib/contentful-space-manager');
+const env = require('../../lib/env');
 
-exports.command = 'reset'
+exports.command = 'reset';
 
 exports.desc = 'Resets current CTF_ENVIRONMENT_ID to master.'
 
@@ -29,7 +29,7 @@ exports.handler = async () => {
         await space.updateApiKeysAccessToNewEnv(env('CTF_ENVIRONMENT_ID'))
         console.info(`Updated API key to work with the recreated env`)
     } catch (e) {
-        console.error(e)
-        process.exitCode = 1
+        console.error(e);
+        process.exitCode = 1;
     }
-}
+};

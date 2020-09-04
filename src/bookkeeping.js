@@ -1,7 +1,7 @@
-const { join } = require('path')
-const { runMigration } = require('contentful-migration/built/bin/cli')
-require('../lib/contentful-space-manager')
-const env = require('../lib/env')
+const { join } = require('path');
+const { runMigration } = require('contentful-migration/built/bin/cli');
+require('../lib/contentful-space-manager');
+const env = require('../lib/env');
 
 const APPLIED_MIGRATIONS_TYPE_ID = env('APPLIED_MIGRATIONS_TYPE_ID')
 
@@ -11,7 +11,7 @@ const initBookkeeping = async (space) => {
         await migrateMigrationsType(space.env.sys.id)
         console.info('`Applied migrations` type created.')
     }
-}
+};
 
 const updateBookkeeping = async (space, migratedMigrations, options = {}) => {
     if (options.rollback) {
@@ -21,10 +21,10 @@ const updateBookkeeping = async (space, migratedMigrations, options = {}) => {
             allAppliedMigrationEntries
                 .filter((appliedMigration) => migratedTimestamps.includes(appliedMigration.fields.timestamp[space.locale]))
                 .map((entry) => entry.unpublish().then((entry) => entry.delete()))
-        )
+        );
     }
 
-    const newBatchNumber = (await getLatestBatchNumber(space)) + 1
+    const newBatchNumber = (await getLatestBatchNumber(space)) + 1;
 
     return Promise.all(
         migratedMigrations.map((migration) =>
@@ -34,8 +34,8 @@ const updateBookkeeping = async (space, migratedMigrations, options = {}) => {
                 batch: newBatchNumber,
             })
         )
-    )
-}
+    );
+};
 
 const migrateMigrationsType = async (envId) => {
     await runMigration({
@@ -44,8 +44,8 @@ const migrateMigrationsType = async (envId) => {
         accessToken: env('CTF_CMA_TOKEN'),
         environmentId: envId,
         yes: true,
-    })
-}
+    });
+};
 
 const getLatestBatchNumber = async (space) => {
     const initialBatchNumber = 0
