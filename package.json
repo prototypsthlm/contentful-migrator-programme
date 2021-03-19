@@ -2,21 +2,9 @@
     "name": "@prototyp-stockholm/contentful-migrator-programme",
     "version": "0.0.5",
     "description": "Tool to manage and keep track of contentful migrations.",
-    "files": [
-        "dist/**/*"
-    ],
-    "main": "dist/cmp.js",
     "scripts": {
         "test": "npm test",
-        "release": "standard-version",
-        "build": "tsc",
-        "format": "prettier --write '**/*.{ts,js,css,html}'",
-        "lint": "tslint -p tsconfig.json",
-        "prepare": "npm run build",
-        "prepublishOnly": "npm test && npm run lint",
-        "preversion": "npm run lint",
-        "version": "npm run format && git add -A src",
-        "postversion": "git push && git push --tags"
+        "release": "standard-version"
     },
     "bin": {
         "cmp": "./bin/cmp.js"
@@ -50,17 +38,7 @@
         "yargs": "^15.4.1"
     },
     "devDependencies": {
-        "@types/dotenv": "^8.2.0",
-        "@types/mustache": "^4.0.1",
-        "@types/node": "^14.6.4",
-        "@types/serialize-javascript": "^4.0.0",
-        "@types/standard-version": "^7.0.0",
-        "@types/tmp": "^0.2.0",
-        "@types/yargs": "^15.0.5",
         "prettier": "^2.1.1",
-        "standard-version": "^9.0.0",
-        "tslint": "^6.1.3",
-        "tslint-config-prettier": "^1.18.0",
-        "typescript": "^4.0.2"
+        "standard-version": "^9.0.0"
     }
 }
