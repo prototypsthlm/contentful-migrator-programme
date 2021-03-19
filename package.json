@@ -1,5 +1,5 @@
 {
-    "name": "@prototyp-stockholm/contentful-migrator-programme",
+    "name": "t20n/contentful-migrator-programme",
     "version": "0.0.5",
     "description": "Tool to manage and keep track of contentful migrations.",
     "scripts": {
