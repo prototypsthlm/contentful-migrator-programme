@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](https://github.com/prototypsthlm/contentful-migrator-programme/compare/v0.0.5...v0.0.6) (2021-03-19)
+
+
+### Bug Fixes
+
+* remove npm test script ([b777c3f](https://github.com/prototypsthlm/contentful-migrator-programme/commit/b777c3fe1e88a9a98669106cc07e77bf661562a3))
+
 ### [0.0.5](https://github.com/prototypsthlm/contentful-migrator-programme/compare/v0.0.4...v0.0.5) (2020-09-04)
 
 
