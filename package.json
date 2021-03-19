@@ -18,8 +18,8 @@
         "version": "npm run format && git add -A src",
         "postversion": "git push && git push --tags"
     },
-    "bin": {
-        "cmp": "./bin/cmp.js"
+    "directories":{
+        "bin":"./bin"
     },
     "repository": {
         "type": "git",
