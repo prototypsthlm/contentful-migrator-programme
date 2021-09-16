@@ -29,7 +29,7 @@
         "chalk": "^4.1.0",
         "cli-select": "^1.1.2",
         "contentful-management": "^6.1.1",
-        "contentful-migration": "^1.6.2",
+        "contentful-migration": "^4.5.4",
         "dotenv": "^8.2.0",
         "esm": "^3.2.25",
         "mustache": "^4.0.1",
