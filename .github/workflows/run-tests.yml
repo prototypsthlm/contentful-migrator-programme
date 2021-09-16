@@ -1,0 +1,27 @@
+name: Run tests
+on:
+    push:
+        branches: [master]
+    pull_request:
+        branches: [master]
+jobs:
+    test:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Check out code
+              uses: actions/checkout@v2
+
+            - name: Set up node
+              uses: actions/setup-node@v2
+              with:
+                  node-version: '14.16.0'
+
+            - name: Install dependencies
+              run: npm install
+
+            - name: Link binary
+              run: npm link
+
+            - name: Run tests
+              run: npm test
