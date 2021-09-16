@@ -35,7 +35,7 @@
         "mustache": "^4.0.1",
         "serialize-javascript": "^4.0.0",
         "tmp": "^0.2.1",
-        "yargs": "^15.4.1"
+        "yargs": "^17.1.1"
     },
     "devDependencies": {
         "execa": "^4.0.3",
