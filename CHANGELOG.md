@@ -10,11 +10,6 @@ All notable changes to this project will be documented in this file. See [standa
 * Add tests ([#39](https://github.com/prototypsthlm/contentful-migrator-programme/issues/39)) ([13adab2](https://github.com/prototypsthlm/contentful-migrator-programme/commit/13adab2c0bdf0f3c743c78b4cffc0f8cb23e05cf))
 * adds dependabot ([#29](https://github.com/prototypsthlm/contentful-migrator-programme/issues/29)) ([7dc2c15](https://github.com/prototypsthlm/contentful-migrator-programme/commit/7dc2c15315bb11c359cb4648a5abf2e4964e2d79))
 
-
-### Bug Fixes
-
-* remove npm test script ([b777c3f](https://github.com/prototypsthlm/contentful-migrator-programme/commit/b777c3fe1e88a9a98669106cc07e77bf661562a3))
-
 ### [0.0.6](https://github.com/prototypsthlm/contentful-migrator-programme/compare/v0.0.5...v0.0.6) (2021-03-19)
 
 
