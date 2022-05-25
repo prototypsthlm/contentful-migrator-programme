@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.8](https://github.com/prototypsthlm/contentful-migrator-programme/compare/v0.0.7...v0.0.8) (2022-05-25)
+
+
+### Bug Fixes
+
+* 100 migration limit due to bad api request ([#148](https://github.com/prototypsthlm/contentful-migrator-programme/issues/148)) ([f44b290](https://github.com/prototypsthlm/contentful-migrator-programme/commit/f44b290ae0e752cb7caca45485b18bb6ae801f06))
+* remove duplicate bugfix from changelog ([70d3761](https://github.com/prototypsthlm/contentful-migrator-programme/commit/70d376188c5130dc48efe8b7c1c749bdf748f38c))
+
 ### [0.0.7](https://github.com/prototypsthlm/contentful-migrator-programme/compare/v0.0.5...v0.0.7) (2021-09-16)
 
 
