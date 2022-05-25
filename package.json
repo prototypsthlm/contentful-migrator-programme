@@ -1,6 +1,6 @@
 {
     "name": "@prototyp-stockholm/contentful-migrator-programme",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "description": "Tool to manage and keep track of contentful migrations.",
     "scripts": {
         "test": "jest",
