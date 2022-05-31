@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.9](https://github.com/prototypsthlm/contentful-migrator-programme/compare/v0.0.8...v0.0.9) (2022-05-31)
+
+
+### Bug Fixes
+
+* error when creating aux env ([#162](https://github.com/prototypsthlm/contentful-migrator-programme/issues/162)) ([de23d8f](https://github.com/prototypsthlm/contentful-migrator-programme/commit/de23d8f11736759e957e3ea3f1f54651b4b3dccf))
+
 ### [0.0.8](https://github.com/prototypsthlm/contentful-migrator-programme/compare/v0.0.7...v0.0.8) (2022-05-25)
 
 
