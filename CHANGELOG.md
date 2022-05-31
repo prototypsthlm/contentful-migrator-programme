@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.10](https://github.com/prototypsthlm/contentful-migrator-programme/compare/v0.0.9...v0.0.10) (2022-05-31)
+
+
+### Bug Fixes
+
+* missing env id ([236424a](https://github.com/prototypsthlm/contentful-migrator-programme/commit/236424a708b7abf9852ae7090b69fe666192c702))
+
 ### [0.0.9](https://github.com/prototypsthlm/contentful-migrator-programme/compare/v0.0.8...v0.0.9) (2022-05-31)
 
 
