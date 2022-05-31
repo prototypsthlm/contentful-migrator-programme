@@ -18,14 +18,14 @@ const chalk = require('chalk')
 const log = require('../lib/log')
 
 const MIGRATIONS_DIR = join(process.cwd(), env('MIGRATIONS_DIR'))
-const MAX_NUMBER_OF_ENVIRONMENTS = env('MAX_NUMBER_OF_ENVIRONMENTS')
-const MAX_NUMBER_OF_ALIASES = env('MAX_NUMBER_OF_ALIASES')
+const MAX_NUMBER_OF_ENVIRONMENTS = parseInt(env('MAX_NUMBER_OF_ENVIRONMENTS'))
+const MAX_NUMBER_OF_ALIASES = parseInt(env('MAX_NUMBER_OF_ALIASES'))
 
 /**
  * Gets the timestamp from a filename such as '20200211111800525-create-cars-type.js'
  *
  * @param {string} filename
- * @returns {string|null} the timestamp if match, null otherwise
+ * @returns {string|null} the timestamp if matched, null otherwise
  */
 const getTimestampFromFileName = (filename) => {
     const matches = filename.match(/(^\d{17})-/)
@@ -131,16 +131,32 @@ const migrate = async (space, options = {}) => {
     log.info(options.rollback ? 'Rolled back.' : 'Migrated.')
 }
 
+const delay = (time) => new Promise((resolve) => setTimeout(resolve, time))
+
+const tryGetEnv = async (retries) => {
+    try {
+        return await spaceModule(env('CTF_SPACE_ID'), envId, env('CTF_CMA_TOKEN'))
+    } catch (e) {
+        if (retries > 0) {
+            const waiting_seconds = 500
+            log.warn(`Env not ready yet.`)
+            log.warn(`Waiting ${waiting_seconds} ms and retrying.`)
+            await delay(waiting_seconds)
+            return await tryGetEnv(retries - 1)
+        }
+        throw e
+    }
+}
 const createEnv = async (space, envId) => {
     log.info(`Creating environment ${envId}.`)
     await space.createSpaceEnv(envId, env('CTF_ENVIRONMENT_ID'))
     log.success(`Environment ${envId} created.`)
 
-    log.info(`Updating api key access to new env${envId}.`)
+    log.info(`Updating api key access to new env ${envId}.`)
     await space.updateApiKeysAccessToNewEnv(envId)
-    log.success(`Api key access to new env${envId} updated.`)
+    log.success(`Api key access to new env ${envId} updated.`)
 
-    return await spaceModule(env('CTF_SPACE_ID'), envId, env('CTF_CMA_TOKEN'))
+    return await tryGetEnv(10)
 }
 
 const switchEnvAliasAndDropOldEnv = async (space, auxEnv) => {
@@ -242,4 +258,5 @@ module.exports = {
     create,
     drop,
     list: getAppliedMigrations,
+    tryGetEnv
 }
