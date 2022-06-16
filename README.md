@@ -114,3 +114,9 @@ Now anything you modify in the locally cloned package will be instantly availabl
 - [ ]  Improve seeding or maybe rethink it or maybe remove it since it may be out of scope.
 - [ ]  Move to TypeScript.
 - [ ]  Document features.
+
+## Releasing and publishing on NPM
+
+Release-please is utilized to simplify releases and to auto-publish on NPM. In short, release-please creates a release-PR that updates the version and edits the Changelog as soon as it detects new commits with messages starting with "fix" or "feat". This PR is maintained until it is merged. Upon merging, this packages is released and once done it auto-publishes on NPM. 
+
+Read more here https://github.com/google-github-actions/release-please-action#how-release-please-works
