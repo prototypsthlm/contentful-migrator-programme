@@ -38,6 +38,9 @@ const getNameFromFileName = (filename) => {
 }
 
 const getMigrationsToHandle = async (space, options = {}) => {
+    // Take only `19990101235959111-migration-name.js` files
+    const allMigrations = fs.readdirSync(MIGRATIONS_DIR).filter((file) => /^\d{17}.*\.js$/.test(file))
+
     // Rolling back
     if (options.rollback) {
         if (options.targetMigrationTimestamp) {
@@ -48,7 +51,7 @@ const getMigrationsToHandle = async (space, options = {}) => {
 
         const latestBatchNumber = await getLatestBatchNumber(space)
         let latestBatchMigrationTimestamps = await getMigrationTimestampsForBatch(space, latestBatchNumber)
-        let fullMigrationsToRun = fs.readdirSync(MIGRATIONS_DIR).filter((file) => {
+        let fullMigrationsToRun = allMigrations.filter((file) => {
             const timestamp = getTimestampFromFileName(file)
             return timestamp && latestBatchMigrationTimestamps.includes(timestamp)
         })
@@ -58,7 +61,7 @@ const getMigrationsToHandle = async (space, options = {}) => {
 
     // Rolling forward
     const appliedMigrationTimestamps = await getMigratedTimestamps(space)
-    let fullMigrationsToRun = fs.readdirSync(MIGRATIONS_DIR).filter((file) => {
+    let fullMigrationsToRun = allMigrations.filter((file) => {
         const timestamp = getTimestampFromFileName(file)
         return timestamp && !appliedMigrationTimestamps.includes(timestamp)
     })
