@@ -10,23 +10,23 @@ exports.command = 'migrate'
 exports.desc = 'Apply migrations.'
 
 exports.builder = (yargs) => {
-    yargs.option('force', {
-        alias: 'f',
-        describe: 'Required to run them against master environment.',
-        type: 'boolean',
-    })
+  yargs.option('force', {
+    alias: 'f',
+    describe: 'Required to run them against master environment.',
+    type: 'boolean',
+  })
 }
 
 exports.handler = async ({ force }) => {
-    try {
-        if (env('CTF_ENVIRONMENT_ID') === 'master' && !force) {
-            log.error('Executing migrations against master requires the --force flag.')
-            return
-        }
-
-        await apply({ rollback: false })
-    } catch (e) {
-        log.error(e)
-        process.exitCode = 1
+  try {
+    if (env('CTF_ENVIRONMENT_ID') === 'master' && !force) {
+      log.error('Executing migrations against master requires the --force flag.')
+      return
     }
+
+    await apply({ rollback: false })
+  } catch (e) {
+    log.error(e)
+    process.exitCode = 1
+  }
 }

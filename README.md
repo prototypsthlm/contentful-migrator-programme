@@ -1,4 +1,5 @@
 # Contentful Migrator Programme
+
 Tool to manage Contentful migrations
 
 ## Setup
@@ -11,7 +12,8 @@ npm i --save @prototyp-stockholm/contentful-migrator-programme
 
 ### Prepare a Contentful space
 
-Get an API Key for migrations (`CTF_CMA_TOKEN`) under `Settings -> API Keys -> Content management` tokens in your Contentful space.
+Get an API Key for migrations (`CTF_CMA_TOKEN`) under `Settings -> API Keys -> Content management`
+tokens in your Contentful space.
 
 Create an environment under `Settings -> Environments`.
 
@@ -20,20 +22,21 @@ Create an environment under `Settings -> Environments`.
 Create a `.env` file in your project root and add these variables:
 
 #### Required variables
+
 ```dotenv
 CTF_SPACE_ID=<SECRET>       # The Contentful space id
-CTF_ENVIRONMENT_ID=<SECRET>    # The name of the Contentful environment
+CTF_ENVIRONMENT_ID=<SECRET> # The name of the Contentful environment
 CTF_CMA_TOKEN=<SECRET>      # The Content Management API token
 ```
 
 #### Optional variables
-```dotenv
-MIGRATIONS_DIR=migrations                   # A relative path to the directory where CMP will store migration script files
-APPLIED_MIGRATIONS_TYPE_ID=appliedMigrations # The content type id used to store applied migration entries  
-MAX_NUMBER_OF_ALIASES=1                     # The number of allowed aliases in this Contentful space
-MAX_NUMBER_OF_ENVIRONMENTS=4                # The number of allowed aliases in this Contentful space
-```
 
+```dotenv
+MIGRATIONS_DIR=migrations                       # A relative path to the directory where CMP will store migration script files
+APPLIED_MIGRATIONS_TYPE_ID=appliedMigrations    # The content type id used to store applied migration entries
+MAX_NUMBER_OF_ALIASES=1                         # The number of allowed aliases in this Contentful space
+MAX_NUMBER_OF_ENVIRONMENTS=4                    # The number of allowed aliases in this Contentful space
+```
 
 ## Usage
 
@@ -41,17 +44,18 @@ An example migration with `up` and `down` functions:
 
 ```javascript
 module.exports.up = (migration, context) => {
-    const dog = migration.createContentType('dog').name('Dog').displayField('name')
-    dog.createField('name').type('Symbol').name('Name')
+  const dog = migration.createContentType('dog').name('Dog').displayField('name')
+  dog.createField('name').type('Symbol').name('Name')
 }
 
 module.exports.down = (migration, context) => {
-    // Note: If you already have content with type dog you'll have to remove all dog entries, before removing the dog type
-    migration.deleteContentType('dog')
+  // Note: If you already have content with type dog you'll have to remove all dog entries, before removing the dog type
+  migration.deleteContentType('dog')
 }
 ```
 
-If you did not install the package globally you'll have to prepend `node_modules/.bin/` to the `cmp` command.
+If you did not install the package globally you'll have to prepend `node_modules/.bin/` to the `cmp`
+command.
 
 Otherwise, you can add the `cmp` command in the scripts section of the project `package.json`.
 
@@ -59,9 +63,9 @@ Then you can use it like so: `npm run cmp`.
 
 ```json
 {
-    "scripts": {
-        "cmp": "cmp"
-    }
+  "scripts": {
+    "cmp": "cmp"
+  }
 }
 ```
 
@@ -69,25 +73,31 @@ Read more on migration syntax on https://github.com/contentful/contentful-migrat
 
 ### Available commands
 
-
 #### `cmp generate <migrationName>`
-Generates a migration with the given name and a timestamp prepended ex: YYYYMMDDhhmmssxxx-add-user-type.js.
+
+Generates a migration with the given name and a timestamp prepended ex:
+YYYYMMDDhhmmssxxx-add-user-type.js.
 
 #### `cmp migrate`
-Applies all _up_ operations of the non applied migrations to the CTF_ENVIRONMENT_ID set in the `.env` file
+
+Applies all _up_ operations of the non-applied migrations to the CTF_ENVIRONMENT_ID set in
+the `.env` file
 
 #### `cmp rollback`
-Applies the _down_ operations (i.e rolls back ) of the latest migration batch
+
+Applies the _down_ operations (i.e. rolls back ) of the latest migration batch
 
 #### `cmp aux:create <name?>`
+
 Creates an aux environment based on CTF_ENVIRONMENT_ID. You can give it an optional name.
 
 #### `cmp aux:drop <name>`
+
 Drop the environment with the given name
 
 #### `cmp aux:test`
-Creates environment from CTF_ENVIRONMENT_ID, applies new migrations, and drops the environment
 
+Creates environment from CTF_ENVIRONMENT_ID, applies new migrations, and drops the environment
 
 ## For development of the CMP tool
 
@@ -100,23 +110,55 @@ Creates environment from CTF_ENVIRONMENT_ID, applies new migrations, and drops t
 7. `npm link @prototyp-stockholm/contentful-migrator-programme`
 8. create an .env file and set the required CTF credentials
 
-Now anything you modify in the locally cloned package will be instantly available in the test project to test.
+Now anything you modify in the locally cloned package will be instantly available in the test
+project to test.
 
 ## Roadmap
+
 - [x]  Track migrated migrations with a migration type
 - [x]  Generate migration command.
 - [x]  Apply migrations command.
 - [x]  Reset current environment to master.
 - [x]  Rollback the latest migration
 - [ ]  Apply migrations in batches and ability to rollback if something goes wrong (aux env).
-- [ ]  When migrating, all migrations will belong to a batch. When rolling back, the latest batch will be reverted.
-- [ ]  Improve migrations templates (add ability to use `npm run m:generate add-name-to-user-type --name=Symbol --age=Number` for example and generate the needed code to add the fields.
+- [ ]  When migrating, all migrations will belong to a batch. When rolling back, the latest batch
+  will be reverted.
+- [ ]  Improve migrations templates (add ability to
+  use `npm run m:generate add-name-to-user-type --name=Symbol --age=Number` for example and generate
+  the needed code to add the fields).
 - [ ]  Improve seeding or maybe rethink it or maybe remove it since it may be out of scope.
 - [ ]  Move to TypeScript.
 - [ ]  Document features.
 
 ## Releasing and publishing on NPM
 
-Release-please is utilized to simplify releases and to auto-publish on NPM. In short, release-please creates a release-PR that updates the version and edits the Changelog as soon as it detects new commits with messages starting with "fix" or "feat". This PR is maintained until it is merged. Upon merging, this packages is released and once done it auto-publishes on NPM. 
+Release-please is utilized to simplify releases and to auto-publish on NPM. In short, release-please
+creates a release-PR that updates the version and edits the Changelog as soon as it detects new
+commits with messages starting with "fix" or "feat". This PR is maintained until it is merged. Upon
+merging, this packages is released and once done it auto-publishes on NPM.
 
-Read more here https://github.com/google-github-actions/release-please-action#how-release-please-works
+Read more
+here https://github.com/google-github-actions/release-please-action#how-release-please-works
+
+## A note on code style
+
+Code style is enforced using ESlint, Prettier and .editorconfig. If you want to know in
+detail how its configured I recommend you read this
+wonderful [article](https://blog.theodo.com/2019/08/empower-your-dev-environment-with-eslint-prettier-and-editorconfig-with-no-conflicts)
+where it clarifies greatly what exactly each of those tools do. And why are they all useful.
+
+But in summary, we use ESlint for code quality (we use airbnb preset, just because is the
+most popular). Prettier for code formatting (single/double quotes, colons, spaces/tabs). And
+.editorconfig to, well, set the editor config.
+
+Since those tools overlap in some of its features the strategy is to go that path when setting
+config. Prettier, since recent versions, is smart enough to infer some .editorconfig configuration.
+So anything that can be set there has to be set there, and it will be carried out to prettier, so no
+need to duplicate it in `.prettierrc`. In a similar matter, all that can be configured in prettier,
+basically all code style related config should be done there. And thanks to the integration of
+prettier and eslint with eslint-plugin-prettier we will just need to run eslint to apply all
+formatting. It may sound complicated because it is. But it is, as I said wonderfully explained in
+the article I mentioned above.
+
+We added lint-staged npm package which sets a git pre-commit hook that runs eslint which enforces
+all that.
