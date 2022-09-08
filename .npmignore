@@ -6,4 +6,3 @@
 .prettierrc.json
 CHANGELOG.md
 LICENSE
-jest.setupFiles.js
