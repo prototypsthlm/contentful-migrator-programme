@@ -1,32 +1,32 @@
 #! /usr/bin/env node
 
-const fs = require('fs')
-const { join } = require('path')
-const Mustache = require('mustache')
-const { utcTimestampMs } = require('../../lib/date')
-const { camelToKebabCase } = require('../../lib/string')
-const env = require('../../lib/env')
-const log = require('../../lib/log')
+import * as fs from 'fs'
+import { join } from 'path'
+import * as Mustache from 'mustache'
+import { utcTimestampMs } from '../../lib/date'
+import { camelToKebabCase } from '../../lib/string'
+import env from '../../lib/env'
+import * as log from '../../lib/log'
 
-exports.command = 'generate <name>'
+export const command = 'generate <name>'
 
-exports.desc = 'Generates a migration file with the timestamp prepended in the filename.'
+export const desc = 'Generates a migration file with the timestamp prepended in the filename.'
 
-exports.builder = (yargs) => {
+export const builder = (yargs) => {
   yargs.positional('name', {
     describe: 'The name of the migration file.',
     type: 'string',
   })
 }
 
-exports.handler = ({ name }) => {
+export const handler = ({ name }) => {
   try {
     const templatePath = fs.readFileSync(
       join(__dirname, '..', '..', 'templates', 'migration.mustache'),
       'utf8'
     )
 
-    const migrationContents = Mustache.render(templatePath)
+    const migrationContents = Mustache.render(templatePath, {})
     const migrationFileName = `${utcTimestampMs()}-${camelToKebabCase(name)}.js`
     const migrationsDir = env('MIGRATIONS_DIR')
 

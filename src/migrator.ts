@@ -1,21 +1,25 @@
-require('dotenv').config()
-const chalk = require('chalk')
-const fs = require('fs')
-const serialize = require('serialize-javascript')
-const tmp = require('tmp')
-const { join } = require('path')
-const { runMigration } = require('contentful-migration')
-const spaceModule = require('../lib/contentful-space-manager')
-const env = require('../lib/env')
-const { utcTimestamp } = require('../lib/date')
-const {
+import * as dotenv from 'dotenv'
+
+dotenv.config()
+
+import * as chalk from 'chalk'
+import * as fs from 'fs'
+import * as serialize from 'serialize-javascript'
+import * as tmp from 'tmp'
+import { join } from 'path'
+import { runMigration } from 'contentful-migration'
+import spaceModule from './lib/contentful-space-manager'
+import env from './lib/env'
+import { utcTimestamp } from './lib/date'
+import {
   getLatestBatchNumber,
   getMigratedTimestamps,
   getMigrationTimestampsForBatch,
   initBookkeeping,
+  Options,
   updateBookkeeping,
-} = require('./bookkeeping')
-const log = require('../lib/log')
+} from './bookkeeping'
+import * as log from './lib/log'
 
 const MIGRATIONS_DIR = join(process.cwd(), env('MIGRATIONS_DIR'))
 const MAX_NUMBER_OF_ENVIRONMENTS = parseInt(env('MAX_NUMBER_OF_ENVIRONMENTS'), 10)
@@ -38,6 +42,10 @@ const getNameFromFileName = (filename) => {
 }
 
 class Migration {
+  fileName: string
+  timestamp: string
+  name: string
+
   constructor(fileName, timestamp, name) {
     this.fileName = fileName
     this.timestamp = timestamp
@@ -58,9 +66,10 @@ export const list = async (space) => {
     .map((file) => new Migration(file, getTimestampFromFileName(file), getNameFromFileName(file)))
 }
 
-const extractFunctionToSeparateFile = (filePath, direction) => {
-  // eslint-disable-next-line global-require,import/no-dynamic-require
-  const upAndDownFunctions = require(join(MIGRATIONS_DIR, filePath))
+const extractFunctionToSeparateFile = async (filePath, direction) => {
+  const upAndDownFunctions: { up: unknown; down: unknown } = await import(
+    join(MIGRATIONS_DIR, filePath)
+  )
   if (!(upAndDownFunctions.up && upAndDownFunctions.down)) {
     throw new Error('Each migration module needs to declare both "up" and "down" functions')
   }
@@ -80,15 +89,15 @@ const getUpMigration = (migrationFunction) => extractFunctionToSeparateFile(migr
 const getDownMigration = (migrationFunction) =>
   extractFunctionToSeparateFile(migrationFunction, 'down')
 
-const getMigrationsToHandle = async (space, options = {}) => {
+const getMigrationsToHandle = async (space, options?: Options) => {
   // Take only `19990101235959111-migration-name.js` files
   const allMigrations = fs.readdirSync(MIGRATIONS_DIR).filter((file) => /^\d{17}.*\.js$/.test(file))
 
   // Rolling back
-  if (options.rollback) {
-    if (options.targetMigrationTimestamp) {
+  if (options?.rollback) {
+    if (options?.targetMigrationTimestamp) {
       return (await list(space))
-        .filter((m) => Number(m.timestamp) > Number(options.targetMigrationTimestamp))
+        .filter((m) => Number(m.timestamp) > Number(options?.targetMigrationTimestamp))
         .map((m) => getDownMigration(m.fileName))
     }
 
@@ -129,20 +138,20 @@ const runMigrations = async (migrations, envId) => {
   )
 }
 
-const migrate = async (space, options = {}) => {
+const migrate = async (space, options?: Options) => {
   await initBookkeeping(space)
 
   const migrationsToApply = await getMigrationsToHandle(space, options)
 
   if (!migrationsToApply.length) {
-    log.info(`No migrations to ${options.rollback ? 'rollback' : 'apply'}.`)
+    log.info(`No migrations to ${options?.rollback ? 'rollback' : 'apply'}.`)
     return
   }
 
-  log.info(options.rollback ? 'Rolling back.' : 'Migrating.')
+  log.info(options?.rollback ? 'Rolling back.' : 'Migrating.')
   await runMigrations(migrationsToApply, space.env.sys.id)
   await updateBookkeeping(space, migrationsToApply, options)
-  log.info(options.rollback ? 'Rolled back.' : 'Migrated.')
+  log.info(options?.rollback ? 'Rolled back.' : 'Migrated.')
 }
 
 const delay = (time) =>
@@ -193,7 +202,7 @@ const isEnvLimitReached = async (space) => {
   return false
 }
 
-export const apply = async (options = {}) => {
+export const apply = async (options?: Options) => {
   const space = await spaceModule(
     env('CTF_SPACE_ID'),
     env('CTF_ENVIRONMENT_ID'),
@@ -205,11 +214,11 @@ export const apply = async (options = {}) => {
   const migrationsToHandle = await getMigrationsToHandle(space, options)
 
   if (!migrationsToHandle.length) {
-    log.info(`No migrations to ${options.rollback ? 'rollback' : 'apply'}.`)
+    log.info(`No migrations to ${options?.rollback ? 'rollback' : 'apply'}.`)
     return
   }
 
-  if (options.rollback) {
+  if (options?.rollback) {
     log.info(`About to rollback the following migrations:\n  ${migrationsToHandle.join('\n  ')}`)
   } else {
     log.info(`About to apply the following migrations:\n  ${migrationsToHandle.join('\n  ')}`)

@@ -1,15 +1,17 @@
 #! /usr/bin/env node
 
-require('dotenv').config()
-const spaceModule = require('../../lib/contentful-space-manager')
-const env = require('../../lib/env')
-const log = require('../../lib/log')
+import * as dotenv from 'dotenv'
+import spaceModule from '../../lib/contentful-space-manager'
+import env from '../../lib/env'
+import * as log from '../../lib/log'
 
-exports.command = 'reset'
+dotenv.config()
 
-exports.desc = 'Resets current CTF_ENVIRONMENT_ID to master.'
+export const command = 'reset'
 
-exports.handler = async () => {
+export const desc = 'Resets current CTF_ENVIRONMENT_ID to master.'
+
+export const handler = async () => {
   try {
     if (env('CTF_ENVIRONMENT_ID') === 'master') {
       log.error("Can't reset environment if you are on master.")

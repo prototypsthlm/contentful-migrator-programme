@@ -5,7 +5,7 @@ const defaults = {
   MAX_NUMBER_OF_ALIASES: 1,
 }
 
-module.exports = (name) => {
+export default (name) => {
   if (!process.env[name] && !defaults[name]) {
     throw new Error(`Environment variable ${name} is not set.`)
   }

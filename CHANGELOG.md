@@ -82,4 +82,4 @@ All notable changes to this project will be documented in this file. See [standa
 * Rename Prettier config file ([4a813dc](https://github.com/prototypsthlm/contentful-migrator-programme/commit/4a813dcbce6edaab2a60e725fc68f8227e66e7c6))
 * update wrong testEnv parameter shape ([9c4583f](https://github.com/prototypsthlm/contentful-migrator-programme/commit/9c4583f260fdcaa7c8268c5a5b521e544bb39929))
 * wrong migration folder path ([d8fabd6](https://github.com/prototypsthlm/contentful-migrator-programme/commit/d8fabd653fbf8a479c69a7c1a9cc456a0dfb63d9))
-* wrong migrations-type.js path ([a253784](https://github.com/prototypsthlm/contentful-migrator-programme/commit/a2537843d2757828a3f08f1da819d46dda24f853))
+* wrong migrations-type.ts path ([a253784](https://github.com/prototypsthlm/contentful-migrator-programme/commit/a2537843d2757828a3f08f1da819d46dda24f853))

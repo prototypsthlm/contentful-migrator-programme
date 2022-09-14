@@ -1,21 +1,23 @@
 #! /usr/bin/env node
 
-require('dotenv').config()
-const { drop } = require('../../src/migrator')
-const log = require('../../lib/log')
+import * as dotenv from 'dotenv'
+import { drop } from '../../migrator'
+import * as log from '../../lib/log'
 
-exports.command = 'aux:drop <name>'
+dotenv.config()
 
-exports.desc = 'Drops the environment with the given name.'
+export const command = 'aux:drop <name>'
 
-exports.builder = (yargs) => {
+export const desc = 'Drops the environment with the given name.'
+
+export const builder = (yargs) => {
   yargs.positional('name', {
     describe: 'Name of the environment to be deleted.',
     type: 'string',
   })
 }
 
-exports.handler = async ({ name }) => {
+export const handler = async ({ name }) => {
   try {
     if (name === 'master') {
       log.error('Dropping master environment is not allowed.')

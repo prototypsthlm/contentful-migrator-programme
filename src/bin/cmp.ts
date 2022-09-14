@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 
+import * as yargs from 'yargs'
+
 // eslint-disable-next-line no-unused-expressions
-require('yargs')
+yargs
   .usage('Contentful migration tooling.')
   .commandDir('commands')
   .recommendCommands()

@@ -1,16 +1,18 @@
 #! /usr/bin/env node
 
-require('dotenv').config()
-const cliSelect = require('cli-select')
-const { apply, list } = require('../../src/migrator')
-const env = require('../../lib/env')
-const spaceModule = require('../../lib/contentful-space-manager')
+import * as dotenv from 'dotenv'
+import cliSelect from 'cli-select'
+import { apply, list } from '../../migrator'
+import env from '../../lib/env'
+import spaceModule from '../../lib/contentful-space-manager'
 
-exports.command = 'rollback'
+dotenv.config()
 
-exports.desc = 'Rollback already applied migrations'
+export const command = 'rollback'
 
-exports.builder = (yargs) => {
+export const desc = 'Rollback already applied migrations'
+
+export const builder = (yargs) => {
   yargs.option('force', {
     alias: 'f',
     describe: 'Required to run them against master environment.',
@@ -50,7 +52,7 @@ const runInteractive = async () => {
   })
 }
 
-exports.handler = async ({ force, interactive }) => {
+export const handler = async ({ force, interactive }) => {
   try {
     if (env('CTF_ENVIRONMENT_ID') === 'master' && !force) {
       console.error('Executing migrations against master requires the --force flag.')

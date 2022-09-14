@@ -1,8 +1,8 @@
-const env = require('../lib/env')
+import env from './lib/env'
 
 const APPLIED_MIGRATIONS_TYPE_ID = env('APPLIED_MIGRATIONS_TYPE_ID')
 
-module.exports = (migration) => {
+export default (migration) => {
   const migrationsContentType = migration
     .createContentType(APPLIED_MIGRATIONS_TYPE_ID)
     .name('Applied migrations')

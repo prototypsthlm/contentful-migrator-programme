@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "outDir": "out",
+    "rootDir": "src",
+    "importHelpers": false,
+    "moduleResolution": "node",
+    "skipLibCheck": true
+  }
+}
+

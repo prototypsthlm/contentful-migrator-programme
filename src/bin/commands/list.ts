@@ -1,16 +1,18 @@
 #! /usr/bin/env node
 
-require('dotenv').config()
-const { list } = require('../../src/migrator')
-const env = require('../../lib/env')
-const spaceModule = require('../../lib/contentful-space-manager')
-const log = require('../../lib/log')
+import * as dotenv from 'dotenv'
+import { list } from '../../migrator'
+import env from '../../lib/env'
+import spaceModule from '../../lib/contentful-space-manager'
+import * as log from '../../lib/log'
 
-exports.command = 'list'
+dotenv.config()
 
-exports.desc = 'List applied migrations'
+export const command = 'list'
 
-exports.handler = async () => {
+export const desc = 'List applied migrations'
+
+export const handler = async () => {
   try {
     const space = await spaceModule(
       env('CTF_SPACE_ID'),

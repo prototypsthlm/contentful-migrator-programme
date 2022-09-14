@@ -1,6 +1,10 @@
-const contentful = require('contentful-management')
+import { createClient, Space, Environment } from 'contentful-management'
 
-class Space {
+class CmpSpace {
+  space: Space
+  env: Environment
+  locale: string
+
   constructor(space, env, locale) {
     this.space = space
     this.env = env
@@ -107,10 +111,10 @@ class Space {
   }
 }
 
-module.exports = async (spaceId, envId, accessToken) => {
-  const client = contentful.createClient({ accessToken })
+export default async (spaceId, envId, accessToken) => {
+  const client = createClient({ accessToken })
   const space = await client.getSpace(spaceId)
   const env = await space.getEnvironment(envId)
-  const locale = (await env.getLocales()).items.find((l) => l.default).code
-  return new Space(space, env, locale)
+  const locale = (await env.getLocales()).items.find((l) => l.default)?.code
+  return new CmpSpace(space, env, locale)
 }

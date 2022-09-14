@@ -1,16 +1,18 @@
 #! /usr/bin/env node
 
-require('dotenv').config()
-const { create, drop } = require('../../src/migrator')
-const { utcTimestamp } = require('../../lib/date')
-const log = require('../../lib/log')
+import * as dotenv from 'dotenv'
+import { create, drop } from '../../migrator'
+import { utcTimestamp } from '../../lib/date'
+import * as log from '../../lib/log'
 
-exports.command = 'aux:test'
+dotenv.config()
 
-exports.desc =
+export const command = 'aux:test'
+
+export const desc =
   'Creates a temporary environment based on CTF_ENVIRONMENT_ID, applies any pending migration and then is immediately deleted.'
 
-exports.handler = async () => {
+export const handler = async () => {
   try {
     const testEnv = `test${utcTimestamp()}`
     await create({ newEnvId: testEnv })
