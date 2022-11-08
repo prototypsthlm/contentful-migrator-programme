@@ -159,7 +159,7 @@ const createEnv = async (space, envId) => {
     await space.updateApiKeysAccessToNewEnv(envId)
     log.success(`Api key access to new env ${envId} updated.`)
 
-    return await tryGetEnv(envId, 10, env('CTF_GET_ENV_WAITING_SECONDS'))
+    return await tryGetEnv(envId, 10, env('GET_ENV_WAITING_SECONDS'))
 }
 
 const switchEnvAliasAndDropOldEnv = async (space, auxEnv) => {
