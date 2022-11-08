@@ -136,20 +136,20 @@ const migrate = async (space, options = {}) => {
 
 const delay = (time) => new Promise((resolve) => setTimeout(resolve, time))
 
-const tryGetEnv = async (envId, retries) => {
+const tryGetEnv = async (envId, retries, waitingMilliseconds) => {
     try {
         return await spaceModule(env('CTF_SPACE_ID'), envId, env('CTF_CMA_TOKEN'))
     } catch (e) {
         if (retries > 0) {
-            const waiting_seconds = 500
             log.warn(`Env not ready yet.`)
-            log.warn(`Waiting ${waiting_seconds} ms and retrying.`)
-            await delay(waiting_seconds)
-            return await tryGetEnv(envId, retries - 1)
+            log.warn(`Waiting ${waitingMilliseconds} ms and retrying.`)
+            await delay(waitingMilliseconds)
+            return await tryGetEnv(envId, retries - 1, waitingMilliseconds)
         }
         throw e
     }
 }
+
 const createEnv = async (space, envId) => {
     log.info(`Creating environment ${envId}.`)
     await space.createSpaceEnv(envId, env('CTF_ENVIRONMENT_ID'))
@@ -159,7 +159,7 @@ const createEnv = async (space, envId) => {
     await space.updateApiKeysAccessToNewEnv(envId)
     log.success(`Api key access to new env ${envId} updated.`)
 
-    return await tryGetEnv(envId, 10)
+    return await tryGetEnv(envId, env('NUMBER_OF_RETRIES_WHEN_CREATING_ENVIRONMENT'), 1000)
 }
 
 const switchEnvAliasAndDropOldEnv = async (space, auxEnv) => {

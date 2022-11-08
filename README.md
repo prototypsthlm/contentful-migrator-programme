@@ -28,10 +28,11 @@ CTF_CMA_TOKEN=<SECRET>      # The Content Management API token
 
 #### Optional variables
 ```dotenv
-MIGRATIONS_DIR=migrations                   # A relative path to the directory where CMP will store migration script files
-APPLIED_MIGRATIONS_TYPE_ID=appliedMigrations # The content type id used to store applied migration entries  
-MAX_NUMBER_OF_ALIASES=1                     # The number of allowed aliases in this Contentful space
-MAX_NUMBER_OF_ENVIRONMENTS=4                # The number of allowed aliases in this Contentful space
+MIGRATIONS_DIR=migrations                        # A relative path to the directory where CMP will store migration script files
+APPLIED_MIGRATIONS_TYPE_ID=appliedMigrations     # The content type id used to store applied migration entries  
+MAX_NUMBER_OF_ALIASES=1                          # The number of allowed aliases in this Contentful space
+MAX_NUMBER_OF_ENVIRONMENTS=4                     # The number of allowed aliases in this Contentful space
+NUMBER_OF_RETRIES_WHEN_CREATING_ENVIRONMENT=10   # Number of retries when creating an environment
 ```
 
 
