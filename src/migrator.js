@@ -170,13 +170,11 @@ const switchEnvAliasAndDropOldEnv = async (space, auxEnv) => {
     log.info('Environment alias switched successfully.')
 }
 
-const isEnvLimitReached = async (space) => {
+const failIfNoAvailableEnvironments = async (space) => {
     const envs = await space.getEnvironments()
     if (envs.items.length >= MAX_NUMBER_OF_ENVIRONMENTS + MAX_NUMBER_OF_ALIASES) {
-        log.error('Maximum environment amount reached. Aborting.')
-        return true
+        throw Error('Maximum environment amount reached. Aborting.')
     }
-    return false
 }
 
 const apply = async (options = {}) => {
@@ -201,10 +199,7 @@ const apply = async (options = {}) => {
         const newEnvId = utcTimestamp({ dashes: true })
 
         try {
-            if (await isEnvLimitReached(space)) {
-                return
-            }
-
+            await failIfNoAvailableEnvironments(space)
             const spaceNewEnv = await createEnv(space, newEnvId)
             await migrate(spaceNewEnv, options)
             await switchEnvAliasAndDropOldEnv(space, newEnvId)
@@ -226,9 +221,7 @@ const create = async ({ newEnvId }) => {
         return
     }
 
-    if (await isEnvLimitReached(space)) {
-        return
-    }
+    await failIfNoAvailableEnvironments(space)
 
     try {
         const spaceNewEnv = await createEnv(space, newEnvId)
@@ -261,5 +254,5 @@ module.exports = {
     create,
     drop,
     list: getAppliedMigrations,
-    tryGetEnv
+    tryGetEnv,
 }
