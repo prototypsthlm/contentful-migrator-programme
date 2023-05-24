@@ -1,48 +1,46 @@
-#! /usr/bin/env node
+#!/usr/bin/env node
 
-const fs = require('fs')
-const { join } = require('path')
-const Mustache = require('mustache')
-const { utcTimestampMs } = require('../../lib/date')
-const { camelToKebabCase } = require('../../lib/string')
-const env = require('../../lib/env')
-const log = require('../../lib/log')
+import fs from 'fs';
+import {join} from 'path';
+import Mustache from 'mustache';
+//import {utcTimestampMs} from '../../lib/date';
+/*import {camelToKebabCase} from '../../lib/string';
+import env from '../../lib/env';
+import log from '../../lib/log';*/
+import {utcTimestampMs} from "@prototyp-stockholm/contentful-migrator-programme/lib/date.js";
+import {camelToKebabCase} from "@prototyp-stockholm/contentful-migrator-programme/lib/string.js";
+import env from "@prototyp-stockholm/contentful-migrator-programme/lib/env.js";
 
-exports.command = 'generate <name>'
+export const command = 'generate <name>';
 
-exports.desc = 'Generates a migration file with the timestamp prepended in the filename.'
+export const desc = 'Generates a migration file with the timestamp prepended in the filename.';
 
-exports.builder = (yargs) => {
+export const builder = (yargs) => {
     yargs.positional('name', {
         describe: 'The name of the migration file.',
         type: 'string',
-    })
-}
+    });
+};
 
-exports.handler = ({ name }) => {
+export const handler = async ({name}) => {
     try {
-        const templatePath = fs.readFileSync(join(__dirname, '..', '..', 'templates', 'migration.mustache'), 'utf8')
+        const templatePath = await fs.promises.readFile(
+            join(__dirname, '..', '..', 'templates', 'migration.mustache'),
+            'utf8'
+        );
+        const migrationContents = Mustache.render(templatePath);
+        const migrationFileName = `${utcTimestampMs()}-${camelToKebabCase(name)}.js`;
+        const migrationsDir = env('MIGRATIONS_DIR');
 
-        const migrationContents = Mustache.render(templatePath)
-        const migrationFileName = `${utcTimestampMs()}-${camelToKebabCase(name)}.js`
-        const migrationsDir = env('MIGRATIONS_DIR')
+        await fs.promises.mkdir(migrationsDir, {recursive: true});
 
-        fs.mkdir(migrationsDir, { recursive: true }, (err) => {
-            if (err) {
-                throw err
-            }
-        })
+        const migrationPath = join(migrationsDir, migrationFileName);
 
-        const migrationPath = join(migrationsDir, migrationFileName)
+        await fs.promises.writeFile(migrationPath, migrationContents, {flag: 'w'});
 
-        fs.writeFile(migrationPath, migrationContents, { flag: 'w' }, (err) => {
-            if (err) {
-                throw err
-            }
-            log.success(`Migration file ${migrationFileName} created`)
-        })
+        log.success(`Migration file ${migrationFileName} created`);
     } catch (e) {
-        log.error('Migration file creation failed.', e)
-        process.exitCode = 1
+        log.error('Migration file creation failed.', e);
+        process.exitCode = 1;
     }
-}
+};
