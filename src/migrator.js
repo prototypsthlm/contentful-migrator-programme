@@ -1,21 +1,21 @@
-require('dotenv').config()
-const fs = require('fs')
-const { join } = require('path')
-const { runMigration } = require('contentful-migration/built/bin/cli')
-const { utcTimestamp } = require('../lib/date')
-const spaceModule = require('../lib/contentful-space-manager')
-const env = require('../lib/env')
-const serialize = require('serialize-javascript')
-const tmp = require('tmp')
-const {
-    updateBookkeeping,
+import dotenv from 'dotenv'
+dotenv.config()
+
+import * as fs from "fs";
+import { join } from 'path';
+import { runMigration } from 'contentful-migration/built/bin/cli.js'
+import { utcTimestamp } from '../lib/date.js';
+import * as spaceModule from '../lib/contentful-space-manager.js'
+import env from '../lib/env.js'
+import serialize from 'serialize-javascript'
+import tmp from 'tmp'
+import {    updateBookkeeping,
     initBookkeeping,
     getMigrationTimestampsForBatch,
     getLatestBatchNumber,
-    getMigratedTimestamps,
-} = require('./bookkeeping')
-const chalk = require('chalk')
-const log = require('../lib/log')
+    getMigratedTimestamps,} from './bookkeeping.js'
+import chalk from "chalk";
+import * as log from '../lib/log.js';
 
 const MIGRATIONS_DIR = join(process.cwd(), env('MIGRATIONS_DIR'))
 const MAX_NUMBER_OF_ENVIRONMENTS = parseInt(env('MAX_NUMBER_OF_ENVIRONMENTS'))
@@ -96,7 +96,7 @@ const extractFunctionToSeparateFile = (filePath, direction) => {
     return new Migration(partialMigrationFile.name, getTimestampFromFileName(filePath), getNameFromFileName(filePath))
 }
 
-const runMigrations = async (migrations, envId) => {
+export const runMigrations = async (migrations, envId) => {
     for (const migration of migrations) {
         await runMigration({
             filePath: migration.fileName,
@@ -177,7 +177,7 @@ const failIfNoAvailableEnvironments = async (space) => {
     }
 }
 
-const apply = async (options = {}) => {
+export const apply = async (options = {}) => {
     const space = await spaceModule(env('CTF_SPACE_ID'), env('CTF_ENVIRONMENT_ID'), env('CTF_CMA_TOKEN'))
 
     await initBookkeeping(space)
@@ -213,7 +213,7 @@ const apply = async (options = {}) => {
     await migrate(space, options)
 }
 
-const create = async ({ newEnvId }) => {
+export const create = async ({ newEnvId }) => {
     const space = await spaceModule(env('CTF_SPACE_ID'), env('CTF_ENVIRONMENT_ID'), env('CTF_CMA_TOKEN'))
 
     if (await space.environmentExists(newEnvId)) {
@@ -244,15 +244,7 @@ const create = async ({ newEnvId }) => {
     }
 }
 
-const drop = async ({ envId }) => {
+export const drop = async ({ envId }) => {
     const space = await spaceModule(env('CTF_SPACE_ID'), envId, env('CTF_CMA_TOKEN'))
     await space.deleteSpaceEnv(envId)
-}
-
-module.exports = {
-    apply,
-    create,
-    drop,
-    list: getAppliedMigrations,
-    tryGetEnv,
 }

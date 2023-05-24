@@ -1,12 +1,11 @@
-const { join } = require('path')
-const { runMigration } = require('contentful-migration/built/bin/cli')
-require('../lib/contentful-space-manager')
-const env = require('../lib/env')
-const log = require('../lib/log')
+import { join } from 'path';
+import { runMigration } from 'contentful-migration/built/bin/cli.js'
+import env from '../lib/env.js'
+import log from '../lib/log.js';
 
 const APPLIED_MIGRATIONS_TYPE_ID = env('APPLIED_MIGRATIONS_TYPE_ID')
 
-const initBookkeeping = async (space) => {
+export const initBookkeeping = async (space) => {
     if (!(await space.typeExists(APPLIED_MIGRATIONS_TYPE_ID))) {
         log.info('`Applied migrations` type not found. Creating it.')
         await migrateMigrationsType(space.env.sys.id)
@@ -14,7 +13,7 @@ const initBookkeeping = async (space) => {
     }
 }
 
-const updateBookkeeping = async (space, migratedMigrations, options = {}) => {
+export const updateBookkeeping = async (space, migratedMigrations, options = {}) => {
     if (options.rollback) {
         const allAppliedMigrationEntries = await space.getEntries(APPLIED_MIGRATIONS_TYPE_ID)
         const migratedTimestamps = migratedMigrations.map((m) => m.timestamp)
@@ -38,7 +37,7 @@ const updateBookkeeping = async (space, migratedMigrations, options = {}) => {
     )
 }
 
-const migrateMigrationsType = async (envId) => {
+export const migrateMigrationsType = async (envId) => {
     await runMigration({
         filePath: join(__dirname, 'migrations-type.js'),
         spaceId: env('CTF_SPACE_ID'),
@@ -48,32 +47,23 @@ const migrateMigrationsType = async (envId) => {
     })
 }
 
-const getLatestBatchNumber = async (space) => {
+export const getLatestBatchNumber = async (space) => {
     const initialBatchNumber = 0
     return (await getAppliedMigrationEntries(space))
         .map((item) => item.fields.batch[space.locale])
         .reduce((a, b) => Math.max(a, b), initialBatchNumber)
 }
 
-const getMigrationTimestampsForBatch = async (space, batchNumber) => {
+export const getMigrationTimestampsForBatch = async (space, batchNumber) => {
     return (await space.getEntries(APPLIED_MIGRATIONS_TYPE_ID, { 'fields.batch': batchNumber })).map(
         (item) => item.fields.timestamp[space.locale]
     )
 }
 
-const getAppliedMigrationEntries = async (space) => {
+export const getAppliedMigrationEntries = async (space) => {
     return space.getEntries(APPLIED_MIGRATIONS_TYPE_ID)
 }
 
-const getMigratedTimestamps = async (space) => {
+export const getMigratedTimestamps = async (space) => {
     return (await getAppliedMigrationEntries(space)).map((x) => x.fields.timestamp[space.locale])
-}
-
-module.exports = {
-    updateBookkeeping,
-    initBookkeeping,
-    getLatestBatchNumber,
-    getMigrationTimestampsForBatch,
-    getAppliedMigrationEntries,
-    getMigratedTimestamps,
 }

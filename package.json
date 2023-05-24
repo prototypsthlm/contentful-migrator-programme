@@ -2,6 +2,7 @@
     "name": "@prototyp-stockholm/contentful-migrator-programme",
     "version": "0.2.0",
     "description": "Tool to manage and keep track of contentful migrations.",
+    "type": "module",
     "scripts": {
         "test": "jest",
         "release": "standard-version"
@@ -26,6 +27,7 @@
     },
     "homepage": "https://github.com/prototypsthlm/contentful-migrator-programme#readme",
     "dependencies": {
+        "@prototyp-stockholm/contentful-migrator-programme": "^0.2.0",
         "chalk": "^5.2.0",
         "cli-select": "^1.1.2",
         "contentful-management": "^10.1.4",

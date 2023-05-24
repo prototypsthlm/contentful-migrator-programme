@@ -1,32 +1,31 @@
-#! /usr/bin/env node
+#!/usr/bin/env node
+import dotenv from 'dotenv';
+import env from '../../lib/env.js';
+import log from '../../lib/log.js';
+import { apply } from '../../src/migrator.js';
 
-require('dotenv').config()
-const { apply } = require('../../src/migrator')
-const env = require('../../lib/env')
-const log = require('../../lib/log')
+export const command = 'migrate';
 
-exports.command = 'migrate'
+export const desc = 'Apply migrations.';
 
-exports.desc = 'Apply migrations.'
-
-exports.builder = (yargs) => {
+export const builder = (yargs) => {
     yargs.option('force', {
         alias: 'f',
         describe: 'Required to run them against master environment.',
         type: 'boolean',
-    })
-}
+    });
+};
 
-exports.handler = async ({ force }) => {
+export const handler = async ({ force }) => {
     try {
+        dotenv.config();
         if (env('CTF_ENVIRONMENT_ID') === 'master' && !force) {
-            log.error('Executing migrations against master requires the --force flag.')
-            return
+            log.error('Executing migrations against master requires the --force flag.');
+            return;
         }
-
-        await apply({ rollback: false })
+        await apply({ rollback: false });
     } catch (e) {
-        log.error(e)
-        process.exitCode = 1
+        log.error(e);
+        process.exitCode = 1;
     }
-}
+};
