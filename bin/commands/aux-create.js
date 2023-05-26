@@ -1,26 +1,25 @@
-#! /usr/bin/env node
+#!/usr/bin/env node
+import dotenv from 'dotenv';
+import { create } from '../../src/migrator.js';
+import { utcTimestamp } from '../../lib/date.js';
+import log from '../../lib/log.js';
 
-require('dotenv').config()
-const { create } = require('../../src/migrator')
-const { utcTimestamp } = require('../../lib/date')
-const log = require('../../lib/log')
+export const command = 'aux:create [name]';
 
-exports.command = 'aux:create [name]'
+export const desc = 'Creates an auxiliary environment based on CTF_ENVIRONMENT_ID and applies newer migrations to it.';
 
-exports.desc = 'Creates an auxiliary environment based on CTF_ENVIRONMENT_ID and applies newer migrations to it.'
-
-exports.builder = (yargs) => {
+export const builder = (yargs) => {
     yargs.positional('name', {
         describe: 'Specify an optional name for the auxiliary environment.',
         type: 'string',
         default: 'test' + utcTimestamp(),
-    })
-}
+    });
+};
 
-exports.handler = async ({ name }) => {
+export const handler = async ({ name }) => {
     try {
-        await create({ newEnvId: name })
+        await create({ newEnvId: name });
     } catch (e) {
-        log.error('Something went wrong.', e)
+        log.error('Something went wrong.', e);
     }
-}
+};

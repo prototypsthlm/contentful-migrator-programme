@@ -69,7 +69,7 @@ const getMigrationsToHandle = async (space, options = {}) => {
     return fullMigrationsToRun.map(getUpMigration)
 }
 
-const getAppliedMigrations = async (space) => {
+export const getAppliedMigrations = async (space) => {
     const migratedTimestamps = await getMigratedTimestamps(space)
     return fs
         .readdirSync(MIGRATIONS_DIR)

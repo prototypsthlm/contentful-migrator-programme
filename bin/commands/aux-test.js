@@ -1,22 +1,22 @@
 #! /usr/bin/env node
 
-require('dotenv').config()
-const { create, drop } = require('../../src/migrator')
-const { utcTimestamp } = require('../../lib/date')
-const log = require('../../lib/log')
+import dotenv from 'dotenv';
+import { create, drop } from '../../src/migrator.js';
+import { utcTimestamp } from '../../lib/date.js';
+import log from '../../lib/log.js';
 
-exports.command = 'aux:test'
+export const command = 'aux:test';
 
-exports.desc = 'Creates a temporary environment based on CTF_ENVIRONMENT_ID, applies any pending migration and then is immediately deleted.'
+export const desc = 'Creates a temporary environment based on CTF_ENVIRONMENT_ID, applies any pending migration, and then is immediately deleted.';
 
-exports.handler = async () => {
+export const handler = async () => {
     try {
-        const testEnv = 'test' + utcTimestamp()
-        await create({ newEnvId: testEnv })
-        await drop({ envId: testEnv })
-        log.info(`${testEnv} environment deleted in contentful.`)
+        const testEnv = 'test' + utcTimestamp();
+        await create({ newEnvId: testEnv });
+        await drop({ envId: testEnv });
+        log.info(`${testEnv} environment deleted in contentful.`);
     } catch (e) {
-        log.error(e)
-        process.exitCode = 1
+        log.error(e);
+        process.exitCode = 1;
     }
-}
+};
