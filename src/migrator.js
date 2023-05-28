@@ -9,7 +9,7 @@ import * as spaceModule from '../lib/contentful-space-manager.js'
 import env from '../lib/env.js'
 import serialize from 'serialize-javascript'
 import tmp from 'tmp'
-import {    updateBookkeeping,
+import { updateBookkeeping,
     initBookkeeping,
     getMigrationTimestampsForBatch,
     getLatestBatchNumber,

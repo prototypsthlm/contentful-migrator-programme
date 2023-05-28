@@ -1,7 +1,7 @@
-import { join } from 'path';
+import { join } from 'path'
 import { runMigration } from 'contentful-migration/built/bin/cli.js'
 import env from '../lib/env.js'
-import log from '../lib/log.js';
+import log from '../lib/log.js'
 
 const APPLIED_MIGRATIONS_TYPE_ID = env('APPLIED_MIGRATIONS_TYPE_ID')
 
