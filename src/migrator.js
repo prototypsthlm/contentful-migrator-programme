@@ -1,10 +1,10 @@
 import dotenv from 'dotenv'
 dotenv.config()
 
-import * as fs from "fs";
-import { join } from 'path';
+import * as fs from "fs"
+import { join } from 'path'
 import { runMigration } from 'contentful-migration/built/bin/cli.js'
-import { utcTimestamp } from '../lib/date.js';
+import { utcTimestamp } from '../lib/date.js'
 import * as spaceModule from '../lib/contentful-space-manager.js'
 import env from '../lib/env.js'
 import serialize from 'serialize-javascript'
@@ -14,8 +14,8 @@ import { updateBookkeeping,
     getMigrationTimestampsForBatch,
     getLatestBatchNumber,
     getMigratedTimestamps,} from './bookkeeping.js'
-import chalk from "chalk";
-import * as log from '../lib/log.js';
+import chalk from "chalk"
+import * as log from '../lib/log.js'
 
 const MIGRATIONS_DIR = join(process.cwd(), env('MIGRATIONS_DIR'))
 const MAX_NUMBER_OF_ENVIRONMENTS = parseInt(env('MAX_NUMBER_OF_ENVIRONMENTS'))
