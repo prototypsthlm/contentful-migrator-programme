@@ -1,7 +1,10 @@
-import { join } from 'path'
-import { runMigration } from 'contentful-migration/built/bin/cli.js'
+import path, { join } from 'path'
+//import { runMigration } from 'contentful-migration/built/bin/cli.js'
+//import {runMigration} from "contentful-migration";
+import * as migrations from 'contentful-cli/dist/lib/cmds/space_cmds/migration.js'
 import env from '../lib/env.js'
 import log from '../lib/log.js'
+import {fileURLToPath} from "url";
 
 const APPLIED_MIGRATIONS_TYPE_ID = env('APPLIED_MIGRATIONS_TYPE_ID')
 
@@ -38,13 +41,37 @@ export const updateBookkeeping = async (space, migratedMigrations, options = {})
 }
 
 export const migrateMigrationsType = async (envId) => {
-    await runMigration({
+    const __dirname = path.dirname(fileURLToPath(import.meta.url))
+    //const { managementToken, activeSpaceId, activeEnvironmentId, proxy, rawProxy } = context;
+    log.info("migrating migrations type")
+    log.info(env('CTF_CMA_TOKEN'))
+
+
+    const options = {
         filePath: join(__dirname, 'migrations-type.js'),
         spaceId: env('CTF_SPACE_ID'),
+        activeSpaceId: env('CTF_SPACE_ID'),
         accessToken: env('CTF_CMA_TOKEN'),
+        managementToken: env('CTF_CMA_TOKEN'),
         environmentId: envId,
+        activeEnvironmentId: envId,
         yes: true,
-    })
+    }
+
+    log.info("options: " + options.accessToken)
+
+    await migrations.migration(
+/*        {
+        filePath: join(__dirname, 'migrations-type.js'),
+        spaceId: env('CTF_SPACE_ID'),
+        activeSpaceId: env('CTF_SPACE_ID'),
+        accessToken: env('CTF_CMA_TOKEN'),
+        managementToken: env('CTF_CMA_TOKEN'),
+        environmentId: envId,
+        activeEnvironmentId: envId,
+        yes: true,
+    }*/options
+    )
 }
 
 export const getLatestBatchNumber = async (space) => {

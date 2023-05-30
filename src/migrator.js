@@ -3,9 +3,8 @@ dotenv.config()
 
 import * as fs from "fs"
 import { join } from 'path'
-import { runMigration } from 'contentful-migration/built/bin/cli.js'
 import { utcTimestamp } from '../lib/date.js'
-import * as spaceModule from '../lib/contentful-space-manager.js'
+import spaceModule from '../lib/contentful-space-manager.js'
 import env from '../lib/env.js'
 import serialize from 'serialize-javascript'
 import tmp from 'tmp'
@@ -16,6 +15,7 @@ import { updateBookkeeping,
     getMigratedTimestamps,} from './bookkeeping.js'
 import chalk from "chalk"
 import * as log from '../lib/log.js'
+import * as runMigrations from 'contentful-cli/dist/lib/cmds/space_cmds/migration.js'
 
 const MIGRATIONS_DIR = join(process.cwd(), env('MIGRATIONS_DIR'))
 const MAX_NUMBER_OF_ENVIRONMENTS = parseInt(env('MAX_NUMBER_OF_ENVIRONMENTS'))
@@ -97,8 +97,9 @@ const extractFunctionToSeparateFile = (filePath, direction) => {
 }
 
 export const runMigrations = async (migrations, envId) => {
+    console.log(env('CTF_CMA_TOKEN'))
     for (const migration of migrations) {
-        await runMigration({
+        await runMigrations.migration({
             filePath: migration.fileName,
             spaceId: env('CTF_SPACE_ID'),
             accessToken: env('CTF_CMA_TOKEN'),

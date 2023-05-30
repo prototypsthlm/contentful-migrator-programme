@@ -5,7 +5,7 @@ const { join } = require('path')
 describe('generate', () => {
     it('should create a new migration file', async () => {
         const migrationName = 'test-migration'
-        const { stdout } = await execa('cmp', ['generate', migrationName])
+        const { stdout } = await execa.node('./bin/cmp.js', ['generate', migrationName])
 
         const migrationFileName = stdout.split(' ').find((m) => m.indexOf('js') > -1)
         const migrationFile = fs.readFileSync(`${process.env.MIGRATIONS_DIR}/${migrationFileName}`, 'utf-8')
