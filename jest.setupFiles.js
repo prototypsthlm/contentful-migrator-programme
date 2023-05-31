@@ -1,8 +1,14 @@
-const fs = require('fs')
-const Path = require('path')
+import fs from "fs"
+import * as Path from "path"
+
+import * as dotenv from 'dotenv';
+
+dotenv.config({ path: './.env.test' });
 
 beforeAll(() => {
-    process.env.MIGRATIONS_DIR = '__test-migrations__'
+    //process.env.MIGRATIONS_DIR = '__test-migrations__'
+    dotenv.config({ path: './.env.test' });
+
 })
 
 afterAll(() => {

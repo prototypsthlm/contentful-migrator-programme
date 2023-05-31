@@ -15,11 +15,12 @@ export const builder = (_) => {}
 export const handler = async () => {
     try {
         const space = await spaceModule(env('CTF_SPACE_ID'), env('CTF_ENVIRONMENT_ID'), env('CTF_CMA_TOKEN'))
+        log.info("space id: ", env('CTF_SPACE_ID'))
+        log.info("space", JSON.stringify(space, null, 2))
         const appliedMigrations = await list(space)
         appliedMigrations.sort((a, b) => b.timestamp.localeCompare(a.timestamp))
         if (appliedMigrations.length) {
             log.info('Applied migrations:')
-            console.group()
             appliedMigrations.forEach((m) => {
                 log.info(m)
             })

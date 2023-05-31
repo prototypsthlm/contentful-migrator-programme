@@ -14,8 +14,11 @@ import { updateBookkeeping,
     getLatestBatchNumber,
     getMigratedTimestamps,} from './bookkeeping.js'
 import chalk from "chalk"
-import * as log from '../lib/log.js'
-import * as runMigrations from 'contentful-cli/dist/lib/cmds/space_cmds/migration.js'
+import log from '../lib/log.js'
+//todo: The "id" argument must be of type string? because of broken migration file?
+import { runMigration as ctfRunMigrations} from 'contentful-migration/built/bin/cli.js'
+//import {migration} from "../migrations/20230602075003097-inititial-migration.cjs";
+//import {runMigration as ctfRunMigrations} from '../node_modules/contentful-migration/built/bin/cli.js'
 
 const MIGRATIONS_DIR = join(process.cwd(), env('MIGRATIONS_DIR'))
 const MAX_NUMBER_OF_ENVIRONMENTS = parseInt(env('MAX_NUMBER_OF_ENVIRONMENTS'))
@@ -38,9 +41,11 @@ const getNameFromFileName = (filename) => {
 }
 
 const getMigrationsToHandle = async (space, options = {}) => {
+    //todo: might fail here?
     // Take only `19990101235959111-migration-name.js` files
-    const allMigrations = fs.readdirSync(MIGRATIONS_DIR).filter((file) => /^\d{17}.*\.js$/.test(file))
-
+    const allMigrations = fs.readdirSync(MIGRATIONS_DIR).filter((file) => /^\d{17}.*\.cjs$/.test(file))
+    log.info("allMigrations: " + allMigrations.length)
+    log.info("allMigrations: " + JSON.stringify(allMigrations[0], null, 2))
     // Rolling back
     if (options.rollback) {
         if (options.targetMigrationTimestamp) {
@@ -55,8 +60,12 @@ const getMigrationsToHandle = async (space, options = {}) => {
             const timestamp = getTimestampFromFileName(file)
             return timestamp && latestBatchMigrationTimestamps.includes(timestamp)
         })
-
-        return fullMigrationsToRun.map(getDownMigration)
+        log.info("END")
+        log.info("fullMigrationsToRun: " + fullMigrationsToRun.length)
+        log.info("fullMigrationsToRun: " + JSON.stringify(fullMigrationsToRun[0], null, 2))
+        let getDownRes = await getDownMigration
+        log.info("getDownMigration: ", getDownRes)
+        return fullMigrationsToRun.map(await getDownMigration)
     }
 
     // Rolling forward
@@ -70,6 +79,7 @@ const getMigrationsToHandle = async (space, options = {}) => {
 }
 
 export const getAppliedMigrations = async (space) => {
+    log.info("getAppliedMigrations from space: " + space.spaceId)
     const migratedTimestamps = await getMigratedTimestamps(space)
     return fs
         .readdirSync(MIGRATIONS_DIR)
@@ -80,26 +90,43 @@ export const getAppliedMigrations = async (space) => {
         .map((file) => new Migration(file, getTimestampFromFileName(file), getNameFromFileName(file)))
 }
 
-const getUpMigration = (migrationFunction) => extractFunctionToSeparateFile(migrationFunction, 'up')
+const getUpMigration = async(migrationFunction) => await extractFunctionToSeparateFile(migrationFunction, 'up')
 
-const getDownMigration = (migrationFunction) => extractFunctionToSeparateFile(migrationFunction, 'down')
+const getDownMigration = async(migrationFunction) => await extractFunctionToSeparateFile(migrationFunction, 'down')
 
-const extractFunctionToSeparateFile = (filePath, direction) => {
-    const upAndDownFunctions = require(join(MIGRATIONS_DIR, filePath))
-    if (!(upAndDownFunctions.up && upAndDownFunctions.down)) {
+const extractFunctionToSeparateFile = async (filePath, direction) => {
+    //needs to be dynamic import, the below row used require before
+    //const {up, down} = await import(join(MIGRATIONS_DIR, filePath))
+    log.info("filepath: ", join(MIGRATIONS_DIR, filePath))
+    //const {migration} = require(join(MIGRATIONS_DIR, filePath))
+    let path = join(MIGRATIONS_DIR, filePath)
+    const temp = await import(path)
+    log.info("********")
+    log.info(JSON.stringify(temp.default, null, 2))
+    log.info("********")
+    //migration.test()
+    log.info("imported migration: ", JSON.stringify(temp, null, 2))
+    //const upAndDownFunctions = from 'upAndDownFunctionsDir'
+    /*up()
+    down()*/
+
+    if (!(temp.up && temp.down)) {
         throw new Error("Each migration module needs to declare both 'up' and 'down' functions")
     }
-    const serializedFunction = `module.exports = ${serialize(upAndDownFunctions[direction])}`
+    //todo: support both functions
+    const serializedFunction = `module.exports = ${serialize(temp[direction])}`
     const partialMigrationFile = tmp.fileSync({ prefix: `up-${filePath}`, postfix: '.js' })
+    log.info("partialMigrationFile: " + JSON.stringify(partialMigrationFile, null, 2))
     fs.writeFileSync(partialMigrationFile.name, serializedFunction)
 
     return new Migration(partialMigrationFile.name, getTimestampFromFileName(filePath), getNameFromFileName(filePath))
 }
 
 export const runMigrations = async (migrations, envId) => {
-    console.log(env('CTF_CMA_TOKEN'))
+    log.info(`Running ${migrations.length} migrations...`)
     for (const migration of migrations) {
-        await runMigrations.migration({
+        log.info(`Running migration in loop: ${JSON.stringify(migration, null,2)}`)
+        await ctfRunMigrations({
             filePath: migration.fileName,
             spaceId: env('CTF_SPACE_ID'),
             accessToken: env('CTF_CMA_TOKEN'),
@@ -120,9 +147,11 @@ class Migration {
 }
 
 const migrate = async (space, options = {}) => {
+    log.info("Migrating....")
     await initBookkeeping(space)
 
     const migrationsToApply = await getMigrationsToHandle(space, options)
+    log.info("migrationToApply: " + JSON.stringify(migrationsToApply, null, 2))
 
     if (!migrationsToApply.length) {
         log.info(`No migrations to ${options.rollback ? 'rollback' : 'apply'}.`)
@@ -182,6 +211,7 @@ export const apply = async (options = {}) => {
     const space = await spaceModule(env('CTF_SPACE_ID'), env('CTF_ENVIRONMENT_ID'), env('CTF_CMA_TOKEN'))
 
     await initBookkeeping(space)
+    log.info("bookeeping done")
 
     const migrationsToHandle = await getMigrationsToHandle(space, options)
 
@@ -197,11 +227,14 @@ export const apply = async (options = {}) => {
     }
 
     if (env('CTF_ENVIRONMENT_ID') === 'master') {
+        log.info("runnig towards master env")
         const newEnvId = utcTimestamp({ dashes: true })
 
         try {
             await failIfNoAvailableEnvironments(space)
+            log.info("env available")
             const spaceNewEnv = await createEnv(space, newEnvId)
+            log.info("beginning migration....")
             await migrate(spaceNewEnv, options)
             await switchEnvAliasAndDropOldEnv(space, newEnvId)
             return

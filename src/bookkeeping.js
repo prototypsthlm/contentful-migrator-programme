@@ -1,7 +1,6 @@
-import path, { join } from 'path'
-//import { runMigration } from 'contentful-migration/built/bin/cli.js'
-//import {runMigration} from "contentful-migration";
-import * as migrations from 'contentful-cli/dist/lib/cmds/space_cmds/migration.js'
+import path, {join} from 'path'
+//import * as ctfRunMigrations from 'contentful-cli/dist/lib/cmds/space_cmds/migration.js'
+import {runMigration} from '../node_modules/contentful-migration/built/bin/cli.js'
 import env from '../lib/env.js'
 import log from '../lib/log.js'
 import {fileURLToPath} from "url";
@@ -42,35 +41,16 @@ export const updateBookkeeping = async (space, migratedMigrations, options = {})
 
 export const migrateMigrationsType = async (envId) => {
     const __dirname = path.dirname(fileURLToPath(import.meta.url))
-    //const { managementToken, activeSpaceId, activeEnvironmentId, proxy, rawProxy } = context;
+
     log.info("migrating migrations type")
-    log.info(env('CTF_CMA_TOKEN'))
-
-
-    const options = {
-        filePath: join(__dirname, 'migrations-type.js'),
-        spaceId: env('CTF_SPACE_ID'),
-        activeSpaceId: env('CTF_SPACE_ID'),
-        accessToken: env('CTF_CMA_TOKEN'),
-        managementToken: env('CTF_CMA_TOKEN'),
-        environmentId: envId,
-        activeEnvironmentId: envId,
-        yes: true,
-    }
-
-    log.info("options: " + options.accessToken)
-
-    await migrations.migration(
-/*        {
-        filePath: join(__dirname, 'migrations-type.js'),
-        spaceId: env('CTF_SPACE_ID'),
-        activeSpaceId: env('CTF_SPACE_ID'),
-        accessToken: env('CTF_CMA_TOKEN'),
-        managementToken: env('CTF_CMA_TOKEN'),
-        environmentId: envId,
-        activeEnvironmentId: envId,
-        yes: true,
-    }*/options
+    await runMigration(
+        {
+            filePath: join(__dirname, 'migrations-type.js'),
+            spaceId: env('CTF_SPACE_ID'),
+            managementToken: env('CTF_CMA_TOKEN'),
+            environmentId: envId,
+            yes: true,
+        }
     )
 }
 
@@ -82,12 +62,15 @@ export const getLatestBatchNumber = async (space) => {
 }
 
 export const getMigrationTimestampsForBatch = async (space, batchNumber) => {
-    return (await space.getEntries(APPLIED_MIGRATIONS_TYPE_ID, { 'fields.batch': batchNumber })).map(
+    return (await space.getEntries(APPLIED_MIGRATIONS_TYPE_ID, {'fields.batch': batchNumber})).map(
         (item) => item.fields.timestamp[space.locale]
     )
 }
 
 export const getAppliedMigrationEntries = async (space) => {
+    log.info("getting applied migrations")
+    //log.info(APPLIED_MIGRATIONS_TYPE_ID)
+    //log.info(JSON.stringify(space, null, 2))
     return space.getEntries(APPLIED_MIGRATIONS_TYPE_ID)
 }
 
