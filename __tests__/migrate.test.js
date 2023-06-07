@@ -1,4 +1,4 @@
-const execa = require('execa')
+const { execa } = require("execa");
 
 describe('migrate', () => {
     it('should demand user to use "--force" flag if running against master space', async () => {
