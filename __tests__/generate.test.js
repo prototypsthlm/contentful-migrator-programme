@@ -1,4 +1,4 @@
-const execa = require('execa')
+const { execa } = require("execa");
 const fs = require('fs')
 const { join } = require('path')
 

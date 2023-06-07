@@ -38,13 +38,15 @@
         "yargs": "^17.1.1"
     },
     "devDependencies": {
-        "execa": "^7.1.1",
+        "execa": "npm:@esm2cjs/execa@^6.1.1-cjs.1",
         "jest": "^29.0.2",
         "prettier": "^2.1.1",
         "standard-version": "^9.3.1"
     },
     "jest": {
+        "transform": {},
         "verbose": true,
+        "testEnvironment": "jest-environment-node",
         "setupFilesAfterEnv": [
             "./jest.setupFiles.js"
         ]
