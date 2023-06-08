@@ -2,7 +2,11 @@ const fs = require('fs')
 const Path = require('path')
 
 beforeAll(() => {
-    process.env.MIGRATIONS_DIR = '__test-migrations__'
+    let migrationsDir = '__test-migrations__'
+    if (!fs.existsSync(migrationsDir)){
+        fs.mkdirSync(migrationsDir);
+    }
+    process.env.MIGRATIONS_DIR = migrationsDir
 })
 
 afterAll(() => {
