@@ -103,6 +103,13 @@ Creates environment from CTF_ENVIRONMENT_ID, applies new migrations, and drops t
 
 Now anything you modify in the locally cloned package will be instantly available in the test project to test.
 
+## Testing
+
+todo: write about required test vars and how to create an environment 
+
+1. create a new environment in contentful, preferably with a name that starts with "test" and set it as CTF_ENVIRONMENT_ID in the .env.test file
+2. create a new personal access token to be used in the tests and set it as CTF_CMA_TOKEN in the .env.test file
+
 ## Roadmap
 - [x]  Track migrated migrations with a migration type
 - [x]  Generate migration command.
