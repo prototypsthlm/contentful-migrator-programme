@@ -2,3 +2,5 @@
 .env
 .env.test
 .idea/
+
+traffic/output/
