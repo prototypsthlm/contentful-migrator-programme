@@ -55,7 +55,7 @@ module.exports.writeTrafficToFile = () => {
     }
 
     let currentTime = new Date().getTime().toString()
-    let filePath = path.resolve(__dirname, `traffic-${currentTime}.json`)
+    let filePath = path.resolve(__dirname, `output/traffic-${currentTime}.json`)
     let jsonString = JSON.stringify(json, null, 2)
 
     fs.writeFileSync(
