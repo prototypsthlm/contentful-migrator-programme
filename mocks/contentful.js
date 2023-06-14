@@ -34,6 +34,8 @@ module.exports.setupMockedContentfulApi = () => {
 //todo: use env vars for space id
 const baseURL = 'https://api.contentful.com/spaces/bo6ijs14u5ox'
 
+//todo: these handlers correspond to a migrate cmd
+//todo: we need to be able to support different response types (migrated, non migrated etc)
 const handlers = [
     //spaces
     rest.get(`${baseURL}`, (req, res, ctx) => {
@@ -43,7 +45,9 @@ const handlers = [
         )
     }),
 
-    rest.get(`${baseURL}/environments/master/entries?content_type=appliedMigrations&limit=1000`, (req, res, ctx) => {
+    //prev query params
+    //?content_type=appliedMigrations&limit=1000
+    rest.get(`${baseURL}/environments/master/entries`, (req, res, ctx) => {
         return res(
             ctx.status(200),
             ctx.json(test),

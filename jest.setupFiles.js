@@ -3,4 +3,4 @@ const {setupInterceptorServer} = require("./traffic/interceptor");
 
 dotenv.config({ path: './.env.test' });
 
-setupInterceptorServer() //todo: only for testing
+//setupInterceptorServer() //todo: only for testing

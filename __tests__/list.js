@@ -1,11 +1,13 @@
-const {execa} = require("execa");
+const {execaNode} = require("execa");
 const {apply} = require("../src/migrator");
 const fs = require('fs')
 const {join} = require("path");
 const {createSimpleMigrationFile} = require("../__test-utils__/20230602075003099-migration-name");
+const {setupMockedContentfulApi} = require("../mocks/contentful");
 describe('list', () => {
     it('should log that no migrations are applied', async () => {
-        const {stdout} = await execa('./bin/cmp.js', ['list'])
+        setupMockedContentfulApi()
+        const {stdout} = await execaNode('./bin/cmp.js', ['list'])
         expect(stdout).toMatch('Found no applied migrations')
     });
 
@@ -17,9 +19,9 @@ describe('list', () => {
         expect(stdout).toMatch('Applied migrations:')
 
         //todo: teardown / rollback migration
-        await apply({rollback: true} )
+        /!*await apply({rollback: true} )
         stdout  = await execa('./bin/cmp.js', ['list'])
-        expect(stdout).toMatch('Found no applied migrations')
+        expect(stdout).toMatch('Found no applied migrations')*!/
     });*/
 })
 
