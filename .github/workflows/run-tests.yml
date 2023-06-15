@@ -29,3 +29,4 @@ jobs:
                 MIGRATIONS_DIR: __test-migrations__
                 CTF_SPACE_ID: bo6ijs14u5ox
                 CTF_ENVIRONMENT_ID: master
+                CTF_CMA_TOKEN: dummy_token
