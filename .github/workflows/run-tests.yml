@@ -27,3 +27,4 @@ jobs:
               run: npm test
               env:
                 MIGRATIONS_DIR: __test-migrations__
+                CTF_SPACE_ID: master
