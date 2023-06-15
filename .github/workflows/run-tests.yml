@@ -26,4 +26,4 @@ jobs:
             - name: Run tests
               run: npm test
               env:
-                MIGRATIONS_DIR:__test-migrations__
+                MIGRATIONS_DIR: __test-migrations__
