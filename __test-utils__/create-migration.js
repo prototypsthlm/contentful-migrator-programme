@@ -20,7 +20,7 @@ module.exports.createSimpleMigrationFile = () => {
         migration.deleteContentType('testContentType')
     }`;
     const migrationsDir = process.env.MIGRATIONS_DIR
-    const migrationFileName = '20230602075003099-migration-name.js'
+    const migrationFileName = 'create-migration.js'
     const migrationPath = join(migrationsDir, migrationFileName)
 
     fs.writeFile(migrationPath, content, (err) => {

@@ -1,16 +1,20 @@
 const { execaNode
 } = require("execa");
+const {handler: migrateCommand} = require("../bin/commands/migrate");
+const {extractLogLinesFromConsole} = require("../__test-utils__/log");
 
 describe('migrate', () => {
     it('should demand user to use "--force" flag if running against master space', async () => {
-        process.env.CTF_ENVIRONMENT_ID = 'master'
-        const { stdout } = await execaNode('./bin/cmp.js', ['migrate'])
-        expect(stdout).toMatch('Executing migrations against master requires the --force flag.')
+        const stdout = extractLogLinesFromConsole();
+        await migrateCommand(false)
+        expect(stdout).toContain("Executing migrations against master requires the --force flag.")
+        console.log(stdout)
     })
 
-    it('apply migrations when supplying the --force flag', async () => {
+    //todo: implement
+/*    it('apply migrations when supplying the --force flag', async () => {
         process.env.CTF_ENVIRONMENT_ID = 'master'
         const { stdout } = await execaNode('./bin/cmp.js', ['migrate --force'])
         //expect(stdout).toMatch('Executing migrations against master requires the --force flag.')
-    })
+    })*/
 })

@@ -48,6 +48,7 @@
         "transform": {},
         "verbose": true,
         "testEnvironment": "jest-environment-node",
+        "silent": false,
         "setupFiles": [
             "./jest.setupFiles.js"
         ],
