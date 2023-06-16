@@ -1,3 +1,5 @@
+//todo: refactor responses to own files, local to their handlers
+
 //https://api.contentful.com/spaces/bo6ijs14u5ox
 module.exports.spacesResponseBody = {
     "name": "spaceName",
@@ -32,7 +34,7 @@ module.exports.spacesResponseBody = {
 }
 
 //https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/entries?content_type=appliedMigrations&limit=1000
-module.exports.test = {
+module.exports.entiresResponseBody = {
     "sys": {
         "type": "Array"
     },

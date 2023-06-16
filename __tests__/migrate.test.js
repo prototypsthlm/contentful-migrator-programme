@@ -2,8 +2,12 @@ const { execaNode
 } = require("execa");
 const {handler: migrateCommand} = require("../bin/commands/migrate");
 const {extractLogLinesFromConsole} = require("../__test-utils__/log");
+const {setupMockedContentfulApi} = require("../mocks/contentful");
+const {defaultHandler} = require("../mocks/handlers/generic/genericResponseHandler");
 
 describe('migrate', () => {
+    setupMockedContentfulApi(defaultHandler)
+
     it('should demand user to use "--force" flag if running against master space', async () => {
         const stdout = extractLogLinesFromConsole();
         await migrateCommand(false)

@@ -1,8 +1,11 @@
 const {setupMockedContentfulApi} = require("../mocks/contentful");
 const {handler: listCommand} = require("../bin/commands/list");
 const {extractLogLinesFromConsole} = require("../__test-utils__/log");
+const {defaultHandler} = require("../mocks/handlers/generic/genericResponseHandler");
 
 describe('list', () => {
+    setupMockedContentfulApi(defaultHandler)
+
     it('should log that no migrations are applied', async () => {
         const stdout = extractLogLinesFromConsole();
         await listCommand()
