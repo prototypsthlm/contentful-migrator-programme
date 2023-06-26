@@ -14,7 +14,7 @@ const {
     getLatestBatchNumber,
     getMigratedTimestamps,
 } = require('./bookkeeping')
-const chalk = require('chalk')
+const pc = require('picocolors')
 const log = require('../lib/log')
 
 const MIGRATIONS_DIR = join(process.cwd(), env('MIGRATIONS_DIR'))
@@ -230,7 +230,7 @@ const create = async ({ newEnvId }) => {
 
         console.group()
         log.success('###########################################')
-        log.success(`Contentful test environment \`${chalk.blue(newEnvId)}\` created`)
+        log.success(`Contentful test environment \`${pc.blue(newEnvId)}\` created`)
         log.success('###########################################')
         console.groupEnd()
 

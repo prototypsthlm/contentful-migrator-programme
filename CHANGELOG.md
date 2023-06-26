@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/prototypsthlm/contentful-migrator-programme/compare/v0.2.0...v0.3.0) (2023-06-26)
+
+
+### Features
+
+* replace chalk with cjs compatible picocolors ([#297](https://github.com/prototypsthlm/contentful-migrator-programme/issues/297)) ([63ab571](https://github.com/prototypsthlm/contentful-migrator-programme/commit/63ab571f5cd761cbc1eac24220b994ef74ab96dd))
+
+
+### Bug Fixes
+
+* Readme code comment typo in setup section ([#299](https://github.com/prototypsthlm/contentful-migrator-programme/issues/299)) ([36363e1](https://github.com/prototypsthlm/contentful-migrator-programme/commit/36363e17762a815a2d79aa277ada4172d2f52824))
+* rename master to main ([#301](https://github.com/prototypsthlm/contentful-migrator-programme/issues/301)) ([809a89c](https://github.com/prototypsthlm/contentful-migrator-programme/commit/809a89c3fa56e776c24fdb4ae21edee7b0fea43e))
+
 ## [0.2.0](https://github.com/prototypsthlm/contentful-migrator-programme/compare/v0.1.0...v0.2.0) (2022-12-28)
 
 
