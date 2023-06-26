@@ -7,6 +7,7 @@ describe('list', () => {
     setupMockedContentfulApi(defaultHandler)
 
     it('should log that no migrations are applied', async () => {
+
         const stdout = extractLogLinesFromConsole();
         await listCommand()
         expect(stdout).toContain("Found no applied migrations")

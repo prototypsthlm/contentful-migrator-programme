@@ -12,7 +12,6 @@ describe('migrate', () => {
         const stdout = extractLogLinesFromConsole();
         await migrateCommand(false)
         expect(stdout).toContain("Executing migrations against master requires the --force flag.")
-        console.log(stdout)
     })
 
     //todo: implement

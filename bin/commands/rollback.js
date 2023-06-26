@@ -5,6 +5,7 @@ const { apply, list } = require('../../src/migrator')
 const env = require('../../lib/env')
 const cliSelect = require('cli-select')
 const spaceModule = require('../../lib/contentful-space-manager')
+const log = require("../../lib/log");
 
 exports.command = 'rollback'
 
@@ -27,7 +28,7 @@ exports.builder = (yargs) => {
 exports.handler = async ({ force, interactive }) => {
     try {
         if (env('CTF_ENVIRONMENT_ID') === 'master' && !force) {
-            console.error('Executing migrations against master requires the --force flag.')
+            log.error('Executing migrations against master requires the --force flag.')
             return
         }
 
@@ -46,7 +47,7 @@ const runInteractive = async () => {
     const space = await spaceModule(env('CTF_SPACE_ID'), env('CTF_ENVIRONMENT_ID'), env('CTF_CMA_TOKEN'))
     const appliedMigrations = await list(space)
     if (!appliedMigrations.length) {
-        console.log('Found no applied migrations')
+        log.info('Found no applied migrations')
         return
     }
 

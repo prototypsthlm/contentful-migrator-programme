@@ -1,5 +1,5 @@
+//utility to get all console log messages in a test context
 module.exports.extractLogLinesFromConsole = () => {
-    //todo: remove encodings from Chalk
     const originalLog = console.log;
     const allLogMessages = [];
     console.log = (...args) => {
