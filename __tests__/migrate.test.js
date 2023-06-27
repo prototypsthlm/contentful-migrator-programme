@@ -2,7 +2,7 @@ const { execaNode
 } = require("execa");
 const {handler: migrateCommand} = require("../bin/commands/migrate");
 const {extractLogLinesFromConsole} = require("../__test-utils__/log");
-const {setupMockedContentfulApi} = require("../mocks/baseContentfulHandler");
+const {setupMockedContentfulApi} = require("../mocks/contentful/baseContentfulHandler");
 
 describe('migrate', () => {
     setupMockedContentfulApi()

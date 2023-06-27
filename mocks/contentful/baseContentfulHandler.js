@@ -1,6 +1,6 @@
 //overrides network calls to contentful for testing purposes
 const {setupServer} = require('msw/node')
-const log = require("../lib/log");
+const log = require("../../lib/log");
 const {rest} = require("msw");
 
 let mockedContentfulServer = null
@@ -43,7 +43,7 @@ module.exports.closeMockedContentfulApi = () => {
 }
 
 //todo: make it clear that env var must match the one in the mock
-module.exports.baseURL = 'https://api.contentful.com/spaces/bo6ijs14u5ox'
+module.exports.baseURL = 'https://api.contentful.com/spaces/TEST_SPACE_ID'
 
 const spacesHandler = [
     rest.get(`${this.baseURL}`, (req, res, ctx) => {
@@ -74,12 +74,12 @@ const masterEnvironmentHandler = [
 
 //Region: response bodies
 
-//https://api.contentful.com/spaces/bo6ijs14u5ox
+//https://api.contentful.com/spaces/TEST_SPACE_ID
 const spacesResponseBody = {
     "name": "spaceName",
     "sys": {
         "type": "Space",
-        "id": "bo6ijs14u5ox",
+        "id": "TEST_SPACE_ID",
         "version": 7,
         "createdBy": {
             "sys": {
@@ -107,7 +107,7 @@ const spacesResponseBody = {
     }
 }
 
-//https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/locales
+//https://api.contentful.com/spaces/TEST_SPACE_ID/environments/master/locales
 const localeResponseBody = {
     "sys": {
         "type": "Array"
@@ -133,7 +133,7 @@ const localeResponseBody = {
                     "sys": {
                         "type": "Link",
                         "linkType": "Space",
-                        "id": "bo6ijs14u5ox"
+                        "id": "TEST_SPACE_ID"
                     }
                 },
                 "environment": {
@@ -165,7 +165,7 @@ const localeResponseBody = {
     ]
 }
 
-//https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master
+//https://api.contentful.com/spaces/TEST_SPACE_ID/environments/master
 const masterEnvironmentResponseBody = {
     "name": "2023-06-14-08-27-25",
     "sys": {
@@ -183,7 +183,7 @@ const masterEnvironmentResponseBody = {
             "sys": {
                 "type": "Link",
                 "linkType": "Space",
-                "id": "bo6ijs14u5ox"
+                "id": "TEST_SPACE_ID"
             }
         },
         "status": {

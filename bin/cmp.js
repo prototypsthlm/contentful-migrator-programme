@@ -1,5 +1,5 @@
 const {setupInterceptorServer} = require("../traffic/interceptor");
-const {setupMockedContentfulApi} = require("../mocks/baseContentfulHandler");
+const {setupMockedContentfulApi} = require("../mocks/contentful/baseContentfulHandler");
 
 //setupInterceptorServer() //todo: only for testing
 

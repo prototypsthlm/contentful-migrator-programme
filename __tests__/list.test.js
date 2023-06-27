@@ -1,8 +1,8 @@
-const {setupMockedContentfulApi, closeMockedContentfulApi} = require("../mocks/baseContentfulHandler");
+const {setupMockedContentfulApi, closeMockedContentfulApi} = require("../mocks/contentful/baseContentfulHandler");
 const {handler: listCommand} = require("../bin/commands/list");
 const {extractLogLinesFromConsole} = require("../__test-utils__/log");
-const {listOneMigrationAppliedHandler} = require("../mocks/handlers/list/oneAppliedMigrationsHandler");
-const {listNoAppliedMigrationHandler} = require("../mocks/handlers/list/noAppliedMigrationsHandler");
+const {listOneMigrationAppliedHandler} = require("../mocks/contentful/handlers/list/oneAppliedMigrationsHandler");
+const {listNoAppliedMigrationHandler} = require("../mocks/contentful/handlers/list/noAppliedMigrationsHandler");
 const {createSimpleMigrationFile} = require("../__test-utils__/create-migration");
 const {readdirSync} = require("fs");
 
