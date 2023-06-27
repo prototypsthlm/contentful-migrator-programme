@@ -1,9 +1,10 @@
-//overrides network calls to contentful for testing purposes
 const {setupServer} = require('msw/node')
 const log = require("../../lib/log");
 const {rest} = require("msw");
 
 let mockedContentfulServer = null
+
+module.exports.baseURL = 'https://api.contentful.com/spaces/TEST_SPACE_ID'
 
 module.exports.setupMockedContentfulApi = (handlers) => {
     if (handlers == null) {
@@ -41,9 +42,6 @@ module.exports.closeMockedContentfulApi = () => {
         mockedContentfulServer.close()
     }
 }
-
-//todo: make it clear that env var must match the one in the mock
-module.exports.baseURL = 'https://api.contentful.com/spaces/TEST_SPACE_ID'
 
 const spacesHandler = [
     rest.get(`${this.baseURL}`, (req, res, ctx) => {

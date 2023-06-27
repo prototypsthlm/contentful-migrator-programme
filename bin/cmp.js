@@ -1,8 +1,3 @@
-const {setupInterceptorServer} = require("../traffic/interceptor");
-const {setupMockedContentfulApi} = require("../mocks/contentful/baseContentfulHandler");
-
-//setupInterceptorServer() //todo: only for testing
-
 require('yargs')
     .usage('Contentful migration tooling.')
     .commandDir('commands')

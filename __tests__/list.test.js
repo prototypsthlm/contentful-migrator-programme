@@ -7,10 +7,9 @@ const {createSimpleMigrationFile} = require("../__test-utils__/create-migration"
 const {readdirSync} = require("fs");
 
 describe('list', () => {
-    //setupMockedContentfulApi(defaultHandler)
     it('should log that no migrations are applied', async () => {
         setupMockedContentfulApi(listNoAppliedMigrationHandler)
-        numberOfMigrationsInMigrationsDir = readdirSync(process.env.MIGRATIONS_DIR).length;
+        let numberOfMigrationsInMigrationsDir = readdirSync(process.env.MIGRATIONS_DIR).length;
         expect(numberOfMigrationsInMigrationsDir).toBe(0)
 
         const stdout = extractLogLinesFromConsole();
@@ -22,9 +21,8 @@ describe('list', () => {
     it('should log that migrations are applied', async () => {
         setupMockedContentfulApi(listOneMigrationAppliedHandler)
 
-        //todo: use the actual generate code to create the file
         createSimpleMigrationFile()
-        numberOfMigrationsInMigrationsDir = readdirSync(process.env.MIGRATIONS_DIR).length;
+        let numberOfMigrationsInMigrationsDir = readdirSync(process.env.MIGRATIONS_DIR).length;
         expect(numberOfMigrationsInMigrationsDir).toBe(1)
 
         const stdout = extractLogLinesFromConsole();
