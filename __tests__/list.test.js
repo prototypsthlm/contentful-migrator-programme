@@ -4,6 +4,7 @@ const {extractLogLinesFromConsole} = require("../__test-utils__/log");
 const {listOneMigrationAppliedHandler} = require("../mocks/handlers/list/oneAppliedMigrationsHandler");
 const {listNoAppliedMigrationHandler} = require("../mocks/handlers/list/noAppliedMigrationsHandler");
 const {createSimpleMigrationFile} = require("../__test-utils__/create-migration");
+const {readdirSync} = require("fs");
 
 describe('list', () => {
     //setupMockedContentfulApi(defaultHandler)
