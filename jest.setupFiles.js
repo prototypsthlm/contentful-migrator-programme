@@ -1,24 +1,15 @@
-const fs = require('fs')
-const Path = require('path')
+const dotenv = require("dotenv");
+const {setupInterceptorServer} = require("./traffic/interceptor");
+dotenv.config({ path: './.env.test' });
 
-beforeAll(() => {
-    process.env.MIGRATIONS_DIR = '__test-migrations__'
-})
-
-afterAll(() => {
-    deleteFolderRecursive(process.env.MIGRATIONS_DIR)
-})
-
-const deleteFolderRecursive = function (path) {
-    if (fs.existsSync(path)) {
-        fs.readdirSync(path).forEach((file, index) => {
-            const curPath = Path.join(path, file)
-            if (fs.lstatSync(curPath).isDirectory()) {
-                deleteFolderRecursive(curPath)
-            } else {
-                fs.unlinkSync(curPath)
-            }
-        })
-        fs.rmdirSync(path)
-    }
-}
+//mock lib/log since encoding characters from chalk makes testing difficult
+jest.mock('./lib/log', () => {
+    console.log("Setting up mocked log")
+    return {
+        _esModule: false,
+        info: (...message) => console.log(...message),
+        success: (...message) => console.log(...message),
+        error: (...message) => console.log(...message),
+        warn: (...message) => console.log(...message),
+    };
+});

@@ -103,6 +103,18 @@ Creates environment from CTF_ENVIRONMENT_ID, applies new migrations, and drops t
 
 Now anything you modify in the locally cloned package will be instantly available in the test project to test.
 
+## Testing
+
+We use `Jest` for testing. Before the tests are run setup in `jest.setupFiles.js` and `jestSetupFilesAfterEnv.js` are being performed.
+
+`jest.setupFiles.js` overrides the .env file with the .env.test file. It also creates a utility mock of `console.log` to capture all console output but without any encoding characters from picocolor. 
+
+`jestSetupFilesAfterEnv.js` creates a test migration directory before the test suite is executed. The directory is removed after the test suite is executed.
+
+Before running the tests you need to create a `.env.test` file in the root of the project. Create a copy from `.env.test.template`
+
+Since the codebase is integrated with the `contenful-management` package we use a mock their api by using `mock service worker`. The mocks can be found in `mocks/contentful`. The `handlers` directory contains response handlers corresponding for each command in `cmd.js`
+
 ## Roadmap
 - [x]  Track migrated migrations with a migration type
 - [x]  Generate migration command.
