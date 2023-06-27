@@ -1,29 +1,36 @@
-const {setupMockedContentfulApi} = require("../mocks/contentful");
+const {setupMockedContentfulApi, closeMockedContentfulApi} = require("../mocks/baseContentfulHandler");
 const {handler: listCommand} = require("../bin/commands/list");
 const {extractLogLinesFromConsole} = require("../__test-utils__/log");
-const {defaultHandler} = require("../mocks/handlers/generic/genericResponseHandler");
+const {listOneMigrationAppliedHandler} = require("../mocks/handlers/list/oneAppliedMigrationsHandler");
+const {listNoAppliedMigrationHandler} = require("../mocks/handlers/list/noAppliedMigrationsHandler");
+const {createSimpleMigrationFile} = require("../__test-utils__/create-migration");
 
 describe('list', () => {
-    setupMockedContentfulApi(defaultHandler)
-
+    //setupMockedContentfulApi(defaultHandler)
     it('should log that no migrations are applied', async () => {
+        setupMockedContentfulApi(listNoAppliedMigrationHandler)
+        numberOfMigrationsInMigrationsDir = readdirSync(process.env.MIGRATIONS_DIR).length;
+        expect(numberOfMigrationsInMigrationsDir).toBe(0)
 
         const stdout = extractLogLinesFromConsole();
         await listCommand()
         expect(stdout).toContain("Found no applied migrations")
+        closeMockedContentfulApi()
     });
 
+    it('should log that migrations are applied', async () => {
+        setupMockedContentfulApi(listOneMigrationAppliedHandler)
 
-/*    it('should log that migrations are applied', async () => {
-        await createSimpleMigrationFile()
-        await apply()
-        let {stdout}  = await execa('./bin/cmp.js', ['list'])
-        expect(stdout).toMatch('Applied migrations:')
+        //todo: use the actual generate code to create the file
+        createSimpleMigrationFile()
+        numberOfMigrationsInMigrationsDir = readdirSync(process.env.MIGRATIONS_DIR).length;
+        expect(numberOfMigrationsInMigrationsDir).toBe(1)
 
-        //todo: teardown / rollback migration
-        /!*await apply({rollback: true} )
-        stdout  = await execa('./bin/cmp.js', ['list'])
-        expect(stdout).toMatch('Found no applied migrations')*!/
-    });*/
+        const stdout = extractLogLinesFromConsole();
+        await listCommand()
+        expect(stdout).toContain("Applied migrations:")
+        expect(stdout).toContain("20230609122547608 - new-migration")
+        closeMockedContentfulApi()
+    });
 })
 

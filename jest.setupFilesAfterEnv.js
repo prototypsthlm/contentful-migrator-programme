@@ -1,7 +1,6 @@
 const fs = require('fs')
 const Path = require('path')
 const dotenv = require("dotenv");
-const {setupMockedContentfulApi} = require("./mocks/contentful");
 
 beforeAll(() => {
     let migrationsDir = process.env.MIGRATIONS_DIR
