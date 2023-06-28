@@ -3,7 +3,7 @@ const {rest} = require('msw')
 const fs = require('fs')
 const path = require('path')
 const {setupServer} = require('msw/node')
-const log = require("../lib/log");
+const log = require("../lib/log")
 
 const requests = new Map()
 const transactions = new Set()

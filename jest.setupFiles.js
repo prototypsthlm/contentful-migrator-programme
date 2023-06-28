@@ -1,6 +1,5 @@
-const dotenv = require("dotenv");
-const {setupInterceptorServer} = require("./traffic/interceptor");
-dotenv.config({ path: './.env.test' });
+const dotenv = require("dotenv")
+dotenv.config({ path: './.env.test' })
 
 //mock lib/log since encoding characters from chalk makes testing difficult
 jest.mock('./lib/log', () => {
@@ -11,5 +10,5 @@ jest.mock('./lib/log', () => {
         success: (...message) => console.log(...message),
         error: (...message) => console.log(...message),
         warn: (...message) => console.log(...message),
-    };
-});
+    }
+})

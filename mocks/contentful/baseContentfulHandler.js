@@ -1,6 +1,6 @@
 const {setupServer} = require('msw/node')
-const log = require("../../lib/log");
-const {rest} = require("msw");
+const log = require("../../lib/log")
+const {rest} = require("msw")
 
 let mockedContentfulServer = null
 

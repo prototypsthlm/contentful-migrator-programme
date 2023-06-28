@@ -25,9 +25,9 @@ module.exports.createSimpleMigrationFile = () => {
 
     fs.writeFileSync(migrationPath, content, (err) => {
         if (err) {
-            console.error(err);
+            console.error(err)
             return;
         }
-        console.log('File created successfully!');
-    });
+        console.log('File created successfully!')
+    })
 }

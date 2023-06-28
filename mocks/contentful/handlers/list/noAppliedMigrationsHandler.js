@@ -1,5 +1,5 @@
-const {rest} = require("msw");
-const {baseURL} = require("../../baseContentfulHandler");
+const {rest} = require("msw")
+const {baseURL} = require("../../baseContentfulHandler")
 module.exports.listNoAppliedMigrationHandler = [
     rest.get(`${baseURL}/environments/master/entries`, (req, res, ctx) => {
         return res(

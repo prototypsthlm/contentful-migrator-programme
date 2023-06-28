@@ -1,18 +1,22 @@
-const { execaNode } = require("execa");
 const fs = require('fs')
 const { join } = require('path')
+const {handler: generateCommand} = require("../bin/commands/generate")
+const {extractLogLinesFromConsole} = require("../__test-utils__/log")
+const {readdirSync} = require("fs")
 
-//todo: rewrite to match refactored other tests?
 describe('generate', () => {
     it('should create a new migration file', async () => {
+        const stdout = extractLogLinesFromConsole()
         const migrationName = 'test-migration'
-        const { stdout } = await execaNode('./bin/cmp.js', ['generate', migrationName])
+        await generateCommand({name: migrationName})
 
-        const migrationFileName = stdout.split(' ').find((m) => m.indexOf('js') > -1)
-        const migrationFile = fs.readFileSync(`${process.env.MIGRATIONS_DIR}/${migrationFileName}`, 'utf-8')
+        let numberOfMigrationsInMigrationsDir = readdirSync(process.env.MIGRATIONS_DIR)
+        expect(numberOfMigrationsInMigrationsDir.length).toBe(1)
 
+        const migrationFileName = stdout[0].split(' ').find((m) => m.indexOf('js') > -1)
+        const migrationFilePath = `${process.env.MIGRATIONS_DIR}/${migrationFileName}`
+        const migrationFile = fs.readFileSync(migrationFilePath, 'utf-8')
         const template = fs.readFileSync(join(__dirname, '..', 'templates', 'migration.mustache'), 'utf8')
-
         expect(migrationFile).toEqual(template)
     })
 })
