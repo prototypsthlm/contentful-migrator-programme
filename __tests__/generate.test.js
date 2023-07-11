@@ -2,7 +2,6 @@ const fs = require('fs')
 const { join } = require('path')
 const {handler: generateCommand} = require("../bin/commands/generate")
 const {extractLogLinesFromConsole} = require("../__test-utils__/log")
-const {readdirSync} = require("fs")
 
 describe('generate', () => {
     it('should create a new migration file', async () => {
@@ -10,8 +9,8 @@ describe('generate', () => {
         const migrationName = 'test-migration'
         await generateCommand({name: migrationName})
 
-        let numberOfMigrationsInMigrationsDir = readdirSync(process.env.MIGRATIONS_DIR)
-        expect(numberOfMigrationsInMigrationsDir.length).toBe(1)
+        let numberOfMigrationsInMigrationsDir = fs.readdirSync(process.env.MIGRATIONS_DIR).length
+        expect(numberOfMigrationsInMigrationsDir).toBe(1)
 
         const migrationFileName = stdout[0].split(' ').find((m) => m.indexOf('js') > -1)
         const migrationFilePath = `${process.env.MIGRATIONS_DIR}/${migrationFileName}`
