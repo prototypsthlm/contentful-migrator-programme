@@ -10,6 +10,7 @@ module.exports.setupMockedContentfulApi = (handlers) => {
     if (handlers == null) {
         handlers = []
     }
+    let totalNumberOfRequests = 0
     log.info('setting up mocked contentful rest server')
     const server = setupServer(...spacesHandler, ...localeHandler, ...masterEnvironmentHandler, ...handlers)
 
@@ -27,6 +28,8 @@ module.exports.setupMockedContentfulApi = (handlers) => {
     server.events.on('request:start', (request, response) => {
         // Record every dispatched request.
         log.info(`* intercepting ${request.method} request to ${request.url}`)
+        totalNumberOfRequests++
+        log.info('Total number of requests: ', totalNumberOfRequests)
     })
 
     mockedContentfulServer = server

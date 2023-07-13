@@ -1,5 +1,4 @@
 #! /usr/bin/env node
-
 const fs = require('fs')
 const { join } = require('path')
 const Mustache = require('mustache')
@@ -19,10 +18,9 @@ exports.builder = (yargs) => {
     })
 }
 
-exports.handler = ({ name }) => {
+exports.handler = async ({ name }) => {
     try {
         const templatePath = fs.readFileSync(join(__dirname, '..', '..', 'templates', 'migration.mustache'), 'utf8')
-
         const migrationContents = Mustache.render(templatePath)
         const migrationFileName = `${utcTimestampMs()}-${camelToKebabCase(name)}.js`
         const migrationsDir = env('MIGRATIONS_DIR')
@@ -35,14 +33,23 @@ exports.handler = ({ name }) => {
 
         const migrationPath = join(migrationsDir, migrationFileName)
 
-        fs.writeFile(migrationPath, migrationContents, { flag: 'w' }, (err) => {
-            if (err) {
-                throw err
-            }
-            log.success(`Migration file ${migrationFileName} created`)
-        })
+        await writeFileAsync(migrationPath, migrationContents)
+        log.success(`Migration file ${migrationFileName} created`)
     } catch (e) {
         log.error('Migration file creation failed.', e)
         process.exitCode = 1
     }
+}
+
+//todo: move to utility if we need this elsewhere
+function writeFileAsync(filePath, data) {
+    return new Promise((resolve, reject) => {
+        fs.writeFile(filePath, data, (error) => {
+            if (error) {
+                reject(error)
+            } else {
+                resolve()
+            }
+        })
+    })
 }
