@@ -9,9 +9,9 @@ const requests = new Map()
 const transactions = new Set()
 const server = setupServer()
 
-//this utility can be used to record all network traffic.
+// this utility can be used to record all network traffic.
 // Each request and response during app lifetime is logged to json in the traffic/output directory.
-//run setupInterceptorServer() in bin/cmp.js for this to work.
+// run setupInterceptorServer() in bin/cmp.js for this to work.
 module.exports.setupInterceptorServer = ({ logUnhandledRequests, logBypassedTraffic, saveTrafficToFile }) => {
     log.info('setting up network traffic interceptor server')
 

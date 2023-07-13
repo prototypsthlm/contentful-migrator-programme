@@ -1,3 +1,4 @@
+const { execaNode } = require('execa')
 const fs = require('fs')
 const { join } = require('path')
 const { handler: generateCommand } = require('../bin/commands/generate')
