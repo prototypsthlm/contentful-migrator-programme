@@ -3,7 +3,7 @@ const Path = require('path')
 
 beforeAll(() => {
     let migrationsDir = process.env.MIGRATIONS_DIR
-    if (!fs.existsSync(migrationsDir)){
+    if (!fs.existsSync(migrationsDir)) {
         fs.mkdirSync(migrationsDir)
     }
 })

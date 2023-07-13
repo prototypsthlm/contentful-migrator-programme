@@ -1,20 +1,20 @@
-const {setupMockedContentfulApi, closeMockedContentfulApi} = require("../mocks/contentful/baseContentfulHandler")
-const {handler: listCommand} = require("../bin/commands/list")
-const {extractLogLinesFromConsole} = require("../__test-utils__/log")
-const {listOneMigrationAppliedHandler} = require("../mocks/contentful/handlers/list/oneAppliedMigrationsHandler")
-const {listNoAppliedMigrationHandler} = require("../mocks/contentful/handlers/list/noAppliedMigrationsHandler")
-const {createSimpleMigrationFile} = require("../__test-utils__/create-migration")
-const {readdirSync} = require("fs")
+const { setupMockedContentfulApi, closeMockedContentfulApi } = require('../mocks/contentful/baseContentfulHandler')
+const { handler: listCommand } = require('../bin/commands/list')
+const { extractLogLinesFromConsole } = require('../__test-utils__/log')
+const { listOneMigrationAppliedHandler } = require('../mocks/contentful/handlers/list/oneAppliedMigrationsHandler')
+const { listNoAppliedMigrationHandler } = require('../mocks/contentful/handlers/list/noAppliedMigrationsHandler')
+const { createSimpleMigrationFile } = require('../__test-utils__/create-migration')
+const { readdirSync } = require('fs')
 
 describe('list', () => {
     it('should log that no migrations are applied', async () => {
         setupMockedContentfulApi(listNoAppliedMigrationHandler)
-        let numberOfMigrationsInMigrationsDir = readdirSync(process.env.MIGRATIONS_DIR).length;
+        let numberOfMigrationsInMigrationsDir = readdirSync(process.env.MIGRATIONS_DIR).length
         expect(numberOfMigrationsInMigrationsDir).toBe(0)
 
         const stdout = extractLogLinesFromConsole()
         await listCommand()
-        expect(stdout).toContain("Found no applied migrations")
+        expect(stdout).toContain('Found no applied migrations')
         closeMockedContentfulApi()
     })
 
@@ -22,14 +22,13 @@ describe('list', () => {
         setupMockedContentfulApi(listOneMigrationAppliedHandler)
 
         createSimpleMigrationFile()
-        let numberOfMigrationsInMigrationsDir = readdirSync(process.env.MIGRATIONS_DIR).length;
+        let numberOfMigrationsInMigrationsDir = readdirSync(process.env.MIGRATIONS_DIR).length
         expect(numberOfMigrationsInMigrationsDir).toBe(1)
 
         const stdout = extractLogLinesFromConsole()
         await listCommand()
-        expect(stdout).toContain("Applied migrations:")
-        expect(stdout).toContain("20230609122547608 - new-migration")
+        expect(stdout).toContain('Applied migrations:')
+        expect(stdout).toContain('20230609122547608 - new-migration')
         closeMockedContentfulApi()
     })
 })
-

@@ -1,13 +1,13 @@
 const fs = require('fs')
 const { join } = require('path')
-const {handler: generateCommand} = require("../bin/commands/generate")
-const {extractLogLinesFromConsole} = require("../__test-utils__/log")
+const { handler: generateCommand } = require('../bin/commands/generate')
+const { extractLogLinesFromConsole } = require('../__test-utils__/log')
 
 describe('generate', () => {
     it('should create a new migration file', async () => {
         const stdout = extractLogLinesFromConsole()
         const migrationName = 'test-migration'
-        await generateCommand({name: migrationName})
+        await generateCommand({ name: migrationName })
 
         let numberOfMigrationsInMigrationsDir = fs.readdirSync(process.env.MIGRATIONS_DIR).length
         expect(numberOfMigrationsInMigrationsDir).toBe(1)
