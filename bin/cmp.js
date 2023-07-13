@@ -1,8 +1,5 @@
 #!/usr/bin/env node
 
-const { setupInterceptorServer } = require('../traffic/interceptor')
-setupInterceptorServer({ logUnhandledRequests: true })
-
 require('yargs')
     .usage('Contentful migration tooling.')
     .commandDir('commands')
