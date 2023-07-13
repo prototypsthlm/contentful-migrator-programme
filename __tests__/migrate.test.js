@@ -1,19 +1,17 @@
-const { execaNode
-} = require("execa")
-const {handler: migrateCommand} = require("../bin/commands/migrate")
-const {extractLogLinesFromConsole} = require("../__test-utils__/log")
-const {setupMockedContentfulApi, closeMockedContentfulApi} = require("../mocks/contentful/baseContentfulHandler")
-const {createSimpleMigrationFile} = require("../__test-utils__/create-migration")
-const {applyOneMigrationHandler} = require("../mocks/contentful/handlers/migrate/applyOneMigrationHandler")
+const { handler: migrateCommand } = require('../bin/commands/migrate')
+const { extractLogLinesFromConsole } = require('../__test-utils__/log')
+const { setupMockedContentfulApi, closeMockedContentfulApi } = require('../mocks/contentful/baseContentfulHandler')
+const { createSimpleMigrationFile } = require('../__test-utils__/create-migration')
+const { applyOneMigrationHandler } = require('../mocks/contentful/handlers/migrate/applyOneMigrationHandler')
 
 describe('migrate', () => {
-/*    it('should demand user to use "--force" flag if running against master space', async () => {
+    /*    it('should demand user to use "--force" flag if running against master space', async () => {
         const stdout = extractLogLinesFromConsole()
         await migrateCommand({force: false})
         expect(stdout).toContain("Executing migrations against master requires the --force flag.")
     })*/
 
-/*    it('should log that no migrations to apply if migrations directory is empty', async () => {
+    /*    it('should log that no migrations to apply if migrations directory is empty', async () => {
         setupMockedContentfulApi(applyOneMigrationHandler)
         const stdout = extractLogLinesFromConsole()
 
@@ -23,15 +21,14 @@ describe('migrate', () => {
         closeMockedContentfulApi()
     })*/
 
-
     it('should migrate if force flag is true', async () => {
         setupMockedContentfulApi(applyOneMigrationHandler)
         const stdout = extractLogLinesFromConsole()
 
         createSimpleMigrationFile()
-        await migrateCommand({force: true})
+        await migrateCommand({ force: true })
 
-        expect(stdout).toContain("About to apply the following migrations:")
+        expect(stdout).toContain('About to apply the following migrations:')
         //expect(stdout).toContain("🎉  Migration successful")
 
         closeMockedContentfulApi()
@@ -80,4 +77,3 @@ Publish Content Type testContentType
     handling exit
 
 */
-

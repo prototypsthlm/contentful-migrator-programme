@@ -1,9 +1,9 @@
 #! /usr/bin/env node
 const fs = require('fs')
-const {join} = require('path')
+const { join } = require('path')
 const Mustache = require('mustache')
-const {utcTimestampMs} = require('../../lib/date')
-const {camelToKebabCase} = require('../../lib/string')
+const { utcTimestampMs } = require('../../lib/date')
+const { camelToKebabCase } = require('../../lib/string')
 const env = require('../../lib/env')
 const log = require('../../lib/log')
 
@@ -18,14 +18,14 @@ exports.builder = (yargs) => {
     })
 }
 
-exports.handler = async ({name}) => {
+exports.handler = async ({ name }) => {
     try {
         const templatePath = fs.readFileSync(join(__dirname, '..', '..', 'templates', 'migration.mustache'), 'utf8')
         const migrationContents = Mustache.render(templatePath)
         const migrationFileName = `${utcTimestampMs()}-${camelToKebabCase(name)}.js`
         const migrationsDir = env('MIGRATIONS_DIR')
 
-        fs.mkdir(migrationsDir, {recursive: true}, (err) => {
+        fs.mkdir(migrationsDir, { recursive: true }, (err) => {
             if (err) {
                 throw err
             }

@@ -1,9 +1,10 @@
 const fs = require('fs')
 const Path = require('path')
+const dotenv = require('dotenv')
 
 beforeAll(() => {
     let migrationsDir = process.env.MIGRATIONS_DIR
-    if (!fs.existsSync(migrationsDir)){
+    if (!fs.existsSync(migrationsDir)) {
         fs.mkdirSync(migrationsDir)
     }
 })

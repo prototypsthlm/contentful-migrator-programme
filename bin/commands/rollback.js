@@ -5,7 +5,7 @@ const { apply, list } = require('../../src/migrator')
 const env = require('../../lib/env')
 const cliSelect = require('cli-select')
 const spaceModule = require('../../lib/contentful-space-manager')
-const log = require("../../lib/log")
+const log = require('../../lib/log')
 
 exports.command = 'rollback'
 
