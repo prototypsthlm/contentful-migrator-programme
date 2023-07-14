@@ -2,7 +2,7 @@
 
 //todo: remove, only for testing
 const { setupInterceptorServer } = require('../traffic/interceptor')
-setupInterceptorServer({ logUnhandledRequests: true })
+setupInterceptorServer({ logUnhandledRequests: true, logBypassedTraffic: true, saveTrafficToFile: true })
 
 require('yargs')
     .usage('Contentful migration tooling.')

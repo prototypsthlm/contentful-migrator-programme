@@ -21,59 +21,22 @@ describe('migrate', () => {
         closeMockedContentfulApi()
     })*/
 
-    it('should migrate if force flag is true', async () => {
+    it('should initially create a table for Applied Migrations', async () => {
+        //todo: this test will actually perform 2 migrations:
+        //todo: 1 for applied migrations table
+        //:todo 1 for test content type
+
         setupMockedContentfulApi(applyOneMigrationHandler)
         const stdout = extractLogLinesFromConsole()
 
         createSimpleMigrationFile()
         await migrateCommand({ force: true })
-
-        expect(stdout).toContain('About to apply the following migrations:')
+        //The following migration has been planned
+        //Publish Content Type appliedMigrations
+        expect(stdout).toContain('`Applied migrations` type not found. Creating it.')
+        //expect(stdout).toContain('About to apply the following migrations:')
         //expect(stdout).toContain("🎉  Migration successful")
 
         closeMockedContentfulApi()
     })
 })
-
-/*
-    About to apply the following migrations:
-    20230609122547608 - new-migration
-
-    Creating environment 2023-06-28-11-35-08.
-    Environment 2023-06-28-11-35-08 created.
-    Updating api key access to new env 2023-06-28-11-35-08.
-
-    Api key access to new env 2023-06-28-11-35-08 updated.
-
-    Migrating.
-
-    The following migration has been planned
-
-Environment: 2023-06-28-11-35-08
-
-Create Content Type testContentType
-- name: "Test content type"
-- description: ""
-- displayField: "testContentId"
-
-Create field testContentId
-- name: "test content id"
-- type: "Symbol"
-
-Publish Content Type testContentType
-❯ Create Content Type testContentType
-  ⠋ Making requests (1/2)
-❯ Create Content Type testContentType
-❯ Create Content Type testContentType
-  ⠸ Making requests (2/2)
-❯ Create Content Type testContentType
-✔ Create Content Type testContentType
-🎉  Migration successful
-
-    Migrated.
-        Switching environment alias.
-
-    Environment alias switched successfully.
-    handling exit
-
-*/

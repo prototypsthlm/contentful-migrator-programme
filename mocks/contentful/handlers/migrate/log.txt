@@ -1,0 +1,153 @@
+setting up network traffic interceptor server
+* intercepting GET request to https://api.contentful.com/spaces/bo6ijs14u5ox
+* Found an unhandled GET request to https://api.contentful.com/spaces/bo6ijs14u5ox
+* receiving status 200 from https://api.contentful.com/spaces/bo6ijs14u5ox
+* intercepting GET request to https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master
+* Found an unhandled GET request to https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master
+* receiving status 200 from https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master
+* intercepting GET request to https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/locales
+* Found an unhandled GET request to https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/locales
+* receiving status 200 from https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/locales
+* intercepting GET request to https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/content_types/appliedMigrations
+* Found an unhandled GET request to https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/content_types/appliedMigrations
+* receiving status 404 from https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/content_types/appliedMigrations
+`Applied migrations` type not found. Creating it.
+* intercepting GET request to https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/content_types?limit=100&order=sys.createdAt&sys.id[in]=appliedMigrations&skip=0
+* Found an unhandled GET request to https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/content_types?limit=100&order=sys.createdAt&sys.id[in]=appliedMigrations&skip=0
+* receiving status 200 from https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/content_types?limit=100&order=sys.createdAt&sys.id[in]=appliedMigrations&skip=0
+* intercepting GET request to https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/locales?limit=100&order=sys.createdAt&skip=0
+* Found an unhandled GET request to https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/locales?limit=100&order=sys.createdAt&skip=0
+* receiving status 200 from https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/locales?limit=100&order=sys.createdAt&skip=0
+The following migration has been planned
+
+Environment: master
+
+Create Content Type appliedMigrations
+  - name: "Applied migrations"
+  - displayField: "timestamp"
+
+  Create field timestamp
+    - name: "Timestamp"
+    - type: "Symbol"
+    - required: true
+
+  Create field name
+    - name: "Name"
+    - type: "Symbol"
+    - required: true
+
+  Create field batch
+    - name: "Batch number"
+    - type: "Integer"
+    - required: true
+
+Publish Content Type appliedMigrations
+❯ Create Content Type appliedMigrations
+  ⠋ Making requests (1/2)
+    › PUT /content_types/appliedMigrations at V0
+* intercepting PUT request to https://api.contentful.com/spaces/bo6ijs14u5ox/env❯ Create Content Type appliedMigrations
+  ⠦ Making requests (1/2)
+❯ Create Content Type appliedMigrations
+  ⠦ Making requests (2/2)
+    › PUT /content_types/appliedMigrations/published at V1
+* intercepting PUT request to https://api.contentful.com/spaces/bo6ijs14u5ox/env✔ Create Content Type appliedMigrations
+🎉  Migration successful
+`Applied migrations` type created.
+* intercepting GET request to https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/entries?content_type=appliedMigrations&limit=1000
+* Found an unhandled GET request to https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/entries?content_type=appliedMigrations&limit=1000
+* receiving status 200 from https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/content_types/appliedMigrations/published
+* receiving status 200 from https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/entries?content_type=appliedMigrations&limit=1000
+About to apply the following migrations:
+  20230609122547608 - new-migration
+* intercepting GET request to https://api.contentful.com/spaces/bo6ijs14u5ox/environments
+* Found an unhandled GET request to https://api.contentful.com/spaces/bo6ijs14u5ox/environments
+* receiving status 200 from https://api.contentful.com/spaces/bo6ijs14u5ox/environments
+Creating environment 2023-07-14-09-24-23.
+* intercepting PUT request to https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23
+* Found an unhandled PUT request to https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23
+* receiving status 201 from https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23
+Environment 2023-07-14-09-24-23 created.
+Updating api key access to new env 2023-07-14-09-24-23.
+* intercepting GET request to https://api.contentful.com/spaces/bo6ijs14u5ox/api_keys
+* Found an unhandled GET request to https://api.contentful.com/spaces/bo6ijs14u5ox/api_keys
+* receiving status 200 from https://api.contentful.com/spaces/bo6ijs14u5ox/api_keys
+* intercepting PUT request to https://api.contentful.com/spaces/bo6ijs14u5ox/api_keys/1Yrt2lSOGbwEjPWJVg6yJA
+* Found an unhandled PUT request to https://api.contentful.com/spaces/bo6ijs14u5ox/api_keys/1Yrt2lSOGbwEjPWJVg6yJA
+* receiving status 200 from https://api.contentful.com/spaces/bo6ijs14u5ox/api_keys/1Yrt2lSOGbwEjPWJVg6yJA
+Api key access to new env 2023-07-14-09-24-23 updated.
+* intercepting GET request to https://api.contentful.com/spaces/bo6ijs14u5ox
+* Found an unhandled GET request to https://api.contentful.com/spaces/bo6ijs14u5ox
+* receiving status 200 from https://api.contentful.com/spaces/bo6ijs14u5ox
+* intercepting GET request to https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23
+* Found an unhandled GET request to https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23
+* receiving status 200 from https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23
+* intercepting GET request to https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/locales
+* Found an unhandled GET request to https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/locales
+* receiving status 200 from https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/locales
+* intercepting GET request to https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/content_types/appliedMigrations
+* Found an unhandled GET request to https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/content_types/appliedMigrations
+* receiving status 200 from https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/content_types/appliedMigrations
+* intercepting GET request to https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/entries?content_type=appliedMigrations&limit=1000
+* Found an unhandled GET request to https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/entries?content_type=appliedMigrations&limit=1000
+* receiving status 200 from https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/entries?content_type=appliedMigrations&limit=1000
+Migrating.
+* intercepting GET request to https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/content_types?limit=100&order=sys.createdAt&sys.id[in]=testContentType&skip=0
+* Found an unhandled GET request to https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/content_types?limit=100&order=sys.createdAt&sys.id[in]=testContentType&skip=0
+* receiving status 200 from https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/content_types?limit=100&order=sys.createdAt&sys.id[in]=testContentType&skip=0
+* intercepting GET request to https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/locales?limit=100&order=sys.createdAt&skip=0
+* Found an unhandled GET request to https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/locales?limit=100&order=sys.createdAt&skip=0
+* receiving status 200 from https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/locales?limit=100&order=sys.createdAt&skip=0
+The following migration has been planned
+
+Environment: 2023-07-14-09-24-23
+
+Create Content Type testContentType
+  - name: "Test content type"
+  - description: ""
+  - displayField: "testContentId"
+
+  Create field testContentId
+    - name: "test content id"
+    - type: "Symbol"
+
+Publish Content Type testContentType
+❯ Create Content Type testContentType
+  ⠋ Making requests (1/2)
+    › PUT /content_types/testContentType at V0
+* intercepting PUT request to https://api.contentful.com/spaces/bo6ijs14u5ox/env❯ Create Content Type testContentType
+  ⠸ Making requests (1/2)
+❯ Create Content Type testContentType
+  ⠸ Making requests (2/2)
+    › PUT /content_types/testContentType/published at V1
+* intercepting PUT request to https://api.contentful.com/spaces/bo6ijs14u5ox/env❯ Create Content Type testContentType
+  ⠧ Making requests (2/2)
+✔ Create Content Type testContentType
+🎉  Migration successful
+* intercepting GET request to https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/entries?content_type=appliedMigrations&limit=1000
+* Found an unhandled GET request to https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/entries?content_type=appliedMigrations&limit=1000
+* receiving status 200 from https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/entries?content_type=appliedMigrations&limit=1000
+* intercepting POST request to https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/entries
+* Found an unhandled POST request to https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/entries
+* receiving status 201 from https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/entries
+* intercepting PUT request to https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/entries/4Z82uIue7f5KTUjGfmsSyg/published
+* Found an unhandled PUT request to https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/entries/4Z82uIue7f5KTUjGfmsSyg/published
+* receiving status 200 from https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/entries/4Z82uIue7f5KTUjGfmsSyg/published
+Migrated.
+Switching environment alias.
+* intercepting GET request to https://api.contentful.com/spaces/bo6ijs14u5ox/environment_aliases/master
+* Found an unhandled GET request to https://api.contentful.com/spaces/bo6ijs14u5ox/environment_aliases/master
+* receiving status 200 from https://api.contentful.com/spaces/bo6ijs14u5ox/environment_aliases/master
+* intercepting GET request to https://api.contentful.com/spaces/bo6ijs14u5ox/environment_aliases/master
+* Found an unhandled GET request to https://api.contentful.com/spaces/bo6ijs14u5ox/environment_aliases/master
+* receiving status 200 from https://api.contentful.com/spaces/bo6ijs14u5ox/environment_aliases/master
+* intercepting PUT request to https://api.contentful.com/spaces/bo6ijs14u5ox/environment_aliases/master
+* Found an unhandled PUT request to https://api.contentful.com/spaces/bo6ijs14u5ox/environment_aliases/master
+* receiving status 200 from https://api.contentful.com/spaces/bo6ijs14u5ox/environment_aliases/master
+* intercepting GET request to https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-12-23
+* Found an unhandled GET request to https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-12-23
+* receiving status 200 from https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-12-23
+* intercepting DELETE request to https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-12-23
+* Found an unhandled DELETE request to https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-12-23
+* receiving status 204 from https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-12-23
+Environment alias switched successfully.
+handling exit
