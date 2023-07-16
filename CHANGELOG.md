@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.0](https://github.com/prototypsthlm/contentful-migrator-programme/compare/v0.4.0...v0.5.0) (2023-07-13)
+
+
+### Features
+
+* implement more tests ([#312](https://github.com/prototypsthlm/contentful-migrator-programme/issues/312)) ([feed65a](https://github.com/prototypsthlm/contentful-migrator-programme/commit/feed65a32b9b3f8c2c29a409144783c2e460541e))
+* run prettier on all files ([e22272d](https://github.com/prototypsthlm/contentful-migrator-programme/commit/e22272dfe36f2790401ee10042617ef61dfcbcf6))
+
 ## [0.4.0](https://github.com/prototypsthlm/contentful-migrator-programme/compare/v0.3.0...v0.4.0) (2023-06-27)
 
 
