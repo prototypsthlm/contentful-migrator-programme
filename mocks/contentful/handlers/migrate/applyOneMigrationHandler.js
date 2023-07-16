@@ -425,6 +425,8 @@ module.exports.applyOneMigrationHandler = [
 
     //* intercepting GET request to https://api.contentful.com/spaces/TEST_SPACE_ID/environments/2023-07-14-09-24-23/locales
     rest.get(`${baseURL}/environments/*/locales`, (req, res, ctx) => {
+        //todo: not handled ? * intercepting GET request to https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/locales?limit=100&order=sys.createdAt&skip=0
+
         return res(
             ctx.status(200),
             ctx.json({
