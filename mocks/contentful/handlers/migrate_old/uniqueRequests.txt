@@ -1,6 +1,0 @@
-
-
-GET request to https://api.contentful.com/spaces/TEST_SPACE_ID/environment_aliases/master
-PUT request to https://api.contentful.com/spaces/TEST_SPACE_ID/environment_aliases/master
-GET request to https://api.contentful.com/spaces/TEST_SPACE_ID/environments/2023-06-29-08-45-03
-DELETE request to https://api.contentful.com/spaces/TEST_SPACE_ID/environments/2023-06-29-08-45-03

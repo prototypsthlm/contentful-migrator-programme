@@ -21,7 +21,7 @@ module.exports.applyOneMigrationHandler = [
                     space: 'TEST_SPACE_ID',
                 },
                 requestId: '284d7c14-9b52-4655-aecb-2c6806e59106',
-            })
+            }),
         )
     }),
 
@@ -39,7 +39,7 @@ module.exports.applyOneMigrationHandler = [
                     skip: 0,
                     limit: 100,
                     items: [],
-                })
+                }),
             )
         }
     }),
@@ -119,7 +119,7 @@ module.exports.applyOneMigrationHandler = [
                         omitted: false,
                     },
                 ],
-            })
+            }),
         )
     }),
 
@@ -208,7 +208,7 @@ module.exports.applyOneMigrationHandler = [
                         omitted: false,
                     },
                 ],
-            })
+            }),
         )
     }),
 
@@ -224,7 +224,7 @@ module.exports.applyOneMigrationHandler = [
                     skip: 0,
                     limit: 1000,
                     items: [],
-                })
+                }),
             )
         }
     }),
@@ -372,7 +372,7 @@ module.exports.applyOneMigrationHandler = [
                         },
                     },
                 ],
-            })
+            }),
         )
     }),
 
@@ -419,7 +419,7 @@ module.exports.applyOneMigrationHandler = [
                     updatedAt: '2023-07-14T09:24:24Z',
                     aliases: [],
                 },
-            })
+            }),
         )
     }),
 
@@ -484,7 +484,7 @@ module.exports.applyOneMigrationHandler = [
                         },
                     },
                 ],
-            })
+            }),
         )
     }),
     //wildcard endpoints to match GET environment /DATE_TIME
@@ -529,7 +529,7 @@ module.exports.applyOneMigrationHandler = [
                     updatedAt: '2023-07-14T09:24:25Z',
                     aliases: [],
                 },
-            })
+            }),
         )
     }),
 
@@ -1189,7 +1189,7 @@ module.exports.applyOneMigrationHandler = [
                         },
                     },
                 ],
-            })
+            }),
         )
     }),
 
@@ -1846,12 +1846,11 @@ module.exports.applyOneMigrationHandler = [
                         id: '1YsyWIrKbsWrbImKsd9Bqq',
                     },
                 },
-            })
+            }),
         )
     }),
 
     rest.delete(`${baseURL}/environments/*`, (req, res, ctx) => {
-        console.log('HITTING DELETE!!!!')
         return res(ctx.status(204))
     }),
 ]
