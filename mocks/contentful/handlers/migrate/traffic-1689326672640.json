@@ -1,0 +1,3062 @@
+[
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "8d321ca3-ac65-4ed3-b6e3-0bbd648610c1",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "8d321ca3-ac65-4ed3-b6e3-0bbd648610c1",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "8d321ca3-ac65-4ed3-b6e3-0bbd648610c1",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\n  \"name\":\"TypeOne\",\n  \"sys\":{\n    \"type\":\"Space\",\n    \"id\":\"bo6ijs14u5ox\",\n    \"version\":7,\n    \"createdBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"createdAt\":\"2018-09-17T08:26:06Z\",\n    \"updatedBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"updatedAt\":\"2022-12-15T09:11:48Z\",\n    \"organization\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"Organization\",\n        \"id\":\"1kUUWhojvGtUmRyhXfqSwK\"\n      }\n    }\n  }\n}\n\n"
+      }
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "8d321ca3-ac65-4ed3-b6e3-0bbd648610c1",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\n  \"name\":\"TypeOne\",\n  \"sys\":{\n    \"type\":\"Space\",\n    \"id\":\"bo6ijs14u5ox\",\n    \"version\":7,\n    \"createdBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"createdAt\":\"2018-09-17T08:26:06Z\",\n    \"updatedBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"updatedAt\":\"2022-12-15T09:11:48Z\",\n    \"organization\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"Organization\",\n        \"id\":\"1kUUWhojvGtUmRyhXfqSwK\"\n      }\n    }\n  }\n}\n\n"
+      }
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "372153b0-6e71-43a1-8d65-cbaf796add6e",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "372153b0-6e71-43a1-8d65-cbaf796add6e",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "372153b0-6e71-43a1-8d65-cbaf796add6e",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\n  \"name\":\"2023-07-14-09-12-23\",\n  \"sys\":{\n    \"type\":\"Environment\",\n    \"id\":\"master\",\n    \"aliasedEnvironment\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\",\n        \"id\":\"2023-07-14-09-12-23\"\n      }\n    },\n    \"version\":3,\n    \"space\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"Space\",\n        \"id\":\"bo6ijs14u5ox\"\n      }\n    },\n    \"status\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"Status\",\n        \"id\":\"ready\"\n      }\n    },\n    \"createdBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"createdAt\":\"2023-07-14T09:12:24Z\",\n    \"updatedBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"updatedAt\":\"2023-07-14T09:12:24Z\"\n  }\n}\n\n"
+      }
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "372153b0-6e71-43a1-8d65-cbaf796add6e",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\n  \"name\":\"2023-07-14-09-12-23\",\n  \"sys\":{\n    \"type\":\"Environment\",\n    \"id\":\"master\",\n    \"aliasedEnvironment\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\",\n        \"id\":\"2023-07-14-09-12-23\"\n      }\n    },\n    \"version\":3,\n    \"space\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"Space\",\n        \"id\":\"bo6ijs14u5ox\"\n      }\n    },\n    \"status\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"Status\",\n        \"id\":\"ready\"\n      }\n    },\n    \"createdBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"createdAt\":\"2023-07-14T09:12:24Z\",\n    \"updatedBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"updatedAt\":\"2023-07-14T09:12:24Z\"\n  }\n}\n\n"
+      }
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "274f012a-378a-41d7-a20f-7c7a6d3b87e2",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/locales",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "274f012a-378a-41d7-a20f-7c7a6d3b87e2",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/locales",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "274f012a-378a-41d7-a20f-7c7a6d3b87e2",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/locales",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\"sys\":{\"type\":\"Array\"},\"total\":1,\"skip\":0,\"limit\":100,\"items\":[{\"name\":\"English (United States)\",\"internal_code\":\"en-US\",\"code\":\"en-US\",\"fallbackCode\":null,\"default\":true,\"contentManagementApi\":true,\"contentDeliveryApi\":true,\"optional\":false,\"sys\":{\"type\":\"Locale\",\"id\":\"1VDLlb9oKX4EE2oI6p9kMa\",\"version\":1,\"space\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"Space\",\"id\":\"bo6ijs14u5ox\"}},\"environment\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"Environment\",\"id\":\"2023-07-14-09-12-23\",\"uuid\":\"7a45d084-1419-4ae1-b1d4-996d47e44c5a\"}},\"createdBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"createdAt\":\"2023-07-14T09:12:24Z\",\"updatedBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"updatedAt\":\"2023-07-14T09:12:24Z\"}}]}\n"
+      }
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "274f012a-378a-41d7-a20f-7c7a6d3b87e2",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/locales",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\"sys\":{\"type\":\"Array\"},\"total\":1,\"skip\":0,\"limit\":100,\"items\":[{\"name\":\"English (United States)\",\"internal_code\":\"en-US\",\"code\":\"en-US\",\"fallbackCode\":null,\"default\":true,\"contentManagementApi\":true,\"contentDeliveryApi\":true,\"optional\":false,\"sys\":{\"type\":\"Locale\",\"id\":\"1VDLlb9oKX4EE2oI6p9kMa\",\"version\":1,\"space\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"Space\",\"id\":\"bo6ijs14u5ox\"}},\"environment\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"Environment\",\"id\":\"2023-07-14-09-12-23\",\"uuid\":\"7a45d084-1419-4ae1-b1d4-996d47e44c5a\"}},\"createdBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"createdAt\":\"2023-07-14T09:12:24Z\",\"updatedBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"updatedAt\":\"2023-07-14T09:12:24Z\"}}]}\n"
+      }
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "f6a649cb-1b7c-4cf3-918f-e17091cf9515",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/content_types/appliedMigrations",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "f6a649cb-1b7c-4cf3-918f-e17091cf9515",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/content_types/appliedMigrations",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "f6a649cb-1b7c-4cf3-918f-e17091cf9515",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/content_types/appliedMigrations",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 404,
+        "statusText": "Not Found",
+        "headers": {},
+        "body": "{\"sys\":{\"type\":\"Error\",\"id\":\"NotFound\"},\"message\":\"The resource could not be found.\",\"details\":{\"type\":\"ContentType\",\"id\":\"appliedMigrations\",\"environment\":\"master\",\"space\":\"bo6ijs14u5ox\"},\"requestId\":\"284d7c14-9b52-4655-aecb-2c6806e59106\"}\n"
+      }
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "f6a649cb-1b7c-4cf3-918f-e17091cf9515",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/content_types/appliedMigrations",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 404,
+        "statusText": "Not Found",
+        "headers": {},
+        "body": "{\"sys\":{\"type\":\"Error\",\"id\":\"NotFound\"},\"message\":\"The resource could not be found.\",\"details\":{\"type\":\"ContentType\",\"id\":\"appliedMigrations\",\"environment\":\"master\",\"space\":\"bo6ijs14u5ox\"},\"requestId\":\"284d7c14-9b52-4655-aecb-2c6806e59106\"}\n"
+      }
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "2012229b-379d-4d8a-907d-a90553f2e522",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/content_types?limit=100&order=sys.createdAt&sys.id[in]=appliedMigrations&skip=0",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "2012229b-379d-4d8a-907d-a90553f2e522",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/content_types?limit=100&order=sys.createdAt&sys.id[in]=appliedMigrations&skip=0",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "2012229b-379d-4d8a-907d-a90553f2e522",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/content_types?limit=100&order=sys.createdAt&sys.id[in]=appliedMigrations&skip=0",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\"sys\":{\"type\":\"Array\"},\"total\":0,\"skip\":0,\"limit\":100,\"items\":[]}\n"
+      }
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "2012229b-379d-4d8a-907d-a90553f2e522",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/content_types?limit=100&order=sys.createdAt&sys.id[in]=appliedMigrations&skip=0",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\"sys\":{\"type\":\"Array\"},\"total\":0,\"skip\":0,\"limit\":100,\"items\":[]}\n"
+      }
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "beff124d-f4cc-4515-ace3-11d6f5abe0d3",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/locales?limit=100&order=sys.createdAt&skip=0",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "beff124d-f4cc-4515-ace3-11d6f5abe0d3",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/locales?limit=100&order=sys.createdAt&skip=0",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "beff124d-f4cc-4515-ace3-11d6f5abe0d3",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/locales?limit=100&order=sys.createdAt&skip=0",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\"sys\":{\"type\":\"Array\"},\"total\":1,\"skip\":0,\"limit\":100,\"items\":[{\"name\":\"English (United States)\",\"internal_code\":\"en-US\",\"code\":\"en-US\",\"fallbackCode\":null,\"default\":true,\"contentManagementApi\":true,\"contentDeliveryApi\":true,\"optional\":false,\"sys\":{\"type\":\"Locale\",\"id\":\"1VDLlb9oKX4EE2oI6p9kMa\",\"version\":1,\"space\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"Space\",\"id\":\"bo6ijs14u5ox\"}},\"environment\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"Environment\",\"id\":\"2023-07-14-09-12-23\",\"uuid\":\"7a45d084-1419-4ae1-b1d4-996d47e44c5a\"}},\"createdBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"createdAt\":\"2023-07-14T09:12:24Z\",\"updatedBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"updatedAt\":\"2023-07-14T09:12:24Z\"}}]}\n"
+      }
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "beff124d-f4cc-4515-ace3-11d6f5abe0d3",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/locales?limit=100&order=sys.createdAt&skip=0",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\"sys\":{\"type\":\"Array\"},\"total\":1,\"skip\":0,\"limit\":100,\"items\":[{\"name\":\"English (United States)\",\"internal_code\":\"en-US\",\"code\":\"en-US\",\"fallbackCode\":null,\"default\":true,\"contentManagementApi\":true,\"contentDeliveryApi\":true,\"optional\":false,\"sys\":{\"type\":\"Locale\",\"id\":\"1VDLlb9oKX4EE2oI6p9kMa\",\"version\":1,\"space\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"Space\",\"id\":\"bo6ijs14u5ox\"}},\"environment\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"Environment\",\"id\":\"2023-07-14-09-12-23\",\"uuid\":\"7a45d084-1419-4ae1-b1d4-996d47e44c5a\"}},\"createdBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"createdAt\":\"2023-07-14T09:12:24Z\",\"updatedBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"updatedAt\":\"2023-07-14T09:12:24Z\"}}]}\n"
+      }
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "580fe90b-1bf9-49ad-9746-62a63291b2d5",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/content_types/appliedMigrations",
+        "method": "PUT",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "580fe90b-1bf9-49ad-9746-62a63291b2d5",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/content_types/appliedMigrations",
+        "method": "PUT",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "580fe90b-1bf9-49ad-9746-62a63291b2d5",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/content_types/appliedMigrations",
+        "method": "PUT",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 201,
+        "statusText": "Created",
+        "headers": {},
+        "body": "{\"sys\":{\"space\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"Space\",\"id\":\"bo6ijs14u5ox\"}},\"id\":\"appliedMigrations\",\"type\":\"ContentType\",\"createdAt\":\"2023-07-14T09:24:22.833Z\",\"updatedAt\":\"2023-07-14T09:24:22.833Z\",\"environment\":{\"sys\":{\"id\":\"master\",\"type\":\"Link\",\"linkType\":\"Environment\"}},\"createdBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"updatedBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"publishedCounter\":0,\"version\":1},\"displayField\":\"timestamp\",\"name\":\"Applied migrations\",\"description\":null,\"fields\":[{\"id\":\"timestamp\",\"name\":\"Timestamp\",\"type\":\"Symbol\",\"localized\":false,\"required\":true,\"validations\":[],\"disabled\":false,\"omitted\":false},{\"id\":\"name\",\"name\":\"Name\",\"type\":\"Symbol\",\"localized\":false,\"required\":true,\"validations\":[],\"disabled\":false,\"omitted\":false},{\"id\":\"batch\",\"name\":\"Batch number\",\"type\":\"Integer\",\"localized\":false,\"required\":true,\"validations\":[],\"disabled\":false,\"omitted\":false}]}\n"
+      }
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "580fe90b-1bf9-49ad-9746-62a63291b2d5",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/content_types/appliedMigrations",
+        "method": "PUT",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 201,
+        "statusText": "Created",
+        "headers": {},
+        "body": "{\"sys\":{\"space\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"Space\",\"id\":\"bo6ijs14u5ox\"}},\"id\":\"appliedMigrations\",\"type\":\"ContentType\",\"createdAt\":\"2023-07-14T09:24:22.833Z\",\"updatedAt\":\"2023-07-14T09:24:22.833Z\",\"environment\":{\"sys\":{\"id\":\"master\",\"type\":\"Link\",\"linkType\":\"Environment\"}},\"createdBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"updatedBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"publishedCounter\":0,\"version\":1},\"displayField\":\"timestamp\",\"name\":\"Applied migrations\",\"description\":null,\"fields\":[{\"id\":\"timestamp\",\"name\":\"Timestamp\",\"type\":\"Symbol\",\"localized\":false,\"required\":true,\"validations\":[],\"disabled\":false,\"omitted\":false},{\"id\":\"name\",\"name\":\"Name\",\"type\":\"Symbol\",\"localized\":false,\"required\":true,\"validations\":[],\"disabled\":false,\"omitted\":false},{\"id\":\"batch\",\"name\":\"Batch number\",\"type\":\"Integer\",\"localized\":false,\"required\":true,\"validations\":[],\"disabled\":false,\"omitted\":false}]}\n"
+      }
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "a35cbd1d-9d45-4740-9739-722439524851",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/content_types/appliedMigrations/published",
+        "method": "PUT",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "a35cbd1d-9d45-4740-9739-722439524851",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/content_types/appliedMigrations/published",
+        "method": "PUT",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "18fb29bd-f456-482b-a789-ac150f01d04a",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/entries?content_type=appliedMigrations&limit=1000",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "18fb29bd-f456-482b-a789-ac150f01d04a",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/entries?content_type=appliedMigrations&limit=1000",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "a35cbd1d-9d45-4740-9739-722439524851",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/content_types/appliedMigrations/published",
+        "method": "PUT",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\"sys\":{\"space\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"Space\",\"id\":\"bo6ijs14u5ox\"}},\"id\":\"appliedMigrations\",\"type\":\"ContentType\",\"createdAt\":\"2023-07-14T09:24:22.833Z\",\"updatedAt\":\"2023-07-14T09:24:23.228Z\",\"environment\":{\"sys\":{\"id\":\"master\",\"type\":\"Link\",\"linkType\":\"Environment\"}},\"createdBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"updatedBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"publishedCounter\":1,\"version\":2,\"firstPublishedAt\":\"2023-07-14T09:24:23.228Z\",\"publishedAt\":\"2023-07-14T09:24:23.228Z\",\"publishedBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"publishedVersion\":1},\"displayField\":\"timestamp\",\"name\":\"Applied migrations\",\"description\":null,\"fields\":[{\"id\":\"timestamp\",\"name\":\"Timestamp\",\"type\":\"Symbol\",\"localized\":false,\"required\":true,\"validations\":[],\"disabled\":false,\"omitted\":false},{\"id\":\"name\",\"name\":\"Name\",\"type\":\"Symbol\",\"localized\":false,\"required\":true,\"validations\":[],\"disabled\":false,\"omitted\":false},{\"id\":\"batch\",\"name\":\"Batch number\",\"type\":\"Integer\",\"localized\":false,\"required\":true,\"validations\":[],\"disabled\":false,\"omitted\":false}]}\n"
+      }
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "a35cbd1d-9d45-4740-9739-722439524851",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/content_types/appliedMigrations/published",
+        "method": "PUT",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\"sys\":{\"space\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"Space\",\"id\":\"bo6ijs14u5ox\"}},\"id\":\"appliedMigrations\",\"type\":\"ContentType\",\"createdAt\":\"2023-07-14T09:24:22.833Z\",\"updatedAt\":\"2023-07-14T09:24:23.228Z\",\"environment\":{\"sys\":{\"id\":\"master\",\"type\":\"Link\",\"linkType\":\"Environment\"}},\"createdBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"updatedBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"publishedCounter\":1,\"version\":2,\"firstPublishedAt\":\"2023-07-14T09:24:23.228Z\",\"publishedAt\":\"2023-07-14T09:24:23.228Z\",\"publishedBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"publishedVersion\":1},\"displayField\":\"timestamp\",\"name\":\"Applied migrations\",\"description\":null,\"fields\":[{\"id\":\"timestamp\",\"name\":\"Timestamp\",\"type\":\"Symbol\",\"localized\":false,\"required\":true,\"validations\":[],\"disabled\":false,\"omitted\":false},{\"id\":\"name\",\"name\":\"Name\",\"type\":\"Symbol\",\"localized\":false,\"required\":true,\"validations\":[],\"disabled\":false,\"omitted\":false},{\"id\":\"batch\",\"name\":\"Batch number\",\"type\":\"Integer\",\"localized\":false,\"required\":true,\"validations\":[],\"disabled\":false,\"omitted\":false}]}\n"
+      }
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "18fb29bd-f456-482b-a789-ac150f01d04a",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/entries?content_type=appliedMigrations&limit=1000",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\"sys\":{\"type\":\"Array\"},\"total\":0,\"skip\":0,\"limit\":1000,\"items\":[]}\n"
+      }
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "18fb29bd-f456-482b-a789-ac150f01d04a",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/master/entries?content_type=appliedMigrations&limit=1000",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\"sys\":{\"type\":\"Array\"},\"total\":0,\"skip\":0,\"limit\":1000,\"items\":[]}\n"
+      }
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "616b04e4-a32d-4b5a-905c-fb00b982afe5",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "616b04e4-a32d-4b5a-905c-fb00b982afe5",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "616b04e4-a32d-4b5a-905c-fb00b982afe5",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\n  \"total\":3,\n  \"limit\":25,\n  \"skip\":0,\n  \"sys\":{\n    \"type\":\"Array\"\n  },\n  \"items\":[\n    {\n      \"name\":\"test\",\n      \"sys\":{\n        \"type\":\"Environment\",\n        \"id\":\"test\",\n        \"version\":3,\n        \"space\":{\n          \"sys\":{\n            \"type\":\"Link\",\n            \"linkType\":\"Space\",\n            \"id\":\"bo6ijs14u5ox\"\n          }\n        },\n        \"status\":{\n          \"sys\":{\n            \"type\":\"Link\",\n            \"linkType\":\"Status\",\n            \"id\":\"ready\"\n          }\n        },\n        \"createdBy\":{\n          \"sys\":{\n            \"type\":\"Link\",\n            \"linkType\":\"User\",\n            \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n          }\n        },\n        \"createdAt\":\"2023-06-08T12:21:36Z\",\n        \"updatedBy\":{\n          \"sys\":{\n            \"type\":\"Link\",\n            \"linkType\":\"User\",\n            \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n          }\n        },\n        \"updatedAt\":\"2023-06-08T12:21:36Z\",\n        \"aliases\":[]\n      }\n    },\n    {\n      \"name\":\"2023-07-14-09-12-23\",\n      \"sys\":{\n        \"type\":\"Environment\",\n        \"id\":\"2023-07-14-09-12-23\",\n        \"version\":3,\n        \"space\":{\n          \"sys\":{\n            \"type\":\"Link\",\n            \"linkType\":\"Space\",\n            \"id\":\"bo6ijs14u5ox\"\n          }\n        },\n        \"status\":{\n          \"sys\":{\n            \"type\":\"Link\",\n            \"linkType\":\"Status\",\n            \"id\":\"ready\"\n          }\n        },\n        \"createdBy\":{\n          \"sys\":{\n            \"type\":\"Link\",\n            \"linkType\":\"User\",\n            \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n          }\n        },\n        \"createdAt\":\"2023-07-14T09:12:24Z\",\n        \"updatedBy\":{\n          \"sys\":{\n            \"type\":\"Link\",\n            \"linkType\":\"User\",\n            \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n          }\n        },\n        \"updatedAt\":\"2023-07-14T09:12:24Z\",\n        \"aliases\":[\n          {\n            \"sys\":{\n              \"type\":\"Link\",\n              \"linkType\":\"EnvironmentAlias\",\n              \"id\":\"master\"\n            }\n          }\n        ]\n      }\n    },\n    {\n      \"name\":\"2023-07-14-09-12-23\",\n      \"sys\":{\n        \"type\":\"Environment\",\n        \"id\":\"master\",\n        \"aliasedEnvironment\":{\n          \"sys\":{\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\",\n            \"id\":\"2023-07-14-09-12-23\"\n          }\n        },\n        \"version\":3,\n        \"space\":{\n          \"sys\":{\n            \"type\":\"Link\",\n            \"linkType\":\"Space\",\n            \"id\":\"bo6ijs14u5ox\"\n          }\n        },\n        \"status\":{\n          \"sys\":{\n            \"type\":\"Link\",\n            \"linkType\":\"Status\",\n            \"id\":\"ready\"\n          }\n        },\n        \"createdBy\":{\n          \"sys\":{\n            \"type\":\"Link\",\n            \"linkType\":\"User\",\n            \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n          }\n        },\n        \"createdAt\":\"2023-07-14T09:12:24Z\",\n        \"updatedBy\":{\n          \"sys\":{\n            \"type\":\"Link\",\n            \"linkType\":\"User\",\n            \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n          }\n        },\n        \"updatedAt\":\"2023-07-14T09:12:24Z\"\n      }\n    }\n  ]\n}\n\n"
+      }
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "616b04e4-a32d-4b5a-905c-fb00b982afe5",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\n  \"total\":3,\n  \"limit\":25,\n  \"skip\":0,\n  \"sys\":{\n    \"type\":\"Array\"\n  },\n  \"items\":[\n    {\n      \"name\":\"test\",\n      \"sys\":{\n        \"type\":\"Environment\",\n        \"id\":\"test\",\n        \"version\":3,\n        \"space\":{\n          \"sys\":{\n            \"type\":\"Link\",\n            \"linkType\":\"Space\",\n            \"id\":\"bo6ijs14u5ox\"\n          }\n        },\n        \"status\":{\n          \"sys\":{\n            \"type\":\"Link\",\n            \"linkType\":\"Status\",\n            \"id\":\"ready\"\n          }\n        },\n        \"createdBy\":{\n          \"sys\":{\n            \"type\":\"Link\",\n            \"linkType\":\"User\",\n            \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n          }\n        },\n        \"createdAt\":\"2023-06-08T12:21:36Z\",\n        \"updatedBy\":{\n          \"sys\":{\n            \"type\":\"Link\",\n            \"linkType\":\"User\",\n            \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n          }\n        },\n        \"updatedAt\":\"2023-06-08T12:21:36Z\",\n        \"aliases\":[]\n      }\n    },\n    {\n      \"name\":\"2023-07-14-09-12-23\",\n      \"sys\":{\n        \"type\":\"Environment\",\n        \"id\":\"2023-07-14-09-12-23\",\n        \"version\":3,\n        \"space\":{\n          \"sys\":{\n            \"type\":\"Link\",\n            \"linkType\":\"Space\",\n            \"id\":\"bo6ijs14u5ox\"\n          }\n        },\n        \"status\":{\n          \"sys\":{\n            \"type\":\"Link\",\n            \"linkType\":\"Status\",\n            \"id\":\"ready\"\n          }\n        },\n        \"createdBy\":{\n          \"sys\":{\n            \"type\":\"Link\",\n            \"linkType\":\"User\",\n            \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n          }\n        },\n        \"createdAt\":\"2023-07-14T09:12:24Z\",\n        \"updatedBy\":{\n          \"sys\":{\n            \"type\":\"Link\",\n            \"linkType\":\"User\",\n            \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n          }\n        },\n        \"updatedAt\":\"2023-07-14T09:12:24Z\",\n        \"aliases\":[\n          {\n            \"sys\":{\n              \"type\":\"Link\",\n              \"linkType\":\"EnvironmentAlias\",\n              \"id\":\"master\"\n            }\n          }\n        ]\n      }\n    },\n    {\n      \"name\":\"2023-07-14-09-12-23\",\n      \"sys\":{\n        \"type\":\"Environment\",\n        \"id\":\"master\",\n        \"aliasedEnvironment\":{\n          \"sys\":{\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\",\n            \"id\":\"2023-07-14-09-12-23\"\n          }\n        },\n        \"version\":3,\n        \"space\":{\n          \"sys\":{\n            \"type\":\"Link\",\n            \"linkType\":\"Space\",\n            \"id\":\"bo6ijs14u5ox\"\n          }\n        },\n        \"status\":{\n          \"sys\":{\n            \"type\":\"Link\",\n            \"linkType\":\"Status\",\n            \"id\":\"ready\"\n          }\n        },\n        \"createdBy\":{\n          \"sys\":{\n            \"type\":\"Link\",\n            \"linkType\":\"User\",\n            \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n          }\n        },\n        \"createdAt\":\"2023-07-14T09:12:24Z\",\n        \"updatedBy\":{\n          \"sys\":{\n            \"type\":\"Link\",\n            \"linkType\":\"User\",\n            \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n          }\n        },\n        \"updatedAt\":\"2023-07-14T09:12:24Z\"\n      }\n    }\n  ]\n}\n\n"
+      }
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "5294e0c9-bba1-4644-a4ce-03e616ad73a9",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23",
+        "method": "PUT",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "5294e0c9-bba1-4644-a4ce-03e616ad73a9",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23",
+        "method": "PUT",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "5294e0c9-bba1-4644-a4ce-03e616ad73a9",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23",
+        "method": "PUT",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 201,
+        "statusText": "Created",
+        "headers": {},
+        "body": "{\n  \"name\":\"2023-07-14-09-24-23\",\n  \"sys\":{\n    \"type\":\"Environment\",\n    \"id\":\"2023-07-14-09-24-23\",\n    \"version\":1,\n    \"space\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"Space\",\n        \"id\":\"bo6ijs14u5ox\"\n      }\n    },\n    \"status\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"Status\",\n        \"id\":\"queued\"\n      }\n    },\n    \"createdBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"createdAt\":\"2023-07-14T09:24:24Z\",\n    \"updatedBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"updatedAt\":\"2023-07-14T09:24:24Z\",\n    \"aliases\":[]\n  }\n}\n\n"
+      }
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "5294e0c9-bba1-4644-a4ce-03e616ad73a9",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23",
+        "method": "PUT",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 201,
+        "statusText": "Created",
+        "headers": {},
+        "body": "{\n  \"name\":\"2023-07-14-09-24-23\",\n  \"sys\":{\n    \"type\":\"Environment\",\n    \"id\":\"2023-07-14-09-24-23\",\n    \"version\":1,\n    \"space\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"Space\",\n        \"id\":\"bo6ijs14u5ox\"\n      }\n    },\n    \"status\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"Status\",\n        \"id\":\"queued\"\n      }\n    },\n    \"createdBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"createdAt\":\"2023-07-14T09:24:24Z\",\n    \"updatedBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"updatedAt\":\"2023-07-14T09:24:24Z\",\n    \"aliases\":[]\n  }\n}\n\n"
+      }
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "7d6f1133-804b-4f0c-8ff0-24a65edd15fb",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/api_keys",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "7d6f1133-804b-4f0c-8ff0-24a65edd15fb",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/api_keys",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "7d6f1133-804b-4f0c-8ff0-24a65edd15fb",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/api_keys",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\n  \"total\":1,\n  \"limit\":25,\n  \"skip\":0,\n  \"sys\":{\n    \"type\":\"Array\"\n  },\n  \"items\":[\n    {\n      \"name\":\"Example space token 1\",\n      \"description\":\"This token is used by an example app. It is coupled with the content previews.\",\n      \"accessToken\":\"c11ea00b60091e878e7966c52e1138ad3adf5ff00a99c5dde77cb05a83743045\",\n      \"policies\":[\n        {\n          \"effect\":\"allow\",\n          \"actions\":\"all\"\n        }\n      ],\n      \"sys\":{\n        \"type\":\"ApiKey\",\n        \"id\":\"1Yrt2lSOGbwEjPWJVg6yJA\",\n        \"version\":86,\n        \"space\":{\n          \"sys\":{\n            \"type\":\"Link\",\n            \"linkType\":\"Space\",\n            \"id\":\"bo6ijs14u5ox\"\n          }\n        },\n        \"createdBy\":{\n          \"sys\":{\n            \"type\":\"Link\",\n            \"linkType\":\"User\",\n            \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n          }\n        },\n        \"createdAt\":\"2018-09-17T08:26:09Z\",\n        \"updatedBy\":{\n          \"sys\":{\n            \"type\":\"Link\",\n            \"linkType\":\"User\",\n            \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n          }\n        },\n        \"updatedAt\":\"2023-07-14T09:12:25Z\"\n      },\n      \"environments\":[\n        {\n          \"sys\":{\n            \"id\":\"master\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-02-08-50-46\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-11-14-05\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-11-18-44\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-11-19-09\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-11-19-33\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-12-08-11\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-12-09-36\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-12-13-09\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-12-21-53\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-12-25-50\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-12-29-49\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-12-30-33\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-12-30-50\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-12-35-27\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-12-58-23\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-14-10-01\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-14-10-44\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-14-12-01\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-14-12-19\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-14-12-46\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-14-13-12\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-14-14-12\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-14-18-45\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-14-33-50\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-14-35-12\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-14-35-50\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-14-36-46\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-14-38-59\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-14-40-09\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-14-40-30\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-14-52-54\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-14-53-49\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-15-03-45\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-15-04-30\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-15-14-56\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-15-15-34\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-15-24-35\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-15-25-05\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-15-25-47\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-15-38-32\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-15-51-32\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-15-56-58\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-15-57-36\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-15-59-18\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-16-02-06\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-16-02-58\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-16-05-53\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-16-07-40\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-07-07-23-21\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-07-07-23-46\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-07-08-05-31\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-07-08-38-35\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-08-08-08-37\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-08-08-08-56\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-09-12-15-50\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-09-12-16-29\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-09-12-17-53\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-09-12-18-54\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-09-12-19-15\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-09-12-22-38\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-09-12-26-32\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-09-12-56-57\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-09-13-49-12\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-09-13-52-52\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-09-13-53-47\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-14-08-27-25\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-26-13-46-48\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-26-14-05-43\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-26-14-07-29\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-26-14-11-02\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-26-14-12-01\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-26-14-12-36\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-27-08-53-00\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-28-07-02-37\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-28-11-32-12\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-28-11-32-44\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-28-11-33-42\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-28-11-35-08\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-29-08-45-03\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-29-08-45-20\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"test-env\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-07-14-08-51-57\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-07-14-09-11-59\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-07-14-09-12-23\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        }\n      ],\n      \"preview_api_key\":{\n        \"sys\":{\n          \"type\":\"Link\",\n          \"linkType\":\"PreviewApiKey\",\n          \"id\":\"1YsyWIrKbsWrbImKsd9Bqq\"\n        }\n      }\n    }\n  ]\n}\n\n"
+      }
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "7d6f1133-804b-4f0c-8ff0-24a65edd15fb",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/api_keys",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\n  \"total\":1,\n  \"limit\":25,\n  \"skip\":0,\n  \"sys\":{\n    \"type\":\"Array\"\n  },\n  \"items\":[\n    {\n      \"name\":\"Example space token 1\",\n      \"description\":\"This token is used by an example app. It is coupled with the content previews.\",\n      \"accessToken\":\"c11ea00b60091e878e7966c52e1138ad3adf5ff00a99c5dde77cb05a83743045\",\n      \"policies\":[\n        {\n          \"effect\":\"allow\",\n          \"actions\":\"all\"\n        }\n      ],\n      \"sys\":{\n        \"type\":\"ApiKey\",\n        \"id\":\"1Yrt2lSOGbwEjPWJVg6yJA\",\n        \"version\":86,\n        \"space\":{\n          \"sys\":{\n            \"type\":\"Link\",\n            \"linkType\":\"Space\",\n            \"id\":\"bo6ijs14u5ox\"\n          }\n        },\n        \"createdBy\":{\n          \"sys\":{\n            \"type\":\"Link\",\n            \"linkType\":\"User\",\n            \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n          }\n        },\n        \"createdAt\":\"2018-09-17T08:26:09Z\",\n        \"updatedBy\":{\n          \"sys\":{\n            \"type\":\"Link\",\n            \"linkType\":\"User\",\n            \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n          }\n        },\n        \"updatedAt\":\"2023-07-14T09:12:25Z\"\n      },\n      \"environments\":[\n        {\n          \"sys\":{\n            \"id\":\"master\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-02-08-50-46\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-11-14-05\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-11-18-44\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-11-19-09\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-11-19-33\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-12-08-11\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-12-09-36\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-12-13-09\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-12-21-53\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-12-25-50\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-12-29-49\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-12-30-33\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-12-30-50\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-12-35-27\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-12-58-23\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-14-10-01\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-14-10-44\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-14-12-01\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-14-12-19\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-14-12-46\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-14-13-12\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-14-14-12\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-14-18-45\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-14-33-50\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-14-35-12\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-14-35-50\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-14-36-46\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-14-38-59\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-14-40-09\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-14-40-30\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-14-52-54\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-14-53-49\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-15-03-45\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-15-04-30\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-15-14-56\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-15-15-34\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-15-24-35\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-15-25-05\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-15-25-47\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-15-38-32\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-15-51-32\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-15-56-58\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-15-57-36\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-15-59-18\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-16-02-06\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-16-02-58\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-16-05-53\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-05-16-07-40\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-07-07-23-21\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-07-07-23-46\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-07-08-05-31\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-07-08-38-35\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-08-08-08-37\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-08-08-08-56\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-09-12-15-50\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-09-12-16-29\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-09-12-17-53\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-09-12-18-54\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-09-12-19-15\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-09-12-22-38\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-09-12-26-32\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-09-12-56-57\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-09-13-49-12\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-09-13-52-52\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-09-13-53-47\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-14-08-27-25\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-26-13-46-48\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-26-14-05-43\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-26-14-07-29\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-26-14-11-02\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-26-14-12-01\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-26-14-12-36\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-27-08-53-00\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-28-07-02-37\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-28-11-32-12\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-28-11-32-44\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-28-11-33-42\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-28-11-35-08\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-29-08-45-03\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-06-29-08-45-20\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"test-env\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-07-14-08-51-57\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-07-14-09-11-59\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        },\n        {\n          \"sys\":{\n            \"id\":\"2023-07-14-09-12-23\",\n            \"type\":\"Link\",\n            \"linkType\":\"Environment\"\n          }\n        }\n      ],\n      \"preview_api_key\":{\n        \"sys\":{\n          \"type\":\"Link\",\n          \"linkType\":\"PreviewApiKey\",\n          \"id\":\"1YsyWIrKbsWrbImKsd9Bqq\"\n        }\n      }\n    }\n  ]\n}\n\n"
+      }
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "ddadeccf-9671-4bd6-b3d8-ea5c106186b1",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/api_keys/1Yrt2lSOGbwEjPWJVg6yJA",
+        "method": "PUT",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "ddadeccf-9671-4bd6-b3d8-ea5c106186b1",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/api_keys/1Yrt2lSOGbwEjPWJVg6yJA",
+        "method": "PUT",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "ddadeccf-9671-4bd6-b3d8-ea5c106186b1",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/api_keys/1Yrt2lSOGbwEjPWJVg6yJA",
+        "method": "PUT",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\n  \"name\":\"Example space token 1\",\n  \"description\":\"This token is used by an example app. It is coupled with the content previews.\",\n  \"accessToken\":\"c11ea00b60091e878e7966c52e1138ad3adf5ff00a99c5dde77cb05a83743045\",\n  \"policies\":[\n    {\n      \"effect\":\"allow\",\n      \"actions\":\"all\"\n    }\n  ],\n  \"sys\":{\n    \"type\":\"ApiKey\",\n    \"id\":\"1Yrt2lSOGbwEjPWJVg6yJA\",\n    \"version\":87,\n    \"space\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"Space\",\n        \"id\":\"bo6ijs14u5ox\"\n      }\n    },\n    \"createdBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"createdAt\":\"2018-09-17T08:26:09Z\",\n    \"updatedBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"updatedAt\":\"2023-07-14T09:24:25Z\"\n  },\n  \"environments\":[\n    {\n      \"sys\":{\n        \"id\":\"master\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-02-08-50-46\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-11-14-05\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-11-18-44\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-11-19-09\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-11-19-33\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-12-08-11\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-12-09-36\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-12-13-09\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-12-21-53\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-12-25-50\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-12-29-49\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-12-30-33\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-12-30-50\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-12-35-27\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-12-58-23\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-14-10-01\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-14-10-44\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-14-12-01\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-14-12-19\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-14-12-46\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-14-13-12\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-14-14-12\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-14-18-45\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-14-33-50\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-14-35-12\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-14-35-50\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-14-36-46\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-14-38-59\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-14-40-09\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-14-40-30\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-14-52-54\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-14-53-49\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-15-03-45\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-15-04-30\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-15-14-56\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-15-15-34\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-15-24-35\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-15-25-05\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-15-25-47\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-15-38-32\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-15-51-32\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-15-56-58\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-15-57-36\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-15-59-18\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-16-02-06\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-16-02-58\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-16-05-53\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-16-07-40\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-07-07-23-21\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-07-07-23-46\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-07-08-05-31\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-07-08-38-35\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-08-08-08-37\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-08-08-08-56\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-09-12-15-50\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-09-12-16-29\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-09-12-17-53\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-09-12-18-54\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-09-12-19-15\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-09-12-22-38\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-09-12-26-32\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-09-12-56-57\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-09-13-49-12\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-09-13-52-52\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-09-13-53-47\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-14-08-27-25\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-26-13-46-48\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-26-14-05-43\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-26-14-07-29\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-26-14-11-02\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-26-14-12-01\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-26-14-12-36\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-27-08-53-00\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-28-07-02-37\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-28-11-32-12\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-28-11-32-44\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-28-11-33-42\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-28-11-35-08\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-29-08-45-03\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-29-08-45-20\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"test-env\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-07-14-08-51-57\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-07-14-09-11-59\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-07-14-09-12-23\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-07-14-09-24-23\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    }\n  ],\n  \"preview_api_key\":{\n    \"sys\":{\n      \"type\":\"Link\",\n      \"linkType\":\"PreviewApiKey\",\n      \"id\":\"1YsyWIrKbsWrbImKsd9Bqq\"\n    }\n  }\n}\n\n"
+      }
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "ddadeccf-9671-4bd6-b3d8-ea5c106186b1",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/api_keys/1Yrt2lSOGbwEjPWJVg6yJA",
+        "method": "PUT",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\n  \"name\":\"Example space token 1\",\n  \"description\":\"This token is used by an example app. It is coupled with the content previews.\",\n  \"accessToken\":\"c11ea00b60091e878e7966c52e1138ad3adf5ff00a99c5dde77cb05a83743045\",\n  \"policies\":[\n    {\n      \"effect\":\"allow\",\n      \"actions\":\"all\"\n    }\n  ],\n  \"sys\":{\n    \"type\":\"ApiKey\",\n    \"id\":\"1Yrt2lSOGbwEjPWJVg6yJA\",\n    \"version\":87,\n    \"space\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"Space\",\n        \"id\":\"bo6ijs14u5ox\"\n      }\n    },\n    \"createdBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"createdAt\":\"2018-09-17T08:26:09Z\",\n    \"updatedBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"updatedAt\":\"2023-07-14T09:24:25Z\"\n  },\n  \"environments\":[\n    {\n      \"sys\":{\n        \"id\":\"master\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-02-08-50-46\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-11-14-05\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-11-18-44\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-11-19-09\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-11-19-33\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-12-08-11\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-12-09-36\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-12-13-09\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-12-21-53\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-12-25-50\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-12-29-49\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-12-30-33\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-12-30-50\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-12-35-27\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-12-58-23\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-14-10-01\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-14-10-44\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-14-12-01\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-14-12-19\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-14-12-46\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-14-13-12\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-14-14-12\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-14-18-45\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-14-33-50\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-14-35-12\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-14-35-50\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-14-36-46\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-14-38-59\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-14-40-09\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-14-40-30\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-14-52-54\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-14-53-49\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-15-03-45\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-15-04-30\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-15-14-56\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-15-15-34\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-15-24-35\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-15-25-05\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-15-25-47\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-15-38-32\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-15-51-32\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-15-56-58\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-15-57-36\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-15-59-18\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-16-02-06\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-16-02-58\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-16-05-53\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-05-16-07-40\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-07-07-23-21\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-07-07-23-46\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-07-08-05-31\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-07-08-38-35\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-08-08-08-37\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-08-08-08-56\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-09-12-15-50\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-09-12-16-29\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-09-12-17-53\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-09-12-18-54\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-09-12-19-15\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-09-12-22-38\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-09-12-26-32\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-09-12-56-57\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-09-13-49-12\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-09-13-52-52\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-09-13-53-47\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-14-08-27-25\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-26-13-46-48\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-26-14-05-43\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-26-14-07-29\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-26-14-11-02\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-26-14-12-01\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-26-14-12-36\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-27-08-53-00\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-28-07-02-37\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-28-11-32-12\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-28-11-32-44\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-28-11-33-42\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-28-11-35-08\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-29-08-45-03\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-06-29-08-45-20\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"test-env\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-07-14-08-51-57\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-07-14-09-11-59\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-07-14-09-12-23\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    },\n    {\n      \"sys\":{\n        \"id\":\"2023-07-14-09-24-23\",\n        \"type\":\"Link\",\n        \"linkType\":\"Environment\"\n      }\n    }\n  ],\n  \"preview_api_key\":{\n    \"sys\":{\n      \"type\":\"Link\",\n      \"linkType\":\"PreviewApiKey\",\n      \"id\":\"1YsyWIrKbsWrbImKsd9Bqq\"\n    }\n  }\n}\n\n"
+      }
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "38981120-6f37-4ed6-bdd9-153b10e8e79f",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "38981120-6f37-4ed6-bdd9-153b10e8e79f",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "38981120-6f37-4ed6-bdd9-153b10e8e79f",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\n  \"name\":\"TypeOne\",\n  \"sys\":{\n    \"type\":\"Space\",\n    \"id\":\"bo6ijs14u5ox\",\n    \"version\":7,\n    \"createdBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"createdAt\":\"2018-09-17T08:26:06Z\",\n    \"updatedBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"updatedAt\":\"2022-12-15T09:11:48Z\",\n    \"organization\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"Organization\",\n        \"id\":\"1kUUWhojvGtUmRyhXfqSwK\"\n      }\n    }\n  }\n}\n\n"
+      }
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "38981120-6f37-4ed6-bdd9-153b10e8e79f",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\n  \"name\":\"TypeOne\",\n  \"sys\":{\n    \"type\":\"Space\",\n    \"id\":\"bo6ijs14u5ox\",\n    \"version\":7,\n    \"createdBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"createdAt\":\"2018-09-17T08:26:06Z\",\n    \"updatedBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"updatedAt\":\"2022-12-15T09:11:48Z\",\n    \"organization\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"Organization\",\n        \"id\":\"1kUUWhojvGtUmRyhXfqSwK\"\n      }\n    }\n  }\n}\n\n"
+      }
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "f030efc9-91c0-4c33-90ca-0164e17c25a4",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "f030efc9-91c0-4c33-90ca-0164e17c25a4",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "f030efc9-91c0-4c33-90ca-0164e17c25a4",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\n  \"name\":\"2023-07-14-09-24-23\",\n  \"sys\":{\n    \"type\":\"Environment\",\n    \"id\":\"2023-07-14-09-24-23\",\n    \"version\":3,\n    \"space\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"Space\",\n        \"id\":\"bo6ijs14u5ox\"\n      }\n    },\n    \"status\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"Status\",\n        \"id\":\"ready\"\n      }\n    },\n    \"createdBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"createdAt\":\"2023-07-14T09:24:24Z\",\n    \"updatedBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"updatedAt\":\"2023-07-14T09:24:25Z\",\n    \"aliases\":[]\n  }\n}\n\n"
+      }
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "f030efc9-91c0-4c33-90ca-0164e17c25a4",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\n  \"name\":\"2023-07-14-09-24-23\",\n  \"sys\":{\n    \"type\":\"Environment\",\n    \"id\":\"2023-07-14-09-24-23\",\n    \"version\":3,\n    \"space\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"Space\",\n        \"id\":\"bo6ijs14u5ox\"\n      }\n    },\n    \"status\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"Status\",\n        \"id\":\"ready\"\n      }\n    },\n    \"createdBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"createdAt\":\"2023-07-14T09:24:24Z\",\n    \"updatedBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"updatedAt\":\"2023-07-14T09:24:25Z\",\n    \"aliases\":[]\n  }\n}\n\n"
+      }
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "10ad8b7f-c9e9-479a-b41d-2a93d47f882d",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/locales",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "10ad8b7f-c9e9-479a-b41d-2a93d47f882d",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/locales",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "10ad8b7f-c9e9-479a-b41d-2a93d47f882d",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/locales",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\"sys\":{\"type\":\"Array\"},\"total\":1,\"skip\":0,\"limit\":100,\"items\":[{\"name\":\"English (United States)\",\"internal_code\":\"en-US\",\"code\":\"en-US\",\"fallbackCode\":null,\"default\":true,\"contentManagementApi\":true,\"contentDeliveryApi\":true,\"optional\":false,\"sys\":{\"type\":\"Locale\",\"id\":\"1VDLlb9oKX4EE2oI6p9kMa\",\"version\":1,\"space\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"Space\",\"id\":\"bo6ijs14u5ox\"}},\"environment\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"Environment\",\"id\":\"2023-07-14-09-24-23\",\"uuid\":\"496f71bd-6cb5-49c7-8ddc-c9f857c1a212\"}},\"createdBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"createdAt\":\"2023-07-14T09:24:24Z\",\"updatedBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"updatedAt\":\"2023-07-14T09:24:24Z\"}}]}\n"
+      }
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "10ad8b7f-c9e9-479a-b41d-2a93d47f882d",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/locales",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\"sys\":{\"type\":\"Array\"},\"total\":1,\"skip\":0,\"limit\":100,\"items\":[{\"name\":\"English (United States)\",\"internal_code\":\"en-US\",\"code\":\"en-US\",\"fallbackCode\":null,\"default\":true,\"contentManagementApi\":true,\"contentDeliveryApi\":true,\"optional\":false,\"sys\":{\"type\":\"Locale\",\"id\":\"1VDLlb9oKX4EE2oI6p9kMa\",\"version\":1,\"space\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"Space\",\"id\":\"bo6ijs14u5ox\"}},\"environment\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"Environment\",\"id\":\"2023-07-14-09-24-23\",\"uuid\":\"496f71bd-6cb5-49c7-8ddc-c9f857c1a212\"}},\"createdBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"createdAt\":\"2023-07-14T09:24:24Z\",\"updatedBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"updatedAt\":\"2023-07-14T09:24:24Z\"}}]}\n"
+      }
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "8a64479b-494c-4179-a195-cedc6e7c1f38",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/content_types/appliedMigrations",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "8a64479b-494c-4179-a195-cedc6e7c1f38",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/content_types/appliedMigrations",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "8a64479b-494c-4179-a195-cedc6e7c1f38",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/content_types/appliedMigrations",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\"sys\":{\"space\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"Space\",\"id\":\"bo6ijs14u5ox\"}},\"id\":\"appliedMigrations\",\"type\":\"ContentType\",\"createdAt\":\"2023-07-14T09:24:22.833Z\",\"updatedAt\":\"2023-07-14T09:24:23.228Z\",\"environment\":{\"sys\":{\"id\":\"2023-07-14-09-24-23\",\"type\":\"Link\",\"linkType\":\"Environment\"}},\"publishedVersion\":1,\"publishedAt\":\"2023-07-14T09:24:23.228Z\",\"firstPublishedAt\":\"2023-07-14T09:24:23.228Z\",\"createdBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"updatedBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"publishedCounter\":1,\"version\":2,\"publishedBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}}},\"displayField\":\"timestamp\",\"name\":\"Applied migrations\",\"description\":null,\"fields\":[{\"id\":\"timestamp\",\"name\":\"Timestamp\",\"type\":\"Symbol\",\"localized\":false,\"required\":true,\"validations\":[],\"disabled\":false,\"omitted\":false},{\"id\":\"name\",\"name\":\"Name\",\"type\":\"Symbol\",\"localized\":false,\"required\":true,\"validations\":[],\"disabled\":false,\"omitted\":false},{\"id\":\"batch\",\"name\":\"Batch number\",\"type\":\"Integer\",\"localized\":false,\"required\":true,\"validations\":[],\"disabled\":false,\"omitted\":false}]}\n"
+      }
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "8a64479b-494c-4179-a195-cedc6e7c1f38",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/content_types/appliedMigrations",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\"sys\":{\"space\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"Space\",\"id\":\"bo6ijs14u5ox\"}},\"id\":\"appliedMigrations\",\"type\":\"ContentType\",\"createdAt\":\"2023-07-14T09:24:22.833Z\",\"updatedAt\":\"2023-07-14T09:24:23.228Z\",\"environment\":{\"sys\":{\"id\":\"2023-07-14-09-24-23\",\"type\":\"Link\",\"linkType\":\"Environment\"}},\"publishedVersion\":1,\"publishedAt\":\"2023-07-14T09:24:23.228Z\",\"firstPublishedAt\":\"2023-07-14T09:24:23.228Z\",\"createdBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"updatedBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"publishedCounter\":1,\"version\":2,\"publishedBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}}},\"displayField\":\"timestamp\",\"name\":\"Applied migrations\",\"description\":null,\"fields\":[{\"id\":\"timestamp\",\"name\":\"Timestamp\",\"type\":\"Symbol\",\"localized\":false,\"required\":true,\"validations\":[],\"disabled\":false,\"omitted\":false},{\"id\":\"name\",\"name\":\"Name\",\"type\":\"Symbol\",\"localized\":false,\"required\":true,\"validations\":[],\"disabled\":false,\"omitted\":false},{\"id\":\"batch\",\"name\":\"Batch number\",\"type\":\"Integer\",\"localized\":false,\"required\":true,\"validations\":[],\"disabled\":false,\"omitted\":false}]}\n"
+      }
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "f2129345-f674-4988-af9b-6f95f8903989",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/entries?content_type=appliedMigrations&limit=1000",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "f2129345-f674-4988-af9b-6f95f8903989",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/entries?content_type=appliedMigrations&limit=1000",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "f2129345-f674-4988-af9b-6f95f8903989",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/entries?content_type=appliedMigrations&limit=1000",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\"sys\":{\"type\":\"Array\"},\"total\":0,\"skip\":0,\"limit\":1000,\"items\":[]}\n"
+      }
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "f2129345-f674-4988-af9b-6f95f8903989",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/entries?content_type=appliedMigrations&limit=1000",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\"sys\":{\"type\":\"Array\"},\"total\":0,\"skip\":0,\"limit\":1000,\"items\":[]}\n"
+      }
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "46ab6273-192e-4c6c-8772-c94e8f1ce88d",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/content_types?limit=100&order=sys.createdAt&sys.id[in]=testContentType&skip=0",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "46ab6273-192e-4c6c-8772-c94e8f1ce88d",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/content_types?limit=100&order=sys.createdAt&sys.id[in]=testContentType&skip=0",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "46ab6273-192e-4c6c-8772-c94e8f1ce88d",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/content_types?limit=100&order=sys.createdAt&sys.id[in]=testContentType&skip=0",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\"sys\":{\"type\":\"Array\"},\"total\":0,\"skip\":0,\"limit\":100,\"items\":[]}\n"
+      }
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "46ab6273-192e-4c6c-8772-c94e8f1ce88d",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/content_types?limit=100&order=sys.createdAt&sys.id[in]=testContentType&skip=0",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\"sys\":{\"type\":\"Array\"},\"total\":0,\"skip\":0,\"limit\":100,\"items\":[]}\n"
+      }
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "1834b940-1140-4728-8994-9c049e10cffa",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/locales?limit=100&order=sys.createdAt&skip=0",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "1834b940-1140-4728-8994-9c049e10cffa",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/locales?limit=100&order=sys.createdAt&skip=0",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "1834b940-1140-4728-8994-9c049e10cffa",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/locales?limit=100&order=sys.createdAt&skip=0",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\"sys\":{\"type\":\"Array\"},\"total\":1,\"skip\":0,\"limit\":100,\"items\":[{\"name\":\"English (United States)\",\"internal_code\":\"en-US\",\"code\":\"en-US\",\"fallbackCode\":null,\"default\":true,\"contentManagementApi\":true,\"contentDeliveryApi\":true,\"optional\":false,\"sys\":{\"type\":\"Locale\",\"id\":\"1VDLlb9oKX4EE2oI6p9kMa\",\"version\":1,\"space\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"Space\",\"id\":\"bo6ijs14u5ox\"}},\"environment\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"Environment\",\"id\":\"2023-07-14-09-24-23\",\"uuid\":\"496f71bd-6cb5-49c7-8ddc-c9f857c1a212\"}},\"createdBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"createdAt\":\"2023-07-14T09:24:24Z\",\"updatedBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"updatedAt\":\"2023-07-14T09:24:24Z\"}}]}\n"
+      }
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "1834b940-1140-4728-8994-9c049e10cffa",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/locales?limit=100&order=sys.createdAt&skip=0",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\"sys\":{\"type\":\"Array\"},\"total\":1,\"skip\":0,\"limit\":100,\"items\":[{\"name\":\"English (United States)\",\"internal_code\":\"en-US\",\"code\":\"en-US\",\"fallbackCode\":null,\"default\":true,\"contentManagementApi\":true,\"contentDeliveryApi\":true,\"optional\":false,\"sys\":{\"type\":\"Locale\",\"id\":\"1VDLlb9oKX4EE2oI6p9kMa\",\"version\":1,\"space\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"Space\",\"id\":\"bo6ijs14u5ox\"}},\"environment\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"Environment\",\"id\":\"2023-07-14-09-24-23\",\"uuid\":\"496f71bd-6cb5-49c7-8ddc-c9f857c1a212\"}},\"createdBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"createdAt\":\"2023-07-14T09:24:24Z\",\"updatedBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"updatedAt\":\"2023-07-14T09:24:24Z\"}}]}\n"
+      }
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "0cc52d25-2e43-4685-bb7f-54d395796276",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/content_types/testContentType",
+        "method": "PUT",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "0cc52d25-2e43-4685-bb7f-54d395796276",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/content_types/testContentType",
+        "method": "PUT",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "0cc52d25-2e43-4685-bb7f-54d395796276",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/content_types/testContentType",
+        "method": "PUT",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 201,
+        "statusText": "Created",
+        "headers": {},
+        "body": "{\"sys\":{\"space\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"Space\",\"id\":\"bo6ijs14u5ox\"}},\"id\":\"testContentType\",\"type\":\"ContentType\",\"createdAt\":\"2023-07-14T09:24:28.687Z\",\"updatedAt\":\"2023-07-14T09:24:28.687Z\",\"environment\":{\"sys\":{\"id\":\"2023-07-14-09-24-23\",\"type\":\"Link\",\"linkType\":\"Environment\"}},\"createdBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"updatedBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"publishedCounter\":0,\"version\":1},\"displayField\":\"testContentId\",\"name\":\"Test content type\",\"description\":\"\",\"fields\":[{\"id\":\"testContentId\",\"name\":\"test content id\",\"type\":\"Symbol\",\"localized\":false,\"required\":false,\"validations\":[],\"disabled\":false,\"omitted\":false}]}\n"
+      }
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "0cc52d25-2e43-4685-bb7f-54d395796276",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/content_types/testContentType",
+        "method": "PUT",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 201,
+        "statusText": "Created",
+        "headers": {},
+        "body": "{\"sys\":{\"space\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"Space\",\"id\":\"bo6ijs14u5ox\"}},\"id\":\"testContentType\",\"type\":\"ContentType\",\"createdAt\":\"2023-07-14T09:24:28.687Z\",\"updatedAt\":\"2023-07-14T09:24:28.687Z\",\"environment\":{\"sys\":{\"id\":\"2023-07-14-09-24-23\",\"type\":\"Link\",\"linkType\":\"Environment\"}},\"createdBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"updatedBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"publishedCounter\":0,\"version\":1},\"displayField\":\"testContentId\",\"name\":\"Test content type\",\"description\":\"\",\"fields\":[{\"id\":\"testContentId\",\"name\":\"test content id\",\"type\":\"Symbol\",\"localized\":false,\"required\":false,\"validations\":[],\"disabled\":false,\"omitted\":false}]}\n"
+      }
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "fcf7964e-9592-44a4-8418-718bb471c2e6",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/content_types/testContentType/published",
+        "method": "PUT",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "fcf7964e-9592-44a4-8418-718bb471c2e6",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/content_types/testContentType/published",
+        "method": "PUT",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "fcf7964e-9592-44a4-8418-718bb471c2e6",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/content_types/testContentType/published",
+        "method": "PUT",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\"sys\":{\"space\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"Space\",\"id\":\"bo6ijs14u5ox\"}},\"id\":\"testContentType\",\"type\":\"ContentType\",\"createdAt\":\"2023-07-14T09:24:28.687Z\",\"updatedAt\":\"2023-07-14T09:24:29.070Z\",\"environment\":{\"sys\":{\"id\":\"2023-07-14-09-24-23\",\"type\":\"Link\",\"linkType\":\"Environment\"}},\"createdBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"updatedBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"publishedCounter\":1,\"version\":2,\"firstPublishedAt\":\"2023-07-14T09:24:29.070Z\",\"publishedAt\":\"2023-07-14T09:24:29.070Z\",\"publishedBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"publishedVersion\":1},\"displayField\":\"testContentId\",\"name\":\"Test content type\",\"description\":\"\",\"fields\":[{\"id\":\"testContentId\",\"name\":\"test content id\",\"type\":\"Symbol\",\"localized\":false,\"required\":false,\"validations\":[],\"disabled\":false,\"omitted\":false}]}\n"
+      }
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "fcf7964e-9592-44a4-8418-718bb471c2e6",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/content_types/testContentType/published",
+        "method": "PUT",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\"sys\":{\"space\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"Space\",\"id\":\"bo6ijs14u5ox\"}},\"id\":\"testContentType\",\"type\":\"ContentType\",\"createdAt\":\"2023-07-14T09:24:28.687Z\",\"updatedAt\":\"2023-07-14T09:24:29.070Z\",\"environment\":{\"sys\":{\"id\":\"2023-07-14-09-24-23\",\"type\":\"Link\",\"linkType\":\"Environment\"}},\"createdBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"updatedBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"publishedCounter\":1,\"version\":2,\"firstPublishedAt\":\"2023-07-14T09:24:29.070Z\",\"publishedAt\":\"2023-07-14T09:24:29.070Z\",\"publishedBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"publishedVersion\":1},\"displayField\":\"testContentId\",\"name\":\"Test content type\",\"description\":\"\",\"fields\":[{\"id\":\"testContentId\",\"name\":\"test content id\",\"type\":\"Symbol\",\"localized\":false,\"required\":false,\"validations\":[],\"disabled\":false,\"omitted\":false}]}\n"
+      }
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "861e01df-bfbc-487b-adad-2e096920dd14",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/entries?content_type=appliedMigrations&limit=1000",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "861e01df-bfbc-487b-adad-2e096920dd14",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/entries?content_type=appliedMigrations&limit=1000",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "861e01df-bfbc-487b-adad-2e096920dd14",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/entries?content_type=appliedMigrations&limit=1000",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\"sys\":{\"type\":\"Array\"},\"total\":0,\"skip\":0,\"limit\":1000,\"items\":[]}\n"
+      }
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "861e01df-bfbc-487b-adad-2e096920dd14",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/entries?content_type=appliedMigrations&limit=1000",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\"sys\":{\"type\":\"Array\"},\"total\":0,\"skip\":0,\"limit\":1000,\"items\":[]}\n"
+      }
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "c373de8a-d8b3-4e6a-a6fb-add9a82761f8",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/entries",
+        "method": "POST",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "c373de8a-d8b3-4e6a-a6fb-add9a82761f8",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/entries",
+        "method": "POST",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "c373de8a-d8b3-4e6a-a6fb-add9a82761f8",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/entries",
+        "method": "POST",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 201,
+        "statusText": "Created",
+        "headers": {},
+        "body": "{\"metadata\":{\"tags\":[]},\"sys\":{\"space\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"Space\",\"id\":\"bo6ijs14u5ox\"}},\"id\":\"4Z82uIue7f5KTUjGfmsSyg\",\"type\":\"Entry\",\"createdAt\":\"2023-07-14T09:24:30.285Z\",\"updatedAt\":\"2023-07-14T09:24:30.285Z\",\"environment\":{\"sys\":{\"id\":\"2023-07-14-09-24-23\",\"type\":\"Link\",\"linkType\":\"Environment\"}},\"createdBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"updatedBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"publishedCounter\":0,\"version\":1,\"automationTags\":[],\"contentType\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"ContentType\",\"id\":\"appliedMigrations\"}}},\"fields\":{\"timestamp\":{\"en-US\":\"20230609122547608\"},\"name\":{\"en-US\":\"new-migration\"},\"batch\":{\"en-US\":1}}}\n"
+      }
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "c373de8a-d8b3-4e6a-a6fb-add9a82761f8",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/entries",
+        "method": "POST",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 201,
+        "statusText": "Created",
+        "headers": {},
+        "body": "{\"metadata\":{\"tags\":[]},\"sys\":{\"space\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"Space\",\"id\":\"bo6ijs14u5ox\"}},\"id\":\"4Z82uIue7f5KTUjGfmsSyg\",\"type\":\"Entry\",\"createdAt\":\"2023-07-14T09:24:30.285Z\",\"updatedAt\":\"2023-07-14T09:24:30.285Z\",\"environment\":{\"sys\":{\"id\":\"2023-07-14-09-24-23\",\"type\":\"Link\",\"linkType\":\"Environment\"}},\"createdBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"updatedBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"publishedCounter\":0,\"version\":1,\"automationTags\":[],\"contentType\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"ContentType\",\"id\":\"appliedMigrations\"}}},\"fields\":{\"timestamp\":{\"en-US\":\"20230609122547608\"},\"name\":{\"en-US\":\"new-migration\"},\"batch\":{\"en-US\":1}}}\n"
+      }
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "4bd0f737-c601-42c2-a6b5-952c4c0b2500",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/entries/4Z82uIue7f5KTUjGfmsSyg/published",
+        "method": "PUT",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "4bd0f737-c601-42c2-a6b5-952c4c0b2500",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/entries/4Z82uIue7f5KTUjGfmsSyg/published",
+        "method": "PUT",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "4bd0f737-c601-42c2-a6b5-952c4c0b2500",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/entries/4Z82uIue7f5KTUjGfmsSyg/published",
+        "method": "PUT",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\"metadata\":{\"tags\":[]},\"sys\":{\"space\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"Space\",\"id\":\"bo6ijs14u5ox\"}},\"id\":\"4Z82uIue7f5KTUjGfmsSyg\",\"type\":\"Entry\",\"createdAt\":\"2023-07-14T09:24:30.285Z\",\"updatedAt\":\"2023-07-14T09:24:30.641Z\",\"environment\":{\"sys\":{\"id\":\"2023-07-14-09-24-23\",\"type\":\"Link\",\"linkType\":\"Environment\"}},\"publishedVersion\":1,\"publishedAt\":\"2023-07-14T09:24:30.641Z\",\"firstPublishedAt\":\"2023-07-14T09:24:30.641Z\",\"createdBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"updatedBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"publishedCounter\":1,\"version\":2,\"publishedBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"automationTags\":[],\"contentType\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"ContentType\",\"id\":\"appliedMigrations\"}}},\"fields\":{\"timestamp\":{\"en-US\":\"20230609122547608\"},\"name\":{\"en-US\":\"new-migration\"},\"batch\":{\"en-US\":1}}}\n"
+      }
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "4bd0f737-c601-42c2-a6b5-952c4c0b2500",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-24-23/entries/4Z82uIue7f5KTUjGfmsSyg/published",
+        "method": "PUT",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\"metadata\":{\"tags\":[]},\"sys\":{\"space\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"Space\",\"id\":\"bo6ijs14u5ox\"}},\"id\":\"4Z82uIue7f5KTUjGfmsSyg\",\"type\":\"Entry\",\"createdAt\":\"2023-07-14T09:24:30.285Z\",\"updatedAt\":\"2023-07-14T09:24:30.641Z\",\"environment\":{\"sys\":{\"id\":\"2023-07-14-09-24-23\",\"type\":\"Link\",\"linkType\":\"Environment\"}},\"publishedVersion\":1,\"publishedAt\":\"2023-07-14T09:24:30.641Z\",\"firstPublishedAt\":\"2023-07-14T09:24:30.641Z\",\"createdBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"updatedBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"publishedCounter\":1,\"version\":2,\"publishedBy\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"User\",\"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"}},\"automationTags\":[],\"contentType\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"ContentType\",\"id\":\"appliedMigrations\"}}},\"fields\":{\"timestamp\":{\"en-US\":\"20230609122547608\"},\"name\":{\"en-US\":\"new-migration\"},\"batch\":{\"en-US\":1}}}\n"
+      }
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "229e4420-e7ad-4995-8639-fef787a0116e",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environment_aliases/master",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "229e4420-e7ad-4995-8639-fef787a0116e",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environment_aliases/master",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "229e4420-e7ad-4995-8639-fef787a0116e",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environment_aliases/master",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\n  \"sys\":{\n    \"type\":\"EnvironmentAlias\",\n    \"id\":\"master\",\n    \"version\":21,\n    \"space\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"Space\",\n        \"id\":\"bo6ijs14u5ox\"\n      }\n    },\n    \"createdBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"createdAt\":\"2023-06-05T12:35:02Z\",\n    \"updatedBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"updatedAt\":\"2023-07-14T09:12:32Z\"\n  },\n  \"environment\":{\n    \"sys\":{\n      \"type\":\"Link\",\n      \"linkType\":\"Environment\",\n      \"id\":\"2023-07-14-09-12-23\"\n    }\n  }\n}\n\n"
+      }
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "229e4420-e7ad-4995-8639-fef787a0116e",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environment_aliases/master",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\n  \"sys\":{\n    \"type\":\"EnvironmentAlias\",\n    \"id\":\"master\",\n    \"version\":21,\n    \"space\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"Space\",\n        \"id\":\"bo6ijs14u5ox\"\n      }\n    },\n    \"createdBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"createdAt\":\"2023-06-05T12:35:02Z\",\n    \"updatedBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"updatedAt\":\"2023-07-14T09:12:32Z\"\n  },\n  \"environment\":{\n    \"sys\":{\n      \"type\":\"Link\",\n      \"linkType\":\"Environment\",\n      \"id\":\"2023-07-14-09-12-23\"\n    }\n  }\n}\n\n"
+      }
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "d8c6239a-f9a7-4621-bcd3-cf768f3278ef",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environment_aliases/master",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "d8c6239a-f9a7-4621-bcd3-cf768f3278ef",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environment_aliases/master",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "d8c6239a-f9a7-4621-bcd3-cf768f3278ef",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environment_aliases/master",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\n  \"sys\":{\n    \"type\":\"EnvironmentAlias\",\n    \"id\":\"master\",\n    \"version\":21,\n    \"space\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"Space\",\n        \"id\":\"bo6ijs14u5ox\"\n      }\n    },\n    \"createdBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"createdAt\":\"2023-06-05T12:35:02Z\",\n    \"updatedBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"updatedAt\":\"2023-07-14T09:12:32Z\"\n  },\n  \"environment\":{\n    \"sys\":{\n      \"type\":\"Link\",\n      \"linkType\":\"Environment\",\n      \"id\":\"2023-07-14-09-12-23\"\n    }\n  }\n}\n\n"
+      }
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "d8c6239a-f9a7-4621-bcd3-cf768f3278ef",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environment_aliases/master",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\n  \"sys\":{\n    \"type\":\"EnvironmentAlias\",\n    \"id\":\"master\",\n    \"version\":21,\n    \"space\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"Space\",\n        \"id\":\"bo6ijs14u5ox\"\n      }\n    },\n    \"createdBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"createdAt\":\"2023-06-05T12:35:02Z\",\n    \"updatedBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"updatedAt\":\"2023-07-14T09:12:32Z\"\n  },\n  \"environment\":{\n    \"sys\":{\n      \"type\":\"Link\",\n      \"linkType\":\"Environment\",\n      \"id\":\"2023-07-14-09-12-23\"\n    }\n  }\n}\n\n"
+      }
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "0a43754b-30ff-4af0-95fa-28bcd5d01113",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environment_aliases/master",
+        "method": "PUT",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "0a43754b-30ff-4af0-95fa-28bcd5d01113",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environment_aliases/master",
+        "method": "PUT",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "0a43754b-30ff-4af0-95fa-28bcd5d01113",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environment_aliases/master",
+        "method": "PUT",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\n  \"sys\":{\n    \"type\":\"EnvironmentAlias\",\n    \"id\":\"master\",\n    \"version\":22,\n    \"space\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"Space\",\n        \"id\":\"bo6ijs14u5ox\"\n      }\n    },\n    \"createdBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"createdAt\":\"2023-06-05T12:35:02Z\",\n    \"updatedBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"updatedAt\":\"2023-07-14T09:24:31Z\"\n  },\n  \"environment\":{\n    \"sys\":{\n      \"type\":\"Link\",\n      \"linkType\":\"Environment\",\n      \"id\":\"2023-07-14-09-24-23\"\n    }\n  }\n}\n\n"
+      }
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "0a43754b-30ff-4af0-95fa-28bcd5d01113",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environment_aliases/master",
+        "method": "PUT",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\n  \"sys\":{\n    \"type\":\"EnvironmentAlias\",\n    \"id\":\"master\",\n    \"version\":22,\n    \"space\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"Space\",\n        \"id\":\"bo6ijs14u5ox\"\n      }\n    },\n    \"createdBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"createdAt\":\"2023-06-05T12:35:02Z\",\n    \"updatedBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"updatedAt\":\"2023-07-14T09:24:31Z\"\n  },\n  \"environment\":{\n    \"sys\":{\n      \"type\":\"Link\",\n      \"linkType\":\"Environment\",\n      \"id\":\"2023-07-14-09-24-23\"\n    }\n  }\n}\n\n"
+      }
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "fe6cc64a-90a1-44d0-a4ab-05c35e80f662",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-12-23",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "fe6cc64a-90a1-44d0-a4ab-05c35e80f662",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-12-23",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "fe6cc64a-90a1-44d0-a4ab-05c35e80f662",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-12-23",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\n  \"name\":\"2023-07-14-09-12-23\",\n  \"sys\":{\n    \"type\":\"Environment\",\n    \"id\":\"2023-07-14-09-12-23\",\n    \"version\":3,\n    \"space\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"Space\",\n        \"id\":\"bo6ijs14u5ox\"\n      }\n    },\n    \"status\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"Status\",\n        \"id\":\"ready\"\n      }\n    },\n    \"createdBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"createdAt\":\"2023-07-14T09:12:24Z\",\n    \"updatedBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"updatedAt\":\"2023-07-14T09:12:24Z\",\n    \"aliases\":[]\n  }\n}\n\n"
+      }
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "fe6cc64a-90a1-44d0-a4ab-05c35e80f662",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-12-23",
+        "method": "GET",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "body": "{\n  \"name\":\"2023-07-14-09-12-23\",\n  \"sys\":{\n    \"type\":\"Environment\",\n    \"id\":\"2023-07-14-09-12-23\",\n    \"version\":3,\n    \"space\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"Space\",\n        \"id\":\"bo6ijs14u5ox\"\n      }\n    },\n    \"status\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"Status\",\n        \"id\":\"ready\"\n      }\n    },\n    \"createdBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"createdAt\":\"2023-07-14T09:12:24Z\",\n    \"updatedBy\":{\n      \"sys\":{\n        \"type\":\"Link\",\n        \"linkType\":\"User\",\n        \"id\":\"7fkm1bGT9u8nLkbD7Uuqsr\"\n      }\n    },\n    \"updatedAt\":\"2023-07-14T09:12:24Z\",\n    \"aliases\":[]\n  }\n}\n\n"
+      }
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "556a4b62-837b-400e-8eff-800ba8fd5eab",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-12-23",
+        "method": "DELETE",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "556a4b62-837b-400e-8eff-800ba8fd5eab",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-12-23",
+        "method": "DELETE",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      null
+    ]
+  },
+  {
+    "request": [
+      {
+        "_bodyUsed": false,
+        "id": "556a4b62-837b-400e-8eff-800ba8fd5eab",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-12-23",
+        "method": "DELETE",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 204,
+        "statusText": "No Content",
+        "headers": {},
+        "body": ""
+      }
+    ],
+    "response": [
+      {
+        "_bodyUsed": false,
+        "id": "556a4b62-837b-400e-8eff-800ba8fd5eab",
+        "url": "https://api.contentful.com/spaces/bo6ijs14u5ox/environments/2023-07-14-09-12-23",
+        "method": "DELETE",
+        "headers": {},
+        "credentials": "same-origin",
+        "_body": {},
+        "cache": "default",
+        "destination": "",
+        "integrity": "",
+        "keepalive": false,
+        "mode": "cors",
+        "priority": "auto",
+        "redirect": "follow",
+        "referrer": "",
+        "referrerPolicy": "no-referrer",
+        "cookies": {}
+      },
+      {
+        "status": 204,
+        "statusText": "No Content",
+        "headers": {},
+        "body": ""
+      }
+    ]
+  }
+]

@@ -70,6 +70,7 @@ const getMigrationsToHandle = async (space, options = {}) => {
 }
 
 const getAppliedMigrations = async (space) => {
+    //seems to crash here?
     const migratedTimestamps = await getMigratedTimestamps(space)
     return fs
         .readdirSync(MIGRATIONS_DIR)
