@@ -8,6 +8,12 @@ jobs:
     test:
         runs-on: ubuntu-latest
 
+        env:
+          MIGRATIONS_DIR: __test-migrations__
+          CTF_SPACE_ID: ${{ secrets.TEST_SPACE_ID }}
+          CTF_ENVIRONMENT_ID: ${{ secrets.CTF_ENVIRONMENT_ID }}
+          CTF_CMA_TOKEN: ${{ secrets.CTF_CMA_TOKEN }}
+
         steps:
             - name: Check out code
               uses: actions/checkout@v2
@@ -25,8 +31,3 @@ jobs:
 
             - name: Run tests
               run: npm test
-              env:
-                MIGRATIONS_DIR: __test-migrations__
-                CTF_SPACE_ID: ${{ secrets.TEST_SPACE_ID }}
-                CTF_ENVIRONMENT_ID: ${{ secrets.CTF_ENVIRONMENT_ID }}
-                CTF_CMA_TOKEN: ${{ secrets.CTF_CMA_TOKEN }}
