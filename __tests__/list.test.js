@@ -12,9 +12,8 @@ describe('list', () => {
         let numberOfMigrationsInMigrationsDir = readdirSync(process.env.MIGRATIONS_DIR).length
         expect(numberOfMigrationsInMigrationsDir).toBe(0)
 
-        const stdout = extractLogLinesFromConsole()
-        await listCommand()
-        expect(stdout).toContain('Found no applied migrations')
+        let result = await listCommand()
+        expect(result).toBe('Found no applied migrations')
         closeMockedContentfulApi()
     })
 

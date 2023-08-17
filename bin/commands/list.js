@@ -26,6 +26,7 @@ exports.handler = async () => {
             console.groupEnd()
         } else {
             log.info('Found no applied migrations')
+            return 'Found no applied migrations'
         }
     } catch (e) {
         log.error(e)

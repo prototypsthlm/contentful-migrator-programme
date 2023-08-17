@@ -6,9 +6,9 @@ const { listNoAppliedMigrationHandler } = require('../mocks/contentful/handlers/
 describe('reset', () => {
     it('should not reset environment if on master', async () => {
         setupMockedContentfulApi()
-        const stdout = extractLogLinesFromConsole()
-        await resetCommand({ force: false })
-        expect(stdout).toContain(`Can't reset environment if you are on master.`)
+
+        let result = await resetCommand({ force: false })
+        expect(result).toBe(`Can't reset environment if you are on master.`)
         closeMockedContentfulApi()
     })
 })

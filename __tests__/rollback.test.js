@@ -10,8 +10,8 @@ describe('rollback', () => {
         setupMockedContentfulApi()
 
         const stdout = extractLogLinesFromConsole()
-        await rollbackCommand({ force: false })
-        expect(stdout).toContain('Executing migrations against master requires the --force flag.')
+        let result = await rollbackCommand({ force: false })
+        expect(result).toBe('Executing migrations against master requires the --force flag.')
 
         closeMockedContentfulApi()
     })

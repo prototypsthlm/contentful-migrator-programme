@@ -34,7 +34,9 @@ exports.handler = async ({ name }) => {
         const migrationPath = join(migrationsDir, migrationFileName)
 
         await writeFileAsync(migrationPath, migrationContents)
-        log.success(`Migration file ${migrationFileName} created`)
+        let successString = `Migration file ${migrationFileName} created`
+        log.success(successString)
+        return successString
     } catch (e) {
         log.error('Migration file creation failed.', e)
         process.exitCode = 1
