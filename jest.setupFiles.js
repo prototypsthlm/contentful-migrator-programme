@@ -1,5 +1,5 @@
-const dotenv = require('dotenv')
-dotenv.config({ path: './.env.test' })
+/*const dotenv = require('dotenv')
+dotenv.config({ path: './.env.test' })*/
 
 //mock lib/log since encoding characters from chalk makes testing difficult
 jest.mock('./lib/log', () => {
