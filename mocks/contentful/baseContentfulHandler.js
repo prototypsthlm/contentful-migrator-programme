@@ -7,6 +7,10 @@ let mockedContentfulServer = null
 module.exports.baseURL = 'https://api.contentful.com/spaces/TEST_SPACE_ID'
 
 module.exports.setupMockedContentfulApi = (handlers) => {
+    //set up environment variables to match mocked responses from contentful
+    process.env['CTF_SPACE_ID'] = 'TEST_SPACE_ID'
+    process.env['CTF_ENVIRONMENT_ID'] = 'master'
+
     if (handlers == null) {
         handlers = []
     }
