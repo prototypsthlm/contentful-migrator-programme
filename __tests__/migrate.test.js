@@ -4,7 +4,7 @@ const { setupMockedContentfulApi, closeMockedContentfulApi } = require('../mocks
 
 describe('migrate', () => {
     it('should demand user to use "--force" flag if running against master space', async () => {
-        setupMockedContentfulApi() //is this necessary?
+        setupMockedContentfulApi()
         const stdout = extractLogLinesFromConsole()
         await migrateCommand(false)
         expect(stdout).toContain('Executing migrations against master requires the --force flag.')
