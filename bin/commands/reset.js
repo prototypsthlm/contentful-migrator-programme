@@ -12,8 +12,9 @@ exports.desc = 'Resets current CTF_ENVIRONMENT_ID to master.'
 exports.handler = async () => {
     try {
         if (env('CTF_ENVIRONMENT_ID') === 'master') {
-            log.error(`Can't reset environment if you are on master.`)
-            return
+            let errorString = `Can't reset environment if you are on master.`
+            log.error(errorString)
+            return errorString
         }
 
         const space = await spaceModule(env('CTF_SPACE_ID'), env('CTF_ENVIRONMENT_ID'), env('CTF_CMA_TOKEN'))

@@ -4,13 +4,13 @@ const fs = require('fs')
 module.exports.createSimpleMigrationFile = () => {
     const content = `
     module.exports.up = (migration, context) => {
-        const populationCategories = migration
+        const testContentType = migration
             .createContentType('testContentType')
             .name('Test content type')
             .description('')
             .displayField('testContentId')
     
-        populationCategories
+        testContentType
             .createField('testContentId')
             .name('test content id')
             .type('Symbol')

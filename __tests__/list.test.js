@@ -1,6 +1,5 @@
 const { setupMockedContentfulApi, closeMockedContentfulApi } = require('../mocks/contentful/baseContentfulHandler')
 const { handler: listCommand } = require('../bin/commands/list')
-const { extractLogLinesFromConsole } = require('../__test-utils__/log')
 const { listOneMigrationAppliedHandler } = require('../mocks/contentful/handlers/list/oneAppliedMigrationsHandler')
 const { listNoAppliedMigrationHandler } = require('../mocks/contentful/handlers/list/noAppliedMigrationsHandler')
 const { createSimpleMigrationFile } = require('../__test-utils__/create-migration')
@@ -12,9 +11,8 @@ describe('list', () => {
         let numberOfMigrationsInMigrationsDir = readdirSync(process.env.MIGRATIONS_DIR).length
         expect(numberOfMigrationsInMigrationsDir).toBe(0)
 
-        const stdout = extractLogLinesFromConsole()
-        await listCommand()
-        expect(stdout).toContain('Found no applied migrations')
+        let result = await listCommand()
+        expect(result).toBe('Found no applied migrations')
         closeMockedContentfulApi()
     })
 
@@ -25,10 +23,11 @@ describe('list', () => {
         let numberOfMigrationsInMigrationsDir = readdirSync(process.env.MIGRATIONS_DIR).length
         expect(numberOfMigrationsInMigrationsDir).toBe(1)
 
-        const stdout = extractLogLinesFromConsole()
-        await listCommand()
-        expect(stdout).toContain('Applied migrations:')
-        expect(stdout).toContain('20230609122547608 - new-migration')
+        //todo: fix
+        let result = await listCommand()
+        expect(result).toBe('Applied migrations:\n  20230609122547608 - new-migration')
+        /*expect(stdout).toContain('Applied migrations:')
+        expect(stdout).toContain('20230609122547608 - new-migration')*/
         closeMockedContentfulApi()
     })
 })

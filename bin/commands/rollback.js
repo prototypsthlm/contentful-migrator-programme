@@ -6,6 +6,7 @@ const env = require('../../lib/env')
 const cliSelect = require('cli-select')
 const spaceModule = require('../../lib/contentful-space-manager')
 const log = require('../../lib/log')
+const { error } = require('../../lib/log')
 
 exports.command = 'rollback'
 
@@ -28,8 +29,9 @@ exports.builder = (yargs) => {
 exports.handler = async ({ force, interactive }) => {
     try {
         if (env('CTF_ENVIRONMENT_ID') === 'master' && !force) {
-            log.error('Executing migrations against master requires the --force flag.')
-            return
+            let errorString = 'Executing migrations against master requires the --force flag.'
+            log.error(errorString)
+            return errorString
         }
 
         if (interactive) {
