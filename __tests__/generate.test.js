@@ -1,7 +1,6 @@
 const fs = require('fs')
 const { join } = require('path')
 const { handler: generateCommand } = require('../bin/commands/generate')
-const { extractLogLinesFromConsole } = require('../__test-utils__/log')
 
 describe('generate', () => {
     it('should create a new migration file', async () => {

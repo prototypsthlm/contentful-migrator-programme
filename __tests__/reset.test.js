@@ -1,5 +1,4 @@
 const { handler: resetCommand } = require('../bin/commands/reset')
-const { extractLogLinesFromConsole } = require('../__test-utils__/log')
 const { setupMockedContentfulApi, closeMockedContentfulApi } = require('../mocks/contentful/baseContentfulHandler')
 const { listNoAppliedMigrationHandler } = require('../mocks/contentful/handlers/list/noAppliedMigrationsHandler')
 

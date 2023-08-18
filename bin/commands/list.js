@@ -18,15 +18,13 @@ exports.handler = async () => {
         const appliedMigrations = await list(space)
         appliedMigrations.sort((a, b) => b.timestamp.localeCompare(a.timestamp))
         if (appliedMigrations.length) {
-            log.info('Applied migrations:')
-            console.group()
-            appliedMigrations.forEach((m) => {
-                log.info(m)
-            })
-            console.groupEnd()
+            let appliedMigrationsString = 'Applied migrations:\n  ' + appliedMigrations.join('\n  ')
+            log.info('appliedMigrationsString')
+            return appliedMigrationsString
         } else {
-            log.info('Found no applied migrations')
-            return 'Found no applied migrations'
+            let noAppliedMigrationsString = 'Found no applied migrations'
+            log.info(noAppliedMigrationsString)
+            return noAppliedMigrationsString
         }
     } catch (e) {
         log.error(e)

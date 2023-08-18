@@ -1,5 +1,4 @@
 const { handler: migrateCommand } = require('../bin/commands/migrate')
-const { extractLogLinesFromConsole } = require('../__test-utils__/log')
 const { setupMockedContentfulApi, closeMockedContentfulApi } = require('../mocks/contentful/baseContentfulHandler')
 
 describe('migrate', () => {
