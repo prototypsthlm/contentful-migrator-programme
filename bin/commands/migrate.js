@@ -25,9 +25,10 @@ exports.handler = async ({ force }) => {
             return errorString
         }
 
-        await apply({ rollback: false })
+        return await apply({ rollback: false })
     } catch (e) {
         log.error(e)
         process.exitCode = 1
+        return e.toString()
     }
 }

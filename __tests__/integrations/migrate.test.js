@@ -1,21 +1,23 @@
 const { handler: migrateCommand } = require('../../bin/commands/migrate')
 const { handler: rollbackCommand } = require('../../bin/commands/rollback')
-const { extractLogLinesFromConsole, flushLogLines } = require('../../__test-utils__/log')
-const { setupMockedContentfulApi, closeMockedContentfulApi } = require('../../mocks/contentful/baseContentfulHandler')
 const { createSimpleMigrationFile } = require('../../__test-utils__/create-migration')
+
+afterEach(async () => {
+    //unapply the migration done by the tests
+    await rollbackCommand({ force: true })
+})
 
 describe('migrate', () => {
     test('migrate if the force flag is used against master', async () => {
-        const stdout = extractLogLinesFromConsole()
-
         createSimpleMigrationFile()
 
-        await migrateCommand({ force: true })
+        let result = await migrateCommand({ force: true })
 
-        expect(stdout).toContain('Migrated.')
+        expect(result).toBe('Applied the following migrations:\n  20230609122547608 - new-migration')
+    }, 100000)
 
-        //unapply the migration
-        await rollbackCommand({ force: true })
-        expect(stdout).toContain('Rolled back.')
+    test('log if there are no migrations to apply', async () => {
+        let result = await migrateCommand({ force: true })
+        expect(result).toBe('No migrations to apply.')
     }, 100000)
 })

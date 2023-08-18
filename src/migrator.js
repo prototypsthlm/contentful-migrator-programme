@@ -132,6 +132,15 @@ const migrate = async (space, options = {}) => {
     await runMigrations(migrationsToApply, space.env.sys.id)
     await updateBookkeeping(space, migrationsToApply, options)
     log.info(options.rollback ? 'Rolled back.' : 'Migrated.')
+
+    let successString
+    if (options.rollback) {
+        successString = 'Successful rollback of the following migrations:\n  ' + migrationsToApply.join('\n  ')
+    } else {
+        successString = 'Applied the following migrations:\n  ' + migrationsToApply.join('\n  ')
+    }
+    log.info(successString)
+    return successString
 }
 
 const delay = (time) => new Promise((resolve) => setTimeout(resolve, time))
@@ -185,8 +194,9 @@ const apply = async (options = {}) => {
     const migrationsToHandle = await getMigrationsToHandle(space, options)
 
     if (!migrationsToHandle.length) {
-        log.info(`No migrations to ${options.rollback ? 'rollback' : 'apply'}.`)
-        return
+        let noMigrationsMessage = `No migrations to ${options.rollback ? 'rollback' : 'apply'}.`
+        log.info(noMigrationsMessage)
+        return noMigrationsMessage
     }
 
     if (options.rollback) {
@@ -195,22 +205,24 @@ const apply = async (options = {}) => {
         log.info('About to apply the following migrations:\n  ' + migrationsToHandle.join('\n  '))
     }
 
+    //todo: depending on env the way to migrate differ?
     if (env('CTF_ENVIRONMENT_ID') === 'master') {
         const newEnvId = utcTimestamp({ dashes: true })
-
+        let result
         try {
             await failIfNoAvailableEnvironments(space)
             const spaceNewEnv = await createEnv(space, newEnvId)
-            await migrate(spaceNewEnv, options)
+            result = await migrate(spaceNewEnv, options)
+
             await switchEnvAliasAndDropOldEnv(space, newEnvId)
-            return
+            return result
         } catch (e) {
             await space.deleteSpaceEnv(newEnvId)
             throw e
         }
     }
 
-    await migrate(space, options)
+    return await migrate(space, options)
 }
 
 const create = async ({ newEnvId }) => {
