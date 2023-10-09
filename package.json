@@ -27,7 +27,7 @@
     "homepage": "https://github.com/prototypsthlm/contentful-migrator-programme#readme",
     "dependencies": {
         "cli-select": "^1.1.2",
-        "contentful-management": "^10.1.4",
+        "contentful-management": "^11.0.1",
         "contentful-migration": "^4.5.4",
         "dotenv": "^16.0.0",
         "esm": "^3.2.25",
