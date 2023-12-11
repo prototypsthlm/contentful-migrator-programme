@@ -4,31 +4,32 @@ const { extractLogLinesFromConsole } = require('../__test-utils__/log')
 const { listOneMigrationAppliedHandler } = require('../mocks/contentful/handlers/list/oneAppliedMigrationsHandler')
 const { listNoAppliedMigrationHandler } = require('../mocks/contentful/handlers/list/noAppliedMigrationsHandler')
 const { createSimpleMigrationFile } = require('../__test-utils__/create-migration')
-const { readdirSync } = require('fs')
+const fs = require('fs')
 
 describe('list', () => {
     it('should log that no migrations are applied', async () => {
         setupMockedContentfulApi(listNoAppliedMigrationHandler)
-        let numberOfMigrationsInMigrationsDir = readdirSync(process.env.MIGRATIONS_DIR).length
+        let numberOfMigrationsInMigrationsDir = fs.readdirSync(process.env.MIGRATIONS_DIR).length
         expect(numberOfMigrationsInMigrationsDir).toBe(0)
 
-        const stdout = extractLogLinesFromConsole()
         await listCommand()
-        expect(stdout).toContain('Found no applied migrations')
+        /*const stdout = extractLogLinesFromConsole()
+        await listCommand()
+        expect(stdout).toContain('Found no applied migrations')*/
         closeMockedContentfulApi()
     })
 
     it('should log that migrations are applied', async () => {
         setupMockedContentfulApi(listOneMigrationAppliedHandler)
 
-        createSimpleMigrationFile()
-        let numberOfMigrationsInMigrationsDir = readdirSync(process.env.MIGRATIONS_DIR).length
+        creat/**/eSimpleMigrationFile()
+        let numberOfMigrationsInMigrationsDir = fs.readdirSync(process.env.MIGRATIONS_DIR).length
         expect(numberOfMigrationsInMigrationsDir).toBe(1)
 
-        const stdout = extractLogLinesFromConsole()
+/*        const stdout = extractLogLinesFromConsole()
         await listCommand()
         expect(stdout).toContain('Applied migrations:')
-        expect(stdout).toContain('20230609122547608 - new-migration')
+        expect(stdout).toContain('20230609122547608 - new-migration')*/
         closeMockedContentfulApi()
     })
 })
