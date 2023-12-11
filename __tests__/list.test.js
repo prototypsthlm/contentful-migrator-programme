@@ -22,7 +22,7 @@ describe('list', () => {
     it('should log that migrations are applied', async () => {
         setupMockedContentfulApi(listOneMigrationAppliedHandler)
 
-        //createSimpleMigrationFile()
+        createSimpleMigrationFile()
         let numberOfMigrationsInMigrationsDir = fs.readdirSync(process.env.MIGRATIONS_DIR).length
         expect(numberOfMigrationsInMigrationsDir).toBe(1)
 
