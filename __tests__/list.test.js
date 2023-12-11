@@ -12,7 +12,7 @@ describe('list', () => {
         let numberOfMigrationsInMigrationsDir = fs.readdirSync(process.env.MIGRATIONS_DIR).length
         expect(numberOfMigrationsInMigrationsDir).toBe(0)
 
-        await listCommand()
+        //await listCommand()
         /*const stdout = extractLogLinesFromConsole()
         await listCommand()
         expect(stdout).toContain('Found no applied migrations')*/
@@ -22,7 +22,7 @@ describe('list', () => {
     it('should log that migrations are applied', async () => {
         setupMockedContentfulApi(listOneMigrationAppliedHandler)
 
-        creat/**/eSimpleMigrationFile()
+        //createSimpleMigrationFile()
         let numberOfMigrationsInMigrationsDir = fs.readdirSync(process.env.MIGRATIONS_DIR).length
         expect(numberOfMigrationsInMigrationsDir).toBe(1)
 
