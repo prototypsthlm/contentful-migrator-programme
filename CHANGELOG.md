@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.1](https://github.com/prototypsthlm/contentful-migrator-programme/compare/v0.5.0...v0.5.1) (2024-03-13)
+
+
+### Bug Fixes
+
+* trigger minor release ([27012dd](https://github.com/prototypsthlm/contentful-migrator-programme/commit/27012dd64bf775f608f5c06d7753da82a03a7465))
+
 ## [0.5.0](https://github.com/prototypsthlm/contentful-migrator-programme/compare/v0.4.0...v0.5.0) (2023-07-13)
 
 
