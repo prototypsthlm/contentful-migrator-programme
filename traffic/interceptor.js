@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-const { rest } = require('msw')
 const fs = require('fs')
 const path = require('path')
 const { setupServer } = require('msw/node')
@@ -25,7 +24,7 @@ module.exports.setupInterceptorServer = ({ logUnhandledRequests, logBypassedTraf
     }
 
     if (logBypassedTraffic) {
-        server.events.on('request:start', (request, response) => {
+        server.events.on('request:start', ({request, response}) => {
             // Record every dispatched request.
             log.info(`* intercepting ${request.method} request to ${request.url}`)
             requests.set(request.id, request)
@@ -36,7 +35,7 @@ module.exports.setupInterceptorServer = ({ logUnhandledRequests, logBypassedTraf
         // to the "setupServer" call, all responses will be
         // bypassed (performed as-is). This will allow us to
         // collect the actual responses.
-        server.events.on('response:bypass', (response, requestId) => {
+        server.events.on('response:bypass', ({response, requestId}) => {
             log.info(`* receiving status ${response.status} from ${requests.get(requestId).url}`)
             const request = requests.get(requestId)
             transactions.add([request, response])
