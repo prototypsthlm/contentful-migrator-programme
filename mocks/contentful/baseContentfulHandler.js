@@ -1,6 +1,6 @@
 const { setupServer } = require('msw/node')
 const log = require('../../lib/log')
-const { rest } = require('msw')
+const { http, HttpResponse } = require('msw')
 
 let mockedContentfulServer = null
 
@@ -11,7 +11,7 @@ module.exports.setupMockedContentfulApi = (handlers) => {
         handlers = []
     }
     let totalNumberOfRequests = 0
-    log.info('setting up mocked contentful rest server')
+    log.info('setting up mocked contentful http server')
     const server = setupServer(...spacesHandler, ...localeHandler, ...masterEnvironmentHandler, ...handlers)
 
     //log unhandled requests
@@ -25,7 +25,7 @@ module.exports.setupMockedContentfulApi = (handlers) => {
         log.info('handling exit...')
     })
 
-    server.events.on('request:start', (request, response) => {
+    server.events.on('request:start', ({request, response}) => {
         // Record every dispatched request.
         log.info(`* intercepting ${request.method} request to ${request.url}`)
         totalNumberOfRequests++
@@ -43,20 +43,26 @@ module.exports.closeMockedContentfulApi = () => {
 }
 
 const spacesHandler = [
-    rest.get(`${this.baseURL}`, (req, res, ctx) => {
-        return res(ctx.status(200), ctx.json(spacesResponseBody))
+    http.get(`${this.baseURL}`, () => {
+        return HttpResponse.json(spacesResponseBody, {
+            status: 200,
+        })
     }),
 ]
 
 const localeHandler = [
-    rest.get(`${this.baseURL}/environments/master/locales`, (req, res, ctx) => {
-        return res(ctx.status(200), ctx.json(localeResponseBody))
+    http.get(`${this.baseURL}/environments/master/locales`, () => {
+        return HttpResponse.json(localeResponseBody, {
+            status: 200,
+        })
     }),
 ]
 
 const masterEnvironmentHandler = [
-    rest.get(`${this.baseURL}/environments/master`, (req, res, ctx) => {
-        return res(ctx.status(200), ctx.json(masterEnvironmentResponseBody))
+    http.get(`${this.baseURL}/environments/master`, () => {
+        return HttpResponse.json(masterEnvironmentResponseBody, {
+            status: 200,
+        })
     }),
 ]
 
