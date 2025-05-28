@@ -35,7 +35,7 @@
         "picocolors": "^1.0.0",
         "serialize-javascript": "^6.0.0",
         "tmp": "^0.2.1",
-        "yargs": "^17.1.1"
+        "yargs": "^18.0.0"
     },
     "devDependencies": {
         "execa": "npm:@esm2cjs/execa@^6.1.1-cjs.1",
