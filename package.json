@@ -33,7 +33,7 @@
         "esm": "^3.2.25",
         "mustache": "^4.0.1",
         "picocolors": "^1.0.0",
-        "serialize-javascript": "^6.0.0",
+        "serialize-javascript": "^7.0.1",
         "tmp": "^0.2.1",
         "yargs": "^17.1.1"
     },
